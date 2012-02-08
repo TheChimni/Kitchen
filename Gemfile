@@ -45,4 +45,6 @@ gem 'jquery-rails'
 group :test, :development do
   gem "rspec-rails", "~> 2.8"
   gem "guard-rspec"
+  gem "launchy"
+  gem "capybara"
 end
