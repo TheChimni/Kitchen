@@ -4,4 +4,7 @@ class RecipesController < ApplicationController
     # automatically accessible from the view template that renders the response for the action.
     @recipes = Recipe.all
   end
+
+  def new
+  end
 end

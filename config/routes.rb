@@ -1,5 +1,5 @@
 Kitchen::Application.routes.draw do
-  get "recipes/index"
+  resources :recipes
   root :to => 'recipes#index'
 
   # The priority is based upon order of creation:
