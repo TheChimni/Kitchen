@@ -14,9 +14,9 @@ describe Recipe do
     recipe.title.should == 'Tasty recipe'
   end
 
-  it 'should not be valid without a title' do
-    recipe = Recipe.new
-    recipe.should_not be_valid
-  end
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:description) }
+  it { should validate_presence_of(:ingredients) }
+  it { should validate_presence_of(:preparation_method) }
 
 end

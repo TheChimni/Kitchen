@@ -47,4 +47,5 @@ group :test, :development do
   gem "guard-rspec"
   gem "launchy"
   gem "capybara"
+  gem 'shoulda-matchers'
 end
