@@ -6,5 +6,15 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @recipe = Recipe.new
+  end
+
+  def create
+    @recipe = Recipe.new(params[:recipe])
+    if @recipe.save
+      redirect_to recipes_path
+    else
+      # TODO: Handle errors
+    end
   end
 end

@@ -1,0 +1,22 @@
+<%= form_for @recipe do |form| %>
+  <div>
+    <%= form.label :title, 'Title' %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :description, 'Description' %>
+    <%= form.text_area :description %>
+  </div>
+  <div>
+    <%= form.label :ingredients, 'Ingredients' %>
+    <%= form.text_area :ingredients %>
+  </div>
+  <div>
+    <%= form.label :preparation_method, 'Preparation method' %>
+    <%= form.text_area :preparation_method %>
+  </div>
+  <div>
+    <%= form.submit 'Save' %>
+  </div>
+<% end %>
+
