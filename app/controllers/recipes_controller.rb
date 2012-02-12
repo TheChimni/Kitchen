@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to recipes_path
     else
-      # TODO: Handle errors
+      render :new
     end
   end
 end

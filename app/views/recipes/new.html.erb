@@ -1,5 +1,8 @@
 <%= form_for @recipe do |form| %>
   <div>
+    <%= errors_for(@recipe, "Could not save the new recipe").html_safe %>
+  </div>
+  <div>
     <%= form.label :title, 'Title' %>
     <%= form.text_field :title %>
   </div>
