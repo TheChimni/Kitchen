@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'Create a new recipe' do
 
   it 'should create a new recipe when all the required fields are specified' do
-    visit '/'
+    visit recipes_path
     click_link 'New recipe'
     current_path.should == new_recipe_path
     fill_in 'Title', :with => 'Test recipe'
@@ -15,7 +15,7 @@ describe 'Create a new recipe' do
   end
 
   it 'should display the form again with an error message when the description is not specified' do
-    visit '/'
+    visit recipes_path
     click_link 'New recipe'
     current_path.should == new_recipe_path
     fill_in 'Title', :with => 'Test recipe'

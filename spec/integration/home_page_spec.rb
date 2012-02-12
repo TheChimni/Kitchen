@@ -8,12 +8,7 @@ describe 'Home page' do
 
   it 'should show a recipe list title' do
     visit '/'
-    page.should have_content 'My recipes'
+    page.should have_content "Rieethaa's Kitchen"
   end
 
-  it 'should show each recipe' do
-    visit '/'
-    page.should have_content @recipe.title
-    page.should_not have_content 'Fish and chips'
-  end
 end

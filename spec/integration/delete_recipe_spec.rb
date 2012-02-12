@@ -8,7 +8,7 @@ describe 'Delete an existing recipe' do
   end
 
   it 'should destroy an existing recipe' do
-    visit '/'
+    visit recipes_path
     click_link 'Aloo tikki chaat'
     current_path.should == recipe_path(@recipe)
     click_link 'Delete this recipe'

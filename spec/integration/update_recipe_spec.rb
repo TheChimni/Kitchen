@@ -8,7 +8,7 @@ describe 'Update an existing recipe' do
   end
 
   it 'should update the properties of an existing recipe' do
-    visit '/'
+    visit recipes_path
     click_link 'Aloo tikki chaat'
     current_path.should == recipe_path(@recipe)
     click_link 'Edit this recipe'
