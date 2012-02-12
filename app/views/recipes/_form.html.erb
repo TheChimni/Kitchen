@@ -1,0 +1,24 @@
+<%= form_for @recipe do |form| %>
+  <div>
+    <%= errors_for(@recipe, "Could not save the new recipe").html_safe %>
+  </div>
+  <div>
+    <%= form.label :title, 'Title' %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :description, 'Description' %>
+    <%= form.text_area :description %>
+  </div>
+  <div>
+    <%= form.label :ingredients, 'Ingredients' %>
+    <%= form.text_area :ingredients %>
+  </div>
+  <div>
+    <%= form.label :preparation_method, 'Preparation method' %>
+    <%= form.text_area :preparation_method %>
+  </div>
+  <div>
+    <%= form.submit(params[:action] == 'edit' ? 'Update' : 'Save') %>
+  </div>
+<% end %>
