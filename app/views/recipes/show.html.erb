@@ -6,3 +6,7 @@
 
 <%= link_to 'Edit this recipe', edit_recipe_path(@recipe) %>
 <%= link_to 'Delete this recipe', recipe_path(@recipe), :method => :delete, :confirm => 'Are you sure?' %>
+<p>
+  <%= link_to 'Back to recipe list', recipes_path %>
+</p>
+
