@@ -2,7 +2,9 @@
   <%= @recipe.title %>
 </h2>
 
-<div>Rieethaa is going to fill the page in tomorrow</div>
+<div><%= @recipe.description %></div>
+<div><%= @recipe.ingredients %></div>
+<div><%= @recipe.preparation_method %></div>
 
 <%= link_to 'Edit this recipe', edit_recipe_path(@recipe) %>
 <%= link_to 'Delete this recipe', recipe_path(@recipe), :method => :delete, :confirm => 'Are you sure?' %>
