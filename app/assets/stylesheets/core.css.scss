@@ -1,3 +1,8 @@
+$white: rgb(255,255,255);
+$lightblue: rgb(100,133,255);
+$blue: rgb(60,100,200);
+
+
 h1 {
 	color: #f00;
 }
@@ -16,8 +21,8 @@ body {
 #banner {
 	font: 200% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 	padding: 5px;
-	background-color: rgb(100,133,255);
-	color: rgb(255,255,255);
+	background-color: $lightblue;
+	color: $white;
 }
 
 #menu {
@@ -40,10 +45,14 @@ body {
 	display: block;
 	width: 100px;
 	text-decoration: none;
-	color: rgb(100,133,255);
+	color: $lightblue;
 	font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 	padding: 10px 0 0;
 	height: 25px;
+}
+
+#menu li > a:hover {
+	color: $blue;
 }
 
 section {
