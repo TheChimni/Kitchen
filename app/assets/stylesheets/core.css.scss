@@ -19,3 +19,33 @@ body {
 	background-color: rgb(100,133,255);
 	color: rgb(255,255,255);
 }
+
+#menu {
+	display: block;
+	height: 35px;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align:	center;
+}
+
+#menu li {
+	float: left;
+}
+
+#menu li > a {
+	display: block;
+	width: 100px;
+	text-decoration: none;
+	color: rgb(100,133,255);
+	font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+	padding: 10px 0 0;
+	height: 25px;
+}
+
+section {
+	display: block;
+}

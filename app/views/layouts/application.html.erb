@@ -12,12 +12,17 @@
     <div id="banner">
       My Rustic Kitchen
     </div>
-    <ul>
-      <li><%= link_to 'Home', root_path %></li>
-      <li><%= link_to 'Recipes', recipes_path %></li>
-    </ul>
+    <nav id="menu">
+      <ul>
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Recipes', recipes_path %></li>
+      </ul>
+    </nav>
   </header>
-  <%= yield %>  
+  <section>
+    <%= yield %>
+  </section>
+  
 </div>
 </body>
 </html>
