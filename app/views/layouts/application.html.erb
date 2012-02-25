@@ -8,21 +8,10 @@
 </head>
 <body>
 <div id="container">
-  <header>
-    <div id="banner">
-      My Rustic Kitchen
-    </div>
-    <nav id="menu">
-      <ul>
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'Recipes', recipes_path %></li>
-      </ul>
-    </nav>
-  </header>
+  <%= render :partial => 'shared/header' %>
   <section>
     <%= yield %>
   </section>
-  
 </div>
 </body>
 </html>
