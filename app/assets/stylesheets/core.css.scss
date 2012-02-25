@@ -2,6 +2,8 @@ $white: rgb(255,255,255);
 $lightblue: rgb(100,133,255);
 $blue: rgb(60,100,200);
 
+$base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 
 h1 {
 	color: #f00;
@@ -16,6 +18,7 @@ h1 {
 body {
 	margin: 0;
 	background: #CCC;
+	font: $base_font;
 }
 
 #banner {
@@ -57,4 +60,22 @@ body {
 
 section {
 	display: block;
+	padding: 5px;
+}
+
+label {
+	display: block;
+}
+
+input, textarea {
+	font: $base_font;
+	border: 1px solid #CCC;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+textarea {
+	height: 100px;
+	width: 800px;
 }
