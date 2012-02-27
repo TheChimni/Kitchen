@@ -1,6 +1,8 @@
 $white: rgb(255,255,255);
 $lightblue: rgb(100,133,255);
 $blue: rgb(60,100,200);
+$lightgrey: rgb(244,244,244);
+
 
 $base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -83,4 +85,12 @@ input, textarea {
 textarea {
 	height: 100px;
 	width: 800px;
+}
+
+.form-actions {
+	padding: 17px 20px 18px;
+	margin-top: 18px;
+	margin-bottom: 18px;
+	background-color: $lightgrey;
+	border-top: 1px solid #DDD;
 }

@@ -4,8 +4,8 @@
     </div>
     <nav id="menu">
       <ul>
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'Recipes', recipes_path %></li>
+        <li><%= link_to 'Home', root_path, :'data-section' => :home %></li>
+        <li><%= link_to 'Recipes', recipes_path, :'data-section' => :recipes %></li>
       </ul>
     </nav>
   </header>
