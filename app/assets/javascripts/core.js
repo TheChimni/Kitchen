@@ -3,6 +3,7 @@ $(function() {
 	
 	setInitialMenu(); // aim to get rid of this line
 	$('#menu').menu();
+	//$('#carousel').carousel(); // write the carousel plug-in
 });
 
 // Try to factor this into a plugin called menu so that you can uncomment the line above
@@ -33,3 +34,6 @@ function setInitialMenu() {
     });
   };
 })(jQuery);
+
+// Carousel plug-in requirements
+// 1. hide all but the first child panel (all child panels have class carouselItem)
