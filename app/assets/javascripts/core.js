@@ -1,17 +1,7 @@
 $(function() {
-	console.log('this is just a test');
-	
-	setInitialMenu(); // aim to get rid of this line
 	$('#menu').menu();
-	//$('#carousel').carousel(); // write the carousel plug-in
+	$('#carousel').carousel();
 });
-
-// Try to factor this into a plugin called menu so that you can uncomment the line above
-function setInitialMenu() {
-	var section = $('body').data('section');
-	var menuItem = $("a[data-section='" + section + "']");
-	menuItem.css('highlighted');  // define this style (just use a colour change for now)
-}
 
 (function($) 
 {
@@ -26,14 +16,38 @@ function setInitialMenu() {
       {   
         initialize: function()
         {
-  				console.log('hello from plugin');
+					var section = $('body').data('section');
+					var menuItem = $("a[data-section='" + section + "']");
+					menuItem.css({'background-color': 'rgb(244,244,244)'});  // define this style (just use a colour change for now)
         }
       };
       this.menu = self;
       self.initialize();      
     });
   };
+
+	$.fn.carousel = function(options){
+		var opts = $.extend({}, defaults, options);
+    return this.each(function() 
+    {
+			$this = $(this);
+      if (this.carousel) { return false; }
+      var self = 
+      {   
+        initialize: function()
+        {
+					$('.carouselItem:first', $this).show();
+					$("<a class='carouselButton left'>&lt;</a>").appendTo($this);
+					$("<a class='carouselButton right'>&gt;</a>").appendTo($this);
+			  }
+      };
+      this.carousel = self;
+      self.initialize();      
+    });
+	};
+
 })(jQuery);
+
 
 // Carousel plug-in requirements
 // 1. hide all but the first child panel (all child panels have class carouselItem)
