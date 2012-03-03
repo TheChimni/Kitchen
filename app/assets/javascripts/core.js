@@ -28,18 +28,32 @@ $(function() {
 
 	$.fn.carousel = function(options){
 		var opts = $.extend({}, defaults, options);
-    return this.each(function() 
-    {
-			$this = $(this);
+    return this.each(function() {
+			var $this = $(this);
       if (this.carousel) { return false; }
-      var self = 
-      {   
-        initialize: function()
-        {
-					$('.carouselItem:first', $this).show();
-					$("<a class='carouselButton left'>&lt;</a>").appendTo($this);
-					$("<a class='carouselButton right'>&gt;</a>").appendTo($this);
-			  }
+      var self = {
+        initialize: function() {
+					this.currentPanel = $('.carouselItem:first', $this).show();
+					$("<a class='carouselButton left'>&lt;</a>").appendTo($this).click(function(){
+						self.showPrevious();
+					});
+					$("<a class='carouselButton right'>&gt;</a>").appendTo($this).click(function(){
+						self.showNext();
+					});
+			  },
+				showPrevious: function() {
+					this.setCurrent(this.currentPanel.prev('.carouselItem'));
+				},
+				showNext: function() {
+					this.setCurrent(this.currentPanel.next('.carouselItem'));
+				},
+				setCurrent: function(newCurrent) {
+					if (newCurrent.length > 0) {
+						this.currentPanel.hide();
+						this.currentPanel = newCurrent;
+						this.currentPanel.show();
+					}
+				}
       };
       this.carousel = self;
       self.initialize();      
