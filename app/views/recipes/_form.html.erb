@@ -18,6 +18,10 @@
     <%= form.label :preparation_method, 'Preparation method' %>
     <%= form.text_area :preparation_method %>
   </div>
+  <div>
+    <%= form.label :picture, 'Picture' %>
+    <%= form.file_field :picture %>
+  </div>
   <div class="form-actions">
     <%= form.submit(params[:action] == 'edit' ? 'Update' : 'Save') %>
   </div>

@@ -3,6 +3,7 @@
 </h2>
 
 <div><%= @recipe.description %></div>
+<%= image_tag @recipe.picture.url(:medium) %>
 <div><%= @recipe.ingredients %></div>
 <div><%= @recipe.preparation_method %></div>
 
