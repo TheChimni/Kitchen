@@ -14,9 +14,10 @@ describe Recipe do
     recipe.title.should == 'Tasty recipe'
   end
 
-  it { should validate_presence_of(:title) }
-  it { should validate_presence_of(:description) }
-  it { should validate_presence_of(:ingredients) }
-  it { should validate_presence_of(:preparation_method) }
+  it { should validate_presence_of :title }
+  it { should validate_presence_of :description }
+  it { should validate_presence_of :ingredients }
+  it { should validate_presence_of :preparation_method }
 
+  it { should have_attached_file :picture }
 end
