@@ -110,10 +110,18 @@ textarea {
 	top: 40%;
 	position: absolute;
 	width: 50px;
-	height: 50px;
+	height: 55px;
 	background-color: $grey;
-	font-size: 250%;
+	font-size: 150%;
 	color: $white;
+	line-height: 50px;
+	text-align: center;
+	opacity: 0.7;
+	cursor: default;
+}
+
+.carouselButton:hover {
+	background-color: $blue;
 }
 
 .left {
