@@ -1,10 +1,9 @@
 <div id='carousel'>
   <% @recipes.each do |recipe| %>
     <div class='carouselItem' data-id='<%= recipe.id %>'>
-      <%= recipe.title %>
-      <br/>
-      Image goes here...
-      <%= image_tag recipe.picture.url(:medium)  %>
+      <%= image_tag recipe.picture.url(:wide)  %>
+      <div class='carouselTitle'><%= recipe.title %></div>
+      <div class='carouselSubtitle'><%= recipe.description %></div>
     </div>
   <% end %>
 </div>

@@ -3,6 +3,7 @@ $lightblue: rgb(100,133,255);
 $blue: rgb(60,100,200);
 $lightgrey: rgb(244,244,244);
 $grey: rgb(128,128,128);
+$darkgrey: rgb(64,64,64);
 
 $base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -67,7 +68,6 @@ body, html {
 
 section {
 	display: block;
-	padding: 5px;
 }
 
 label {
@@ -96,7 +96,6 @@ textarea {
 	border-top: 1px solid #DDD;
 }
 
-
 #carousel {
 	// Need to have relative position here as all the other carousel items inside this container will be relative to this?
 	position: relative;
@@ -104,6 +103,28 @@ textarea {
 
 .carouselItem {
 	display: none;
+}
+
+@mixin carouselText {
+  position: absolute;
+  right: 0px;
+  color: $white;
+  font-style: italic;
+  background-color: $darkgrey;
+  opacity: 0.7;
+  padding: 5px;
+}
+
+.carouselTitle {
+  @include carouselText;
+  top: 400px;
+  font-size: 160%;
+}
+
+.carouselSubtitle {
+  @include carouselText;
+  font-size: 100%;
+  top: 450px;
 }
 
 .carouselButton {
