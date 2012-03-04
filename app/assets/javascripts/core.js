@@ -42,17 +42,25 @@ $(function() {
 					});
 			  },
 				showPrevious: function() {
-					this.setCurrent(this.currentPanel.prev('.carouselItem'));
+					if (this.currentPanel.prev('.carouselItem').length > 0) {
+						this.setCurrent(this.currentPanel.prev('.carouselItem'));
+					}
+					else {
+						this.setCurrent($('.carouselItem:last', $this));
+					}
 				},
 				showNext: function() {
-					this.setCurrent(this.currentPanel.next('.carouselItem'));
+					if(this.currentPanel.next('.carouselItem').length > 0) {
+						this.setCurrent(this.currentPanel.next('.carouselItem'));
+					}
+					else {
+						this.setCurrent($('.carouselItem:first', $this));
+					}	
 				},
 				setCurrent: function(newCurrent) {
-					if (newCurrent.length > 0) {
 						this.currentPanel.hide();
 						this.currentPanel = newCurrent;
 						this.currentPanel.show();
-					}
 				}
       };
       this.carousel = self;
