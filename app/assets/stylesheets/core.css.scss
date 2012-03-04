@@ -97,12 +97,17 @@ textarea {
 }
 
 #carousel {
-	// Need to have relative position here as all the other carousel items inside this container will be relative to this?
+	/*Need to have relative position here as all the other carousel items inside this container will be relative to this?*/
 	position: relative;
+  /*The children of this container are all absolutely positioned and therefore cannot determine its height */
+  /*so we need to explicitly size the height of the carousel */
+  height: 600px;
+  overflow: hidden;
 }
 
 .carouselItem {
 	display: none;
+  position: absolute;
 }
 
 @mixin carouselText {

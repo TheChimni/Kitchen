@@ -29,6 +29,8 @@ $(function() {
 	$.fn.carousel = function(options){
 		var opts = $.extend({}, defaults, options);
     return this.each(function() {
+      // this represents the carousel DOM object, i.e. the div with id '#carousel' in our case
+      // $this is just a jQuery wrapper around this (just a naming convention)
 			var $this = $(this);
       if (this.carousel) { return false; }
       var self = {
@@ -44,23 +46,34 @@ $(function() {
 				showPrevious: function() {
 					if (this.currentPanel.prev('.carouselItem').length > 0) {
 						this.setCurrent(this.currentPanel.prev('.carouselItem'));
-					}
-					else {
+					} else {
 						this.setCurrent($('.carouselItem:last', $this));
 					}
 				},
 				showNext: function() {
-					if(this.currentPanel.next('.carouselItem').length > 0) {
+					if (this.currentPanel.next('.carouselItem').length > 0) {
 						this.setCurrent(this.currentPanel.next('.carouselItem'));
-					}
-					else {
+					} else {
 						this.setCurrent($('.carouselItem:first', $this));
 					}	
 				},
 				setCurrent: function(newCurrent) {
-						this.currentPanel.hide();
-						this.currentPanel = newCurrent;
-						this.currentPanel.show();
+						var oldCurrent = this.currentPanel;
+            this.currentPanel = newCurrent;
+            this.currentPanel.css({ left: '960px' });
+            this.currentPanel.show();
+            // here 'this' is the object that we have assigned to the 'self' vairable above
+						this.currentPanel.animate({
+              left: '0px'
+						}, 500, function() {
+						});
+						oldCurrent.animate({
+              left: '-960px'
+						}, 500, function() {
+              // in this callback 'this' would be the currentPanel DOM object
+              oldCurrent.hide();
+              oldCurrent.css({ left: '0px' });
+						});
 				}
       };
       this.carousel = self;
