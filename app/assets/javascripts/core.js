@@ -7,13 +7,13 @@ $(function() {
 {
   var defaults = {};
   $.fn.menu = function(options) 
-  {        
+  {
     var opts = $.extend({}, defaults, options);
     return this.each(function() 
     {
       if (this.menu) { return false; }
       var self = 
-      {   
+      {
         initialize: function()
         {
 					var section = $('body').data('section');
@@ -22,7 +22,7 @@ $(function() {
         }
       };
       this.menu = self;
-      self.initialize();      
+      self.initialize();
     });
   };
 
@@ -45,35 +45,55 @@ $(function() {
 			  },
 				showPrevious: function() {
 					if (this.currentPanel.prev('.carouselItem').length > 0) {
-						this.setCurrent(this.currentPanel.prev('.carouselItem'));
+						this.setCurrent(this.currentPanel.prev('.carouselItem'), 'left');
 					} else {
-						this.setCurrent($('.carouselItem:last', $this));
+						this.setCurrent($('.carouselItem:last', $this), 'left');
 					}
 				},
 				showNext: function() {
 					if (this.currentPanel.next('.carouselItem').length > 0) {
-						this.setCurrent(this.currentPanel.next('.carouselItem'));
+						this.setCurrent(this.currentPanel.next('.carouselItem'), 'right');
 					} else {
-						this.setCurrent($('.carouselItem:first', $this));
+						this.setCurrent($('.carouselItem:first', $this), 'right');
 					}	
 				},
-				setCurrent: function(newCurrent) {
+				setCurrent: function(newCurrent, direction) {
 						var oldCurrent = this.currentPanel;
             this.currentPanel = newCurrent;
-            this.currentPanel.css({ left: '960px' });
+						if (direction == 'left') {
+							this.currentPanel.css({ left: '960px' });
+						} else {
+							this.currentPanel.css({ left: '-960px' });
+						}
+
             this.currentPanel.show();
             // here 'this' is the object that we have assigned to the 'self' vairable above
-						this.currentPanel.animate({
-              left: '0px'
-						}, 500, function() {
-						});
-						oldCurrent.animate({
-              left: '-960px'
-						}, 500, function() {
-              // in this callback 'this' would be the currentPanel DOM object
-              oldCurrent.hide();
-              oldCurrent.css({ left: '0px' });
-						});
+						if (direction == 'left') {
+							this.currentPanel.animate({
+	              left: '0px'
+							}, 500, function() {
+							});
+
+							oldCurrent.animate({
+	              left: '-960px'
+							}, 500, function() {
+	              // in this callback 'this' would be the currentPanel DOM object
+	              oldCurrent.hide();
+	              oldCurrent.css({ left: '0px' });
+							});
+						} else {
+							this.currentPanel.animate({
+								left: '0px'
+							}, 500, function() {
+							});
+
+							oldCurrent.animate({left: '960px'}, 500, function() {
+								// reseting the position and visibility of the carousel item back to it's initial state
+								oldCurrent.hide();
+								oldCurrent.css({ left: '0px' })
+							  // stuff to do after animation is complete
+							})
+						}
 				}
       };
       this.carousel = self;
