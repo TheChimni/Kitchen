@@ -34,13 +34,21 @@ $(function() {
       var $this = $(this);
       if (this.carousel) { return false; }
       var self = {
+        isAnimating: false,
         initialize: function() {
           this.currentPanel = $('.carouselItem:first', $this).show();
           $("<a class='carouselButton left'>&lt;</a>").appendTo($this).click(function(){
-            self.showPrevious();
+            if (!self.isAnimating) {
+              // de-activate the buttons whilst the animation is in progress
+              self.isAnimating = true;
+              self.showPrevious();
+            }
           });
           $("<a class='carouselButton right'>&gt;</a>").appendTo($this).click(function(){
-            self.showNext();
+            if (!self.isAnimating) {
+              self.isAnimating = true;
+              self.showNext();
+            }
           });
         },
         showPrevious: function() {
@@ -65,14 +73,15 @@ $(function() {
 
           // here 'this' is the object that we have assigned to the 'self' vairable above
           this.currentPanel.show();
-          this.currentPanel.animate({
-            left: '0px'
-          }, 500, function() {
+          this.currentPanel.animate({ left: '0px' }, 700, function() {
+            // reactivate the buttons
+            self.isAnimating = false;
           });
 
           var endLeft = (startLeft * (-1));
-          oldPanel.animate({left:  endLeft + 'px'}, 500, function() {
+          oldPanel.animate({ left:  endLeft + 'px' }, 700, function() {
             // in this callback 'this' would be the currentPanel DOM object
+            // reset to the original position
             oldPanel.hide();
             oldPanel.css({ left: '0px' });
           });
@@ -84,7 +93,3 @@ $(function() {
   };
 
 })(jQuery);
-
-
-// Carousel plug-in requirements
-// 1. hide all but the first child panel (all child panels have class carouselItem)
