@@ -58,7 +58,7 @@ $(function() {
 					}	
 				},
 				setCurrent: function(newCurrent, direction) {
-						var oldCurrent = this.currentPanel;
+						var oldPanel = this.currentPanel;
             this.currentPanel = newCurrent;
 						if (direction == 'left') {
 							this.currentPanel.css({ left: '960px' });
@@ -66,34 +66,33 @@ $(function() {
 							this.currentPanel.css({ left: '-960px' });
 						}
 
+						// here 'this' is the object that we have assigned to the 'self' vairable above
             this.currentPanel.show();
-            // here 'this' is the object that we have assigned to the 'self' vairable above
-						if (direction == 'left') {
-							this.currentPanel.animate({
-	              left: '0px'
-							}, 500, function() {
-							});
 
-							oldCurrent.animate({
+						this.currentPanel.animate({
+              left: '0px'
+						}, 500, function() {
+						});
+
+						if (direction == 'left') {
+							oldPanel.animate({
 	              left: '-960px'
 							}, 500, function() {
 	              // in this callback 'this' would be the currentPanel DOM object
-	              oldCurrent.hide();
-	              oldCurrent.css({ left: '0px' });
+	              oldPanel.hide();
+	              oldPanel.css({ left: '0px' });
 							});
 						} else {
-							this.currentPanel.animate({
-								left: '0px'
-							}, 500, function() {
-							});
-
-							oldCurrent.animate({left: '960px'}, 500, function() {
+							oldPanel.animate({left: '960px'}, 500, function() {
 								// reseting the position and visibility of the carousel item back to it's initial state
-								oldCurrent.hide();
-								oldCurrent.css({ left: '0px' })
+								oldPanel.hide();
+								oldPanel.css({ left: '0px' })
 							  // stuff to do after animation is complete
 							})
 						}
+				},
+				animateOldPanel: function(direction) {
+					
 				}
       };
       this.carousel = self;
