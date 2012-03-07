@@ -58,24 +58,24 @@ $(function() {
           } 
         },
         setCurrent: function(newCurrent, direction) {
-            var oldPanel = this.currentPanel;
-            this.currentPanel = newCurrent;
-            var startLeft = direction == 'left' ? opts.width : (opts.width * (-1));
-            this.currentPanel.css({ left: startLeft + 'px' });
+          var oldPanel = this.currentPanel;
+          this.currentPanel = newCurrent;
+          var startLeft = direction == 'left' ? opts.width : (opts.width * (-1));
+          this.currentPanel.css({ left: startLeft + 'px' });
 
-            // here 'this' is the object that we have assigned to the 'self' vairable above
-            this.currentPanel.show();
-            this.currentPanel.animate({
-              left: '0px'
-            }, 500, function() {
-            });
+          // here 'this' is the object that we have assigned to the 'self' vairable above
+          this.currentPanel.show();
+          this.currentPanel.animate({
+            left: '0px'
+          }, 500, function() {
+          });
 
-            var endLeft = (startLeft * (-1));
-            oldPanel.animate({left:  endLeft + 'px'}, 500, function() {
-              // in this callback 'this' would be the currentPanel DOM object
-              oldPanel.hide();
-              oldPanel.css({ left: '0px' });
-            });
+          var endLeft = (startLeft * (-1));
+          oldPanel.animate({left:  endLeft + 'px'}, 500, function() {
+            // in this callback 'this' would be the currentPanel DOM object
+            oldPanel.hide();
+            oldPanel.css({ left: '0px' });
+          });
         }
       };
       this.carousel = self;
