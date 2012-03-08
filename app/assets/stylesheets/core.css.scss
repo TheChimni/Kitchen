@@ -4,6 +4,8 @@ $blue: rgb(60,100,200);
 $lightgrey: rgb(244,244,244);
 $grey: rgb(128,128,128);
 $darkgrey: rgb(64,64,64);
+$turquoiseBlueGradience: #24a7ab ;
+
 
 $base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -21,7 +23,7 @@ h1 {
 
 body {
 	margin: 0;
-	background: #CCC;
+	background: $white;
 	font: $base_font;
 }
 
@@ -94,6 +96,26 @@ textarea {
 	margin-bottom: 18px;
 	background-color: $lightgrey;
 	border-top: 1px solid #DDD;
+}
+
+.formButtons {
+  font-weight: bold;
+  font-size: 100%;
+  border: 1px solid #282727;
+  // background-color: $turquoiseBlueGradience;
+background-image: linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
+background-image: -o-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
+background-image: -moz-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
+background-image: -webkit-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
+background-image: -ms-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
+
+background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(0.14, rgb(214,223,232)),
+  color-stop(0.57, rgb(36,167,171))
+);
 }
 
 #carousel {
