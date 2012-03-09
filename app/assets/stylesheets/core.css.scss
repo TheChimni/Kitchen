@@ -5,6 +5,7 @@ $lightgrey: rgb(244,244,244);
 $grey: rgb(128,128,128);
 $darkgrey: rgb(64,64,64);
 $turquoiseBlueGradience: #24a7ab ;
+$darkblue: rgb(0, 51, 153) 9;
 
 
 $base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -90,8 +91,8 @@ textarea {
 	width: 800px;
 }
 
-.form-actions {
-	padding: 17px 20px 18px;
+.formActions {
+	padding: 17px 20px 18px 0px;
 	margin-top: 18px;
 	margin-bottom: 18px;
 	background-color: $lightgrey;
@@ -100,22 +101,39 @@ textarea {
 
 .formButtons {
   font-weight: bold;
-  font-size: 100%;
+  font-size: 150%;
   border: 1px solid #282727;
-  // background-color: $turquoiseBlueGradience;
-background-image: linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
-background-image: -o-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
-background-image: -moz-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
-background-image: -webkit-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
-background-image: -ms-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
 
-background-image: -webkit-gradient(
-  linear,
-  left bottom,
-  left top,
-  color-stop(0.14, rgb(214,223,232)),
-  color-stop(0.57, rgb(36,167,171))
-);
+  box-shadow: 1px 3px 5px #555;
+  -webkit-box-shadow: 1px 3px 5px #555;
+  -moz-box-shadow: 1px 3px 5px #555;
+
+// background: -webkit-gradient(linear, 0 0, 0 100%, from(#FFF089), to(#A69520));
+// background: -moz-linear-gradient(#FFF089, #A69520);
+// background: -o-linear-gradient(#FFF089, #A69520);
+// background: linear-gradient(top center, #FFF089, #A69520);
+
+
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CEE028), to(#BFBA2C), color-stop(.6,#C2D47D));
+background: -moz-linear-gradient(#CEE028, #BFBA2C);
+
+// background-color: $turquoiseBlueGradience;
+// background-image: linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
+// background-image: -o-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
+// background-image: -moz-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
+// background-image: -webkit-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
+// background-image: -ms-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
+
+// background-image: -webkit-gradient(
+//   linear,
+//   left bottom,
+//   left top,
+//   color-stop(0.14, rgb(214,223,232)),
+//   color-stop(0.57, rgb(36,167,171))
+// );
 }
 
 #carousel {

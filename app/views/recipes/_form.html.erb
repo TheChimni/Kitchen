@@ -22,7 +22,7 @@
     <%= form.label :picture, 'Picture' %>
     <%= form.file_field :picture %>
   </div>
-  <div class="form-actions">
+  <div class="formActions">
     <%= form.submit(params[:action] == 'edit' ? 'Update' : 'Save', :class => 'formButtons') %>
   </div>
 <% end %>
