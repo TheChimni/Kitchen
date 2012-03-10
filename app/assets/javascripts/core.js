@@ -37,7 +37,15 @@ $(function() {
         isAnimating: false,
         initialize: function() {
           $('div.carouselItem').width(opts.width);
-          this.currentPanel = $('.carouselItem:first', $this).show();
+
+          // Need to set the width of the carousel and position it so that it occupies full width
+          this.bodyWidth = $('body').width();
+          $this.width(this.bodyWidth);
+          this.margin = Math.max(0, (this.bodyWidth - opts.width)/2);
+          $this.css({ left: (-1 * this.margin) + 'px' });
+
+          this.currentPanel = $('.carouselItem:first', $this).css({ left: this.margin + 'px' }).show();
+
           // make sure carousel only works if you have atleast 2 items
           if ($('#carousel .carouselItem').length < 2) {
             return;
@@ -74,21 +82,21 @@ $(function() {
           var oldPanel = this.currentPanel;
           this.currentPanel = newCurrent;
           var startLeft = direction == 'left' ? opts.width : (opts.width * (-1));
-          this.currentPanel.css({ left: startLeft + 'px' });
+          this.currentPanel.css({ left: (startLeft + this.margin) + 'px' });
 
           // here 'this' is the object that we have assigned to the 'self' vairable above
           this.currentPanel.show();
-          this.currentPanel.animate({ left: '0px' }, 700, function() {
+          this.currentPanel.animate({ left: this.margin + 'px' }, 700, function() {
             // reactivate the buttons
             self.isAnimating = false;
           });
 
           var endLeft = (startLeft * (-1));
-          oldPanel.animate({ left:  endLeft + 'px' }, 700, function() {
+          oldPanel.animate({ left:  (this.margin + endLeft) + 'px' }, 700, function() {
             // in this callback 'this' would be the currentPanel DOM object
             // reset to the original position
             oldPanel.hide();
-            oldPanel.css({ left: '0px' });
+            oldPanel.css({ left: this.margin + 'px' });
           });
         }
       };
