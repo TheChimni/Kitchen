@@ -2,18 +2,18 @@ Recipe.destroy_all
 
 Recipe.create!(:title => 'Baingan ka Bharta',
                :description => 'Good old Punjabi food',
-               :ingredients => 'secret',
+               :ingredient_list => 'secret',
                :preparation_method => 'secret')
 Recipe.create!(:title => 'Shepu',
                :description => 'Marathi farmers food',
-               :ingredients => 'secret',
+               :ingredient_list => 'secret',
                :preparation_method => 'secret')
 Recipe.create!(:title => 'Dal Makhni',
                :description => 'Daadiji ki recipe',
-               :ingredients => 'secret',
+               :ingredient_list => 'secret',
                :preparation_method => 'secret')
 Recipe.create!(:title => 'Bhindi',
                :description => 'Eaten all over India',
-               :ingredients => 'secret',
+               :ingredient_list => 'secret',
                :preparation_method => 'secret')
 

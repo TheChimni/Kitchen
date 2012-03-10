@@ -1,7 +1,7 @@
 class AddFieldsToRecipes < ActiveRecord::Migration
   def change
     change_table :recipes do |t|
-      t.text :ingredients
+      t.text :ingredient_list
       t.text :preparation_method
       t.integer :preparation_time, :default => 30
       t.integer :cooking_time, :default => 30

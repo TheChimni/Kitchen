@@ -6,7 +6,7 @@ describe 'Show an existing recipe' do
     
     before do
       @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :description => 'Yummy street food',
-                               :ingredients => 'secret sauce', :preparation_method => 'secret method')
+                               :ingredient_list => 'secret sauce', :preparation_method => 'secret method')
     end
 
     it "'Back to recipe' list should take you back to the recipe list page" do
@@ -35,7 +35,7 @@ describe 'Show an existing recipe' do
   context 'Fish and chips' do
     before do
       @recipe = Recipe.create!(:title => 'Fish and chips', :description => 'Not so Yummy street food',
-                               :ingredients => 'greasy stuff', :preparation_method => 'toss into fryer')
+                               :ingredient_list => 'greasy stuff', :preparation_method => 'toss into fryer')
     end
     
     it 'should show the description of the recipe' do

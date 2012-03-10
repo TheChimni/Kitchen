@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'Home page' do
   before do
     @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :description => 'Yummy street food',
-                             :ingredients => 'secret', :preparation_method => 'secret')
+                             :ingredient_list => 'secret', :preparation_method => 'secret')
   end
 
   it 'should show a page header' do
