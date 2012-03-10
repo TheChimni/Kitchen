@@ -4,8 +4,9 @@ $blue: rgb(60,100,200);
 $lightgrey: rgb(244,244,244);
 $grey: rgb(128,128,128);
 $darkgrey: rgb(64,64,64);
-$turquoiseBlueGradience: #24a7ab ;
 $darkblue: rgb(0, 51, 153) 9;
+$nicecolour: rgb(0, 68, 204);
+$buttonbackground: #006DCC;
 
 
 $base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -100,9 +101,18 @@ textarea {
 }
 
 .formButtons {
-  font-weight: bold;
-  font-size: 150%;
-  border: 1px solid #282727;
+  display: inline-block;
+  padding: 4px 10px 4px;
+  margin-bottom: 0;
+  line-height: 18px;
+  text-align: center;
+  vertical-align: middle;
+  // font-size: 13px;
+  font-size: 120%;
+  color: $white;
+
+  border: 1px solid rgb(204, 204, 204);
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -111,29 +121,15 @@ textarea {
   -webkit-box-shadow: 1px 3px 5px #555;
   -moz-box-shadow: 1px 3px 5px #555;
 
-// background: -webkit-gradient(linear, 0 0, 0 100%, from(#FFF089), to(#A69520));
-// background: -moz-linear-gradient(#FFF089, #A69520);
-// background: -o-linear-gradient(#FFF089, #A69520);
-// background: linear-gradient(top center, #FFF089, #A69520);
+  background-color: $buttonbackground;
+  background-color:#0088cc;
+  background-repeat: repeat-x;
 
-
-background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CEE028), to(#BFBA2C), color-stop(.6,#C2D47D));
-background: -moz-linear-gradient(#CEE028, #BFBA2C);
-
-// background-color: $turquoiseBlueGradience;
-// background-image: linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
-// background-image: -o-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
-// background-image: -moz-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
-// background-image: -webkit-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
-// background-image: -ms-linear-gradient(bottom, rgb(214,223,232) 14%, rgb(36,167,171) 57%);
-
-// background-image: -webkit-gradient(
-//   linear,
-//   left bottom,
-//   left top,
-//   color-stop(0.14, rgb(214,223,232)),
-//   color-stop(0.57, rgb(36,167,171))
-// );
+  background-image: -moz-linear-gradient(top , #0088cc, #0044cc 33px);
+  background-image: -webkit-linear-gradient(top , #0088cc, #0044cc 33px);
+  background-image: -o-linear-gradient(top , #0088cc, #0044cc 33px);
+  background-image: -ms-linear-gradient(top , #0088cc, #0044cc 33px);
+  background-image: linear-gradient(top , #0088cc, #0044cc 33px)
 }
 
 #carousel {
