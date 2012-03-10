@@ -100,7 +100,7 @@ textarea {
 	border-top: 1px solid #DDD;
 }
 
-.formButtons {
+.formButton {
   display: inline-block;
   padding: 4px 10px 4px;
   margin-bottom: 0;
@@ -131,6 +131,20 @@ textarea {
   background-image: -ms-linear-gradient(top , #0088cc, #0044cc 33px);
   background-image: linear-gradient(top , #0088cc, #0044cc 33px)
 }
+
+.formButton:hover {
+  background-color:#0044cc;
+  background-image: -moz-linear-gradient(top , #0088cc, #0044cc 33px);
+  background-image: -webkit-linear-gradient(top , #0088cc, #0044cc 33px);
+  background-image: -o-linear-gradient(top , #0088cc, #0044cc 33px);
+  background-image: -ms-linear-gradient(top , #0088cc, #0044cc 33px);
+  background-image: linear-gradient(top , #0088cc, #0044cc 33px);
+  
+  background-position: 0 -15px;
+  z-index: 2;
+  color: #FFFFFF;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+};
 
 #carousel {
 	/*Need to have relative position here as all the other carousel items inside this container will be relative to this?*/
