@@ -24,5 +24,6 @@
   </div>
   <div class="formActions">
     <%= form.submit(params[:action] == 'edit' ? 'Update' : 'Save', :class => 'formButton') %>
+    <%= link_to 'Cancel', params[:action] == 'edit' ? recipe_path(@recipe) : recipes_path , :class => 'formButton' %>
   </div>
 <% end %>

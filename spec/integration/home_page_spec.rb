@@ -6,9 +6,9 @@ describe 'Home page' do
                              :ingredients => 'secret', :preparation_method => 'secret')
   end
 
-  it 'should show a recipe list title' do
+  it 'should show a page header' do
     visit '/'
-    page.should have_content "Rieethaa's Kitchen"
+    page.should have_content "My Rustic Kitchen"
   end
 
   it "should have a link to the home page" do

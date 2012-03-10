@@ -104,12 +104,13 @@ textarea {
   display: inline-block;
   padding: 4px 10px 4px;
   margin-bottom: 0;
-  line-height: 18px;
+  line-height: 24px;
   text-align: center;
   vertical-align: middle;
   // font-size: 13px;
-  font-size: 120%;
+  font-size: 110%;
   color: $white;
+  text-decoration: none;
 
   border: 1px solid rgb(204, 204, 204);
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -117,9 +118,9 @@ textarea {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
 
-  box-shadow: 1px 3px 5px #555;
-  -webkit-box-shadow: 1px 3px 5px #555;
-  -moz-box-shadow: 1px 3px 5px #555;
+  // box-shadow: 1px 3px 5px #555;
+  // -webkit-box-shadow: 1px 3px 5px #555;
+  // -moz-box-shadow: 1px 3px 5px #555;
 
   background-color: $buttonbackground;
   background-color:#0088cc;
@@ -139,7 +140,7 @@ textarea {
   background-image: -o-linear-gradient(top , #0088cc, #0044cc 33px);
   background-image: -ms-linear-gradient(top , #0088cc, #0044cc 33px);
   background-image: linear-gradient(top , #0088cc, #0044cc 33px);
-  
+
   background-position: 0 -15px;
   z-index: 2;
   color: #FFFFFF;
