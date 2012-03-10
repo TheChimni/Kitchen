@@ -38,6 +38,10 @@ $(function() {
         initialize: function() {
           $('div.carouselItem').width(opts.width);
           this.currentPanel = $('.carouselItem:first', $this).show();
+          // make sure carousel only works if you have atleast 2 items
+          if ($('#carousel .carouselItem').length < 2) {
+            return;
+          }
           $("<a class='carouselButton left'>&lt;</a>").appendTo($this).click(function(){
             if (!self.isAnimating) {
               // de-activate the buttons whilst the animation is in progress
