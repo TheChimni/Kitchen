@@ -159,6 +159,7 @@ textarea {
 .carouselItem {
 	display: none;
   position: absolute;
+  height: 600px;
 }
 
 @mixin carouselText {

@@ -36,6 +36,7 @@ $(function() {
       var self = {
         isAnimating: false,
         initialize: function() {
+          $('div.carouselItem').width(opts.width);
           this.currentPanel = $('.carouselItem:first', $this).show();
           $("<a class='carouselButton left'>&lt;</a>").appendTo($this).click(function(){
             if (!self.isAnimating) {
