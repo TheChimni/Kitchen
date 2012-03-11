@@ -45,6 +45,8 @@ $(function() {
           if ($('#carousel .carouselItem').length < 2) {
             return;
           }
+          $("<div class='carouselOverlay'></div>").appendTo($this).css({ left: '0px', width: this.margin + 'px' });
+          $("<div class='carouselOverlay'></div>").appendTo($this).css({ right: '0px', width: this.margin + 'px' });
           $("<a class='carouselButton left'>&lt;</a>").appendTo($this).click(function(){
             if (!self.isAnimating) {
               // de-activate the buttons whilst the animation is in progress
