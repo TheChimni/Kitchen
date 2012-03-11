@@ -37,15 +37,10 @@ $(function() {
         isAnimating: false,
         initialize: function() {
           $('div.carouselItem').width(opts.width);
-
-          // Need to set the width of the carousel and position it so that it occupies full width
-          this.bodyWidth = $('body').width();
-          $this.width(this.bodyWidth);
-          this.margin = Math.max(0, (this.bodyWidth - opts.width)/2);
-          $this.css({ left: (-1 * this.margin) + 'px' });
-
-          this.currentPanel = $('.carouselItem:first', $this).css({ left: this.margin + 'px' }).show();
-
+          this.currentPanel = $('.carouselItem:first', $this);
+          $(window).resize(function() { self.onResize(); });
+          this.onResize();
+          this.currentPanel.show();
           // make sure carousel only works if you have atleast 2 items
           if ($('#carousel .carouselItem').length < 2) {
             return;
@@ -63,6 +58,14 @@ $(function() {
               self.showNext();
             }
           });
+        },
+        onResize: function() {
+           // Need to set the width of the carousel and position it so that it occupies full width
+          this.bodyWidth = $('body').width();
+          $this.width(this.bodyWidth);
+          this.margin = Math.max(0, (this.bodyWidth - opts.width)/2);
+          $this.css({ left: (-1 * this.margin) + 'px' });
+          this.currentPanel.css({ left: this.margin + 'px' });
         },
         showPrevious: function() {
           if (this.currentPanel.prev('.carouselItem').length > 0) {
