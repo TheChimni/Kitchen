@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body data-section="<%= params[:controller] %>">
+<%= render :partial => 'shared/header' %>
 <div id="container">
-  <%= render :partial => 'shared/header' %>
   <section>
     <%= yield %>
   </section>

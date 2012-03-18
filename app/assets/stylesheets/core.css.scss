@@ -4,6 +4,7 @@ $blue: rgb(60,100,200);
 $lightgrey: rgb(244,244,244);
 $grey: rgb(128,128,128);
 $darkgrey: rgb(64,64,64);
+$extradarkgrey: rgb(32,32,32);
 $darkblue: rgb(0, 51, 153) 9;
 $nicecolour: rgb(0, 68, 204);
 $buttonbackground: #006DCC;
@@ -11,15 +12,13 @@ $buttonbackground: #006DCC;
 
 $base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-
 h1 {
 	color: #f00;
 }
 
-#container {
+#container, .container {
 	width: 960px;
 	margin: 0 auto;
-	background: #FFF;
 	height: 100%;
 }
 
@@ -34,15 +33,21 @@ body, html {
 }
 
 #banner {
-	font: 200% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-	padding: 5px;
-	background-color: $lightblue;
-	color: $white;
+  padding: 5px;
+  background: $white url('header_wallpaper.png') repeat;
+  color: $white;
+  height: 210px;
+}
+
+#banner h1 {
+  font: 200% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  color: $white;
 }
 
 #menu {
 	display: block;
 	height: 35px;
+  font: 100%;
 }
 
 #menu ul {
@@ -60,14 +65,18 @@ body, html {
 	display: block;
 	width: 100px;
 	text-decoration: none;
-	color: $lightblue;
+	color: $darkgrey;
 	font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 	padding: 10px 0 0;
 	height: 25px;
 }
 
 #menu li > a:hover {
-	color: $blue;
+  color: $extradarkgrey;
+}
+
+#menu li > a.selected {
+  color: $extradarkgrey;
 }
 
 section {

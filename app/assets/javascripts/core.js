@@ -15,7 +15,7 @@ $(function() {
         {
           var section = $('body').data('section');
           var menuItem = $("a[data-section='" + section + "']");
-          menuItem.css({'background-color': 'rgb(244,244,244)'});  // define this style (just use a colour change for now)
+          menuItem.addClass('selected');
         }
       };
       this.menu = self;
