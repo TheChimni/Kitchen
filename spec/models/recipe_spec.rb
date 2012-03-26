@@ -23,8 +23,25 @@ describe Recipe do
   it { should have_and_belong_to_many :ingredients }
 
   describe 'ingredients' do
-    it 'extracts ingredients from a recipe' 
-    it "saves a new ingredient if it doesn't already exist"
+    it 'extracts ingredients from a recipe' do
+      recipe = Recipe.new
+      recipe.ingredient_list = "2 kg *rice*"
+      recipe.parse_ingredients.should == ['rice']
+    end
+
+    it 'extracts multiple ingredients' do
+      recipe = Recipe.new
+      recipe.ingredient_list = "Mix *dal* with *rice* and see if you can imagine *egg yolks* in it."
+      pending
+      recipe.parse_ingredients.should == ['dal', 'rice', 'egg yolks']
+    end
+
+    it "saves a new ingredient if it doesn't already exist" do
+      recipe = Recipe.new :title => 'test dal', :description => 'try it' , :ingredient_list => '100gms of *masoor dal*',
+       :preparation_method => 'test'
+      recipe.save
+      Ingredient.count.should == 1
+    end
     it 'links an ingedient to a receipe if the ingredient in the recipe exists'
   end
 end
