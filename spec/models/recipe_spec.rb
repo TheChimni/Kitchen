@@ -21,4 +21,10 @@ describe Recipe do
 
   it { should have_attached_file :picture }
   it { should have_and_belong_to_many :ingredients }
+
+  describe 'ingredients' do
+    it 'extracts ingredients from a recipe' 
+    it "saves a new ingredient if it doesn't already exist"
+    it 'links an ingedient to a receipe if the ingredient in the recipe exists'
+  end
 end
