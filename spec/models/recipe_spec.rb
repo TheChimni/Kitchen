@@ -32,16 +32,59 @@ describe Recipe do
     it 'extracts multiple ingredients' do
       recipe = Recipe.new
       recipe.ingredient_list = "Mix *dal* with *rice* and see if you can imagine *egg yolks* in it."
-      pending
       recipe.parse_ingredients.should == ['dal', 'rice', 'egg yolks']
     end
 
+  context "when CREATING recipe" do
+    # create
     it "saves a new ingredient if it doesn't already exist" do
       recipe = Recipe.new :title => 'test dal', :description => 'try it' , :ingredient_list => '100gms of *masoor dal*',
-       :preparation_method => 'test'
+        :preparation_method => 'test'
       recipe.save
       Ingredient.count.should == 1
+      recipe.ingredients.count.should == 1
     end
-    it 'links an ingedient to a receipe if the ingredient in the recipe exists'
+
+    it 'links an ingredient to a receipe if the ingredient in the recipe exists' do
+      recipe = Recipe.new :title => 'test dal', :description => 'try it' , :ingredient_list => '100gms of *masoor dal*',
+        :preparation_method => 'test'
+      ingredient = Ingredient.create :title => 'masoor dal'
+      recipe.save
+      Ingredient.count.should == 1
+      recipe.ingredients.count.should == 1
+      recipe.ingredients.should include(ingredient)
+    end
+  end
+
+  context 'when UPDATING recipe' do
+  # updates
+      it 'creates a new ingredient if we update the existing recipe and add a new ingredient to it.' do
+        recipe = Recipe.create :title => 'test dal', :description => 'try it' , :ingredient_list => 'pending',
+          :preparation_method => 'test'
+        recipe.ingredient_list = '100gms of *toor dal*'
+        recipe.save
+        Ingredient.count.should == 1
+        recipe.ingredients.count.should == 1
+        recipe.ingredients.first.title.should == 'toor dal'
+      end
+
+      it 'Adds a new ingredient to the recipe and retains the original ingredient' do
+        recipe = Recipe.create :title => 'test dal', :description => 'try it' , :ingredient_list => '*masala*',
+          :preparation_method => 'test'
+        recipe.ingredient_list << '100gms of *toor dal*'
+        recipe.save
+        Ingredient.count.should == 2
+        recipe.ingredients.count.should == 2
+        recipe.ingredients.map{ |ingredient| ingredient.title }.should include('masala', 'toor dal')
+      end
+  end
+
+  context 'when DELETING recipe' do
+  # deletes
+      it 'Delete the corresponding ingredient of a recipe when the recipe is deleted ONLY IF that ingredient 
+      is not used by other recipies' 
+
+      it 'Do not delete the ingredient even when a recipe is deleted if the ingredient is used by other recipe'
+      end
   end
 end

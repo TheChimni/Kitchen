@@ -6,18 +6,19 @@ class Recipe < ActiveRecord::Base
   before_save :save_ingredients
 
   def parse_ingredients
-    matches = /\*([a-zA-Z\s]+)\*/.match(ingredient_list)
-    if matches != nil
-      matches.captures
-    else
-      []
-    end
+    regex = /\*([a-zA-Z\s]+)\*/
+    ingredient_list.scan(regex).flatten
   end
 
   private
   def save_ingredients
-    parse_ingredients.each do |ingredient|
-      Ingredient.create :title => ingredient
+    parse_ingredients.each do |title|
+      existing_ingredient = Ingredient.where(:title => title).first
+      if existing_ingredient.nil?
+        ingredients << Ingredient.create(:title => title)
+      else
+        ingredients << existing_ingredient unless ingredients.include?(existing_ingredient)
+      end
     end
   end
 end
