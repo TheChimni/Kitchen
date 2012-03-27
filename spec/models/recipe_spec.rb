@@ -38,10 +38,19 @@ describe Recipe do
 
     it "saves a new ingredient if it doesn't already exist" do
       recipe = Recipe.new :title => 'test dal', :description => 'try it' , :ingredient_list => '100gms of *masoor dal*',
-       :preparation_method => 'test'
+        :preparation_method => 'test'
       recipe.save
       Ingredient.count.should == 1
     end
-    it 'links an ingedient to a receipe if the ingredient in the recipe exists'
+
+    it 'links an ingedient to a receipe if the ingredient in the recipe exists' do
+      recipe = Recipe.new :title => 'test dal', :description => 'try it' , :ingredient_list => '100gms of *masoor dal*',
+        :preparation_method => 'test'
+      ingredient = Ingredient.create :title => 'masoor dal'
+      recipe.save
+      Ingredient.count.should == 1
+      recipe.ingredients.count.should == 1
+      recipe.ingredients.should include(ingredient)
+    end
   end
 end

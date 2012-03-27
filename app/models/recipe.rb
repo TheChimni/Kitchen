@@ -16,8 +16,13 @@ class Recipe < ActiveRecord::Base
 
   private
   def save_ingredients
-    parse_ingredients.each do |ingredient|
-      Ingredient.create :title => ingredient
+    parse_ingredients.each do |title|
+      existing_ingredient = Ingredient.where(:title => title).first
+      if existing_ingredient.nil?
+        ingredients << Ingredient.create(:title => title)
+      else
+        ingredients << existing_ingredient
+      end
     end
   end
 end
