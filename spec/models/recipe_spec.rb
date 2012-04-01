@@ -77,6 +77,16 @@ describe Recipe do
         recipe.ingredients.count.should == 2
         recipe.ingredients.map{ |ingredient| ingredient.title }.should include('masala', 'toor dal')
       end
+
+      it 'When overwriting the ingredient_list, adds a new ingredient to the recipe and unlinks the original ingredient' do
+        recipe = Recipe.create :title => 'test dal', :description => 'try it' , :ingredient_list => '*masala*',
+          :preparation_method => 'test'
+        recipe.ingredient_list = '100gms of *toor dal*'
+        recipe.save
+        Ingredient.count.should == 2
+        recipe.ingredients.count.should == 1
+        recipe.ingredients.first.title.should == 'toor dal'
+      end
   end
 
   context 'when DELETING recipe' do
