@@ -12,6 +12,7 @@ class Recipe < ActiveRecord::Base
 
   private
   def save_ingredients
+    ingredients.clear
     parse_ingredients.each do |title|
       existing_ingredient = Ingredient.where(:title => title).first
       if existing_ingredient.nil?
