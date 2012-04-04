@@ -5,21 +5,16 @@ $lightgrey: rgb(244,244,244);
 $grey: rgb(128,128,128);
 $darkgrey: rgb(64,64,64);
 $extradarkgrey: rgb(32,32,32);
+$greytransparent: rgba(64,64,64,0.5);
 $darkblue: rgb(0, 51, 153) 9;
 $nicecolour: rgb(0, 68, 204);
 $buttonbackground: #006DCC;
-
 
 $base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 h1 {
 	color: #f00;
 }
-
-// .menuContainer {
-//   width: 826px;
-//   margin: 0 10px;
-// }
 
 #container, .container {
 	width: 960px;
@@ -29,7 +24,7 @@ h1 {
 
 body {
 	margin: 0;
-	background: $white url('choice1.png') repeat;
+	background: $white url('market.jpg') repeat;
 	font: $base_font;
 }
 
@@ -39,16 +34,19 @@ body, html {
 
 #banner {
   padding: 5px;
-  // background-color:rgba(255,0,0,0.5);
-  background: rgba(255,0,0,0.3);
+  background: $greytransparent;
   color: $white;
   height: 40px;
 }
 
-#banner h1 {
-  font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+#banner .siteTitle {
+  font: 120% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
   color: $white;
+  float: left;
+  margin: 7px 0;
 }
+
+
 
 #menu {
   margin: 0 auto;
