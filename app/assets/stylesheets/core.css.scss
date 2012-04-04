@@ -178,24 +178,22 @@ textarea {
 
 @mixin carouselText {
   position: absolute;
-  right: 0px;
+  left: 0px;
   color: $white;
   font-style: italic;
-  background-color: $darkgrey;
-  opacity: 0.7;
   padding: 5px;
 }
 
 .carouselTitle {
   @include carouselText;
-  top: 400px;
+  top: 10px;
   font-size: 160%;
 }
 
 .carouselSubtitle {
   @include carouselText;
   font-size: 100%;
-  top: 450px;
+  top: 60px;
 }
 
 .carouselButton {
@@ -221,7 +219,7 @@ textarea {
 }
 
 .right {
-	right: 0;
+	left: 55px;
 }
 
 .carouselOverlay {
