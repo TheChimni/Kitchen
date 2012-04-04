@@ -16,6 +16,11 @@ h1 {
 	color: #f00;
 }
 
+// .menuContainer {
+//   width: 826px;
+//   margin: 0 10px;
+// }
+
 #container, .container {
 	width: 960px;
 	margin: 0 auto;
@@ -34,17 +39,18 @@ body, html {
 
 #banner {
   padding: 5px;
-  background: $white url('pattern_101.gif') repeat;
+  background: $darkgrey;
   color: $white;
-  height: 210px;
+  height: 40px;
 }
 
 #banner h1 {
-  font: 400% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
   color: $white;
 }
 
 #menu {
+  margin: 0 auto;
 	display: block;
 	height: 35px;
   font: 100%;
@@ -65,18 +71,18 @@ body, html {
 	display: block;
 	width: 100px;
 	text-decoration: none;
-	color: $darkgrey;
+	color: $white;
 	font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 	padding: 10px 0 0;
 	height: 25px;
 }
 
 #menu li > a:hover {
-  color: $extradarkgrey;
+  color: $white;
 }
 
 #menu li > a.selected {
-  color: $extradarkgrey;
+  color: $white;
 }
 
 section {
