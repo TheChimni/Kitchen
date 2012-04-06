@@ -199,19 +199,19 @@ textarea {
 .carouselButton {
 	top: 40%;
 	position: absolute;
-	width: 50px;
-	height: 55px;
-	background-color: $grey;
-	font-size: 150%;
+	width: 30px;
+	height: 30px;
+  border-radius: 16px;
+	border: 2px solid $white;
+	font-size: 110%;
 	color: $white;
-	line-height: 50px;
+	line-height: 28px;
 	text-align: center;
-	opacity: 0.7;
 	cursor: default;
 }
 
 .carouselButton:hover {
-	background-color: $blue;
+	background-color: rgba(255, 255, 255, 0.1);
 }
 
 .left {
@@ -219,7 +219,7 @@ textarea {
 }
 
 .right {
-	left: 55px;
+	left: 45px;
 }
 
 .carouselOverlay {
@@ -228,5 +228,4 @@ textarea {
   opacity: 0.7;
   background-color: $white;
 }
-
 
