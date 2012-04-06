@@ -25,6 +25,7 @@ h1 {
 body {
 	margin: 0;
 	font: $base_font;
+  background-color: $grey;
 }
 
 body, html {
@@ -37,7 +38,7 @@ body, html {
   color: $white;
   height: 40px;
   position: fixed;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
 }
 
@@ -177,12 +178,21 @@ textarea {
 	display: none;
   position: absolute;
   height: 600px;
-	background: $white url('market.jpg') no-repeat;
+  /*background: $white url('market.jpg') no-repeat;*/
+  z-index: 2;
+}
+
+.carouselBackground {
+  height: 2000px;
+  width: 3000px;
+  opacity: 0.0;
+  z-index: 3;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
 .carouselItemRecipes {
-	background: $white url('chillies.jpg') no-repeat;
+	/*background: $white url('chillies.jpg') no-repeat;*/
 }
 
 @mixin carouselText {
@@ -217,6 +227,7 @@ textarea {
 	line-height: 28px;
 	text-align: center;
 	cursor: default;
+  z-index: 2;
 }
 
 .carouselButton:hover {

@@ -62,15 +62,15 @@ $(function() {
               self.showNext();
             }
           });
+          this.fadeBackgrounds();
         },
         onResize: function() {
            // Need to set the width of the carousel and position it so that it occupies full width
           this.bodyWidth = $('body').width();
           this.bodyHeight = $('body').height();
-          $this.width(this.bodyWidth);
-          $this.height(this.bodyHeight);
-          $('.carouselItem', $this).width(this.bodyWidth);
-          $('.carouselItem', $this).height(this.bodyHeight);
+          $this.width(this.bodyWidth).height(this.bodyHeight);
+          $('.carouselItem', $this).width(this.bodyWidth).height(this.bodyHeight);
+          $('.carouselBackground', $this).width(this.bodyWidth).height(this.bodyHeight);
           //this.margin = Math.max(0, (this.bodyWidth - opts.width)/2);
         },
         showPrevious: function() {
@@ -93,7 +93,7 @@ $(function() {
           var startLeft = direction == 'left' ? this.bodyWidth : (this.bodyWidth * (-1));
           this.currentPanel.css({ left: startLeft + 'px' });
 
-          // here 'this' is the object that we have assigned to the 'self' vairable above
+          // here 'this' is the object that we have assigned to the 'self' variable above
           this.currentPanel.show();
           this.currentPanel.animate({ left: '0px' }, 700, function() {
             // reactivate the buttons
@@ -107,6 +107,29 @@ $(function() {
             oldPanel.hide();
             oldPanel.css({ left: '0px' });
           });
+          this.fadeBackgrounds(oldPanel);
+        },
+        fadeBackgrounds: function(oldPanel) {
+          if (oldPanel) {
+            this.getBackground(oldPanel).animate({ opacity: 0.2 }, 500, function() {
+              var newBackground = self.getBackground(self.currentPanel);
+              newBackground.css({ display: 'block', opacity: 0.2 }).animate({ opacity: 1.0 }, 500);
+              $(this).css({ display: 'none' });
+            });
+          } else {
+            this.getBackground(self.currentPanel).css({ display: 'block' }).animate({ opacity: 1.0 }, 500);
+          }
+        },
+        getBackground: function(panel) {
+          if (!panel.data('backgroundDiv')) {
+            panel.data('backgroundDiv', $("<div class='carouselBackground'/>")
+              .css({'background-image': "url('images/" + panel.attr('data-background') + "')"})
+              .width(this.bodyWidth)
+              .height(this.bodyHeight)
+              .appendTo($this)
+            );
+          }
+          return panel.data('backgroundDiv');
         }
       };
       this.carousel = self;
