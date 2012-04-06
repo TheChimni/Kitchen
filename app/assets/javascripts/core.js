@@ -61,9 +61,12 @@ $(function() {
         onResize: function() {
            // Need to set the width of the carousel and position it so that it occupies full width
           this.bodyWidth = $('body').width();
+          this.bodyHeight = $('body').height();
           $this.width(this.bodyWidth);
+          $this.height(this.bodyHeight);
           $('.carouselItem', $this).width(this.bodyWidth);
-          this.margin = Math.max(0, (this.bodyWidth - opts.width)/2);
+          $('.carouselItem', $this).height(this.bodyHeight);
+          //this.margin = Math.max(0, (this.bodyWidth - opts.width)/2);
         },
         showPrevious: function() {
           if (this.currentPanel.prev('.carouselItem').length > 0) {
