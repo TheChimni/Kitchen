@@ -1,6 +1,10 @@
 $(function() {
-  $('#menu').menu();
-  $('#carousel').carousel();
+  var carouselChangeHandler = function() {
+  }
+  var menuChangeHandler = function() {
+  }
+  window.menu = $('#menu').menu();
+  window.carousel = $('#carousel').carousel();
 });
 
 (function($) {
@@ -21,6 +25,7 @@ $(function() {
       this.menu = self;
       self.initialize();
     });
+    return this;
   };
 })(jQuery);
 
@@ -103,6 +108,7 @@ $(function() {
       };
       this.carousel = self;
       self.initialize();      
+      return this;
     });
   };
 
