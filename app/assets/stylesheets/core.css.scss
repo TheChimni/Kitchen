@@ -173,7 +173,12 @@ textarea {
 	display: none;
   position: absolute;
   height: 600px;
-	background: $white url('market.jpg') repeat;
+	background: $white url('market.jpg') no-repeat;
+  background-size: 100%;
+}
+
+.carouselItemRecipes {
+	background: $white url('chillies.jpg') no-repeat;
 }
 
 @mixin carouselText {
