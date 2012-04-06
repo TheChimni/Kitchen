@@ -36,6 +36,9 @@ body, html {
   background: $greytransparent;
   color: $white;
   height: 40px;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
 }
 
 #banner .siteTitle {
@@ -170,6 +173,7 @@ textarea {
 }
 
 .carouselItem {
+  padding: 40px 0 0 0;
 	display: none;
   position: absolute;
   height: 600px;
@@ -182,7 +186,7 @@ textarea {
 }
 
 @mixin carouselText {
-  position: absolute;
+  position: relative;
   left: 0px;
   color: $white;
   font-style: italic;
@@ -198,7 +202,7 @@ textarea {
 .carouselSubtitle {
   @include carouselText;
   font-size: 100%;
-  top: 60px;
+  top: 10px;
 }
 
 .carouselButton {
