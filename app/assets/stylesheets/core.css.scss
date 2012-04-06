@@ -24,7 +24,6 @@ h1 {
 
 body {
 	margin: 0;
-	background: $white url('market.jpg') repeat;
 	font: $base_font;
 }
 
@@ -174,6 +173,7 @@ textarea {
 	display: none;
   position: absolute;
   height: 600px;
+	background: $white url('market.jpg') repeat;
 }
 
 @mixin carouselText {
@@ -211,15 +211,15 @@ textarea {
 }
 
 .carouselButton:hover {
-	background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.15);
 }
 
 .left {
-	left: 0;
+	left: 10px;
 }
 
 .right {
-	left: 45px;
+	left: 50px;
 }
 
 .carouselOverlay {

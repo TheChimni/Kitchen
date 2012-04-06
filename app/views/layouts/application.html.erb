@@ -8,11 +8,9 @@
 </head>
 <body data-section="<%= params[:controller] %>">
 <%= render :partial => 'shared/header' %>
-<div id="container">
-  <section>
-    <%= yield %>
-  </section>
-</div>
+<section>
+  <%= yield %>
+</section>
 <%= render :partial => 'shared/footer' %>
 </body>
 </html>
