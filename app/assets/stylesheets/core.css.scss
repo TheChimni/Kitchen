@@ -9,6 +9,7 @@ $greytransparent: rgba(64,64,64,0.5);
 $darkblue: rgb(0, 51, 153) 9;
 $nicecolour: rgb(0, 68, 204);
 $buttonbackground: #006DCC;
+$orange: rgb(255, 165, 0);
 
 $base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
 $heading_font: SamarkanNormal;
@@ -45,9 +46,9 @@ body, html {
 
 #banner .siteTitle {
   font: 150% SamarkanNormal, "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  color: $white;
+  color: $orange;
   float: left;
-  margin: 7px 0;
+  margin: -10px 0;
 }
 
 
