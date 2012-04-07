@@ -180,16 +180,16 @@ textarea {
 	display: none;
   position: absolute;
   height: 600px;
-  z-index: 2;
-}
-
-.carouselBackground {
-  height: 2000px;
-  width: 3000px;
-  opacity: 0.0;
   z-index: 3;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.carouselItemFixed {
+  padding: 40px 0 0 0;
+  position: relative;
+  opacity: 0.0;
+  z-index: 4;
 }
 
 @mixin carouselText {
@@ -224,7 +224,7 @@ textarea {
 	line-height: 28px;
 	text-align: center;
 	cursor: default;
-  z-index: 2;
+  z-index: 4;
 }
 
 .carouselButton:hover {
