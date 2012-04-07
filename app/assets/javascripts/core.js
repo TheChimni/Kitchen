@@ -20,11 +20,6 @@ $(function() {
           var section = $('body').data('section');
           var menuItem = $("a[data-section='" + section + "']");
           menuItem.addClass('selected');
-          window.onpopstate = function(event){
-            console.log('onpopstate - ' + document.location.pathname);
-
-
-          };
         }
       };
       this.menu = self;
@@ -46,6 +41,12 @@ $(function() {
       var self = {
         isAnimating: false,
         initialize: function() {
+          this.location = '/';
+          this.panels = {}
+          $('.carouselItem').each(function(index, panel) {
+            $panel = $(panel);
+            self.panels['/' + ($panel.data('content') || '')] = $panel;
+          });
           this.currentPanel = $('.carouselItem:first', $this);
           $(window).resize(function() { self.onResize(); });
           this.onResize();
@@ -68,6 +69,7 @@ $(function() {
             }
           });
           this.fadeBackgrounds();
+          window.onpopstate = self.onPopState;
         },
         onResize: function() {
            // Need to set the width of the carousel and position it so that it occupies full width
@@ -76,7 +78,6 @@ $(function() {
           $this.width(this.bodyWidth).height(this.bodyHeight);
           $('.carouselItem', $this).width(this.bodyWidth).height(this.bodyHeight);
           $('.carouselBackground', $this).width(this.bodyWidth).height(this.bodyHeight);
-          //this.margin = Math.max(0, (this.bodyWidth - opts.width)/2);
         },
         showPrevious: function() {
           if (this.currentPanel.prev('.carouselItem').length > 0) {
@@ -139,14 +140,18 @@ $(function() {
         },
         loadContent: function() {
           var content = this.currentPanel.data('content');
-          var location = '/' + content;
+          this.location = '/' + content;
           if (content) {
-            $('.container', this.currentPanel).load(location);
+            $('.container', this.currentPanel).load(this.location);
           }
-
-          if (window.location.pathname != location){
-            history.pushState({}, '', location);  
-            console.log(window.location.pathname);
+          if (window.location.pathname != this.location){
+            history.pushState({}, '', this.location);  
+          }
+        },
+        onPopState: function(event) {
+          if (document.location.pathname != self.location) {
+            var nextPanel = self.panels[document.location.pathname];
+            if (nextPanel) { self.setCurrent(nextPanel, 'left'); }
           }
         }
       };
