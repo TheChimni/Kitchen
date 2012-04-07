@@ -1,10 +1,7 @@
-<h1>My recipes</h1>
-<p>Aren't they lovely?</p>
-
-<ul>
+<ul class='recipeList'>
   <% @recipes.each do |recipe| %>
     <li>
-      <%= link_to recipe.title, recipe_path(recipe) %>
+      <%= render :partial => 'recipe', :locals => { :recipe => recipe } %>
     </li>
   <% end %>
 </ul>

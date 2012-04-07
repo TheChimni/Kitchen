@@ -178,7 +178,6 @@ textarea {
 	display: none;
   position: absolute;
   height: 600px;
-  /*background: $white url('market.jpg') no-repeat;*/
   z-index: 2;
 }
 
@@ -189,10 +188,6 @@ textarea {
   z-index: 3;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.carouselItemRecipes {
-	/*background: $white url('chillies.jpg') no-repeat;*/
 }
 
 @mixin carouselText {
@@ -242,10 +237,17 @@ textarea {
 	left: 50px;
 }
 
-.carouselOverlay {
-  position: absolute;
-  height: 600px;
-  opacity: 0.7;
-  background-color: $white;
+ul.recipeList {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align:	center;
 }
 
+.recipeList li {
+  width: 200px;
+  height: 250px;
+  margin: 10px;
+  float: left;
+	background-color: rgba(255, 255, 255, 0.75);
+}
