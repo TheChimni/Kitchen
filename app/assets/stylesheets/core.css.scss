@@ -11,6 +11,7 @@ $nicecolour: rgb(0, 68, 204);
 $buttonbackground: #006DCC;
 
 $base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
+$heading_font: SamarkanNormal;
 
 h1 {
 	color: #f00;
@@ -43,12 +44,11 @@ body, html {
 }
 
 #banner .siteTitle {
-  font: 120% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font: 150% SamarkanNormal, "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
   color: $white;
   float: left;
   margin: 7px 0;
 }
-
 
 
 #menu {
