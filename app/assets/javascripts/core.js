@@ -20,6 +20,11 @@ $(function() {
           var section = $('body').data('section');
           var menuItem = $("a[data-section='" + section + "']");
           menuItem.addClass('selected');
+          window.onpopstate = function(event){
+            console.log('onpopstate - ' + document.location.pathname);
+
+
+          };
         }
       };
       this.menu = self;
@@ -134,8 +139,14 @@ $(function() {
         },
         loadContent: function() {
           var content = this.currentPanel.data('content');
+          var location = '/' + content;
           if (content) {
-            $('.container', this.currentPanel).load('/' + content);
+            $('.container', this.currentPanel).load(location);
+          }
+
+          if (window.location.pathname != location){
+            history.pushState({}, '', location);  
+            console.log(window.location.pathname);
           }
         }
       };

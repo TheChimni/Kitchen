@@ -84,6 +84,7 @@ body, html {
 }
 
 #menu li > a.selected {
+  text-decoration: underline;
   color: $white;
 }
 
