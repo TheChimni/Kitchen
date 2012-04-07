@@ -108,6 +108,7 @@ $(function() {
             oldPanel.css({ left: '0px' });
           });
           this.fadeBackgrounds(oldPanel);
+          this.loadContent();
         },
         fadeBackgrounds: function(oldPanel) {
           if (oldPanel) {
@@ -130,6 +131,12 @@ $(function() {
             );
           }
           return panel.data('backgroundDiv');
+        },
+        loadContent: function() {
+          var content = this.currentPanel.data('content');
+          if (content) {
+            $('.container', this.currentPanel).load('/' + content);
+          }
         }
       };
       this.carousel = self;
