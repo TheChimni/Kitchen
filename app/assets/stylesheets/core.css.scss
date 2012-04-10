@@ -9,6 +9,7 @@ $greytransparent: rgba(64,64,64,0.5);
 $darkblue: rgb(0, 51, 153) 9;
 $nicecolour: rgb(0, 68, 204);
 $buttonbackground: #006DCC;
+$extralightgrey : rgb(229, 229, 229);
 
 $base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
 $heading_font: SamarkanNormal;
@@ -246,9 +247,12 @@ ul.recipeList {
 }
 
 .recipeList li {
+  position: relative;
   width: 200px;
-  height: 250px;
-  margin: 10px;
+  height: 430px;
+  margin: 0 24px 28px 0;
+  padding: 10px;
+  border: 1px solid $extralightgrey;
   float: left;
 	background-color: rgba(255, 255, 255, 0.75);
 }
