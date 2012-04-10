@@ -10,6 +10,7 @@ $darkblue: rgb(0, 51, 153) 9;
 $nicecolour: rgb(0, 68, 204);
 $buttonbackground: #006DCC;
 $extralightgrey : rgb(229, 229, 229);
+$orange: rgb(255, 165, 0);
 
 $base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
 $heading_font: SamarkanNormal;
@@ -46,9 +47,9 @@ body, html {
 
 #banner .siteTitle {
   font: 150% SamarkanNormal, "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  color: $white;
+  color: $orange;
   float: left;
-  margin: 7px 0;
+  margin: -10px 0;
 }
 
 
@@ -180,16 +181,16 @@ textarea {
 	display: none;
   position: absolute;
   height: 600px;
-  z-index: 2;
-}
-
-.carouselBackground {
-  height: 2000px;
-  width: 3000px;
-  opacity: 0.0;
   z-index: 3;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.carouselItemFixed {
+  padding: 40px 0 0 0;
+  position: relative;
+  opacity: 0.0;
+  z-index: 4;
 }
 
 @mixin carouselText {
@@ -224,7 +225,7 @@ textarea {
 	line-height: 28px;
 	text-align: center;
 	cursor: default;
-  z-index: 2;
+  z-index: 4;
 }
 
 .carouselButton:hover {
