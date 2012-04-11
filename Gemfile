@@ -6,13 +6,7 @@ gem 'paperclip'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :production do
-  gem 'pg'
-end
-
-group :test, :development do
-  gem 'sqlite3'
-end
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
