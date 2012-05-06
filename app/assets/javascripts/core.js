@@ -5,8 +5,10 @@ $(function() {
   }
   window.menu = $('#menu').menu();
   window.carousel = $('#carousel').carousel();
+  $('.markdownInplaceEditor').markdownInplaceEditor();
 });
 
+// Plugin for menu
 (function($) {
   var defaults = {};
   $.fn.menu = function(options) {
@@ -29,6 +31,8 @@ $(function() {
   };
 })(jQuery);
 
+
+// Plugin for Carousal
 (function($) {
   var defaults = { width : 960 };
   $.fn.carousel = function(options) {
@@ -164,4 +168,38 @@ $(function() {
     });
   };
 
+})(jQuery);
+
+
+// Plugin for markdown inplace editing
+(function($) {
+  var defaults = {};
+  $.fn.markdownInplaceEditor = function(options) {
+    var opts = $.extend({}, defaults, options);
+    return this.each(function() 
+    {
+      var $this = $(this);
+      if (this.markdownInplaceEditor) { return false; }
+      var self = { 
+        initialize: function() {
+          self.container = $this;
+          self.a = $('a', $this).click(self.onEditClick);
+          self.textarea = $('textarea', $this);
+          self.div = $('div', $this);
+          self.textarea.blur(self.onBlur);
+        },
+        onEditClick: function(event){
+          self.textarea.show().focus();
+          self.a.hide();
+        },
+        onBlur: function(event){
+          self.a.show();
+          self.textarea.hide();
+        }
+      };
+      this.markdownInplaceEditor = self;
+      self.initialize();
+    });
+    return this;
+  };
 })(jQuery);

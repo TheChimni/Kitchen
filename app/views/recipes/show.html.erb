@@ -4,14 +4,14 @@
 <%= image_tag @recipe.picture.url(:medium) %>
 
 <h3>Ingredients</h3>
-<div class='inplaceEdit' data-attribute='ingredient_list' data-url='<%= recipe_path(@recipe) %>'>
+<div class='markdownInplaceEditor' data-attribute='ingredient_list' data-url='<%= recipe_path(@recipe) %>'>
   <a href='#'>edit</a>
   <textarea><%= @recipe.ingredient_list%></textarea>
   <div><%= @recipe.ingredient_list %></div>
 </div>
 
 <h3>Preparation method</h3>
-<div class='inplaceEdit' data-attribute='preparation_method' data-url='<%= recipe_path(@recipe) %>'>
+<div class='markdownInplaceEditor' data-attribute='preparation_method' data-url='<%= recipe_path(@recipe) %>'>
   <a href='#'>edit</a>
   <textarea><%= @recipe.preparation_method%></textarea>
   <div><%= @recipe.preparation_method %></div>
