@@ -187,14 +187,25 @@ $(function() {
           self.textarea = $('textarea', $this);
           self.div = $('div', $this);
           self.textarea.blur(self.onBlur);
+          self.dataUrl = self.container.data('url');
+          self.dataClass = self.container.data('class');
+          self.dataAttribute = self.container.data('attribute');
         },
-        onEditClick: function(event){
+        onEditClick: function(event) {
           self.textarea.show().focus();
           self.a.hide();
         },
-        onBlur: function(event){
+        onBlur: function(event) {
           self.a.show();
           self.textarea.hide();
+          // Added 'put' as rails framework understands RESTful routes
+          var params = { _method: 'put' };
+          params[self.dataClass + '[' + self.dataAttribute + ']'] = self.textarea.val();
+          $.post(self.dataUrl,
+            params,
+            function(data) {
+              self.div.html(self.textarea.val());
+          });
         }
       };
       this.markdownInplaceEditor = self;
