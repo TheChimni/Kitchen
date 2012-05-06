@@ -1,11 +1,21 @@
-<h2>
-  <%= @recipe.title %>
-</h2>
+<h2><%= @recipe.title %></h2>
 
 <div><%= @recipe.description %></div>
 <%= image_tag @recipe.picture.url(:medium) %>
-<div><%= @recipe.ingredient_list %></div>
-<div><%= @recipe.preparation_method %></div>
+
+<h3>Ingredients</h3>
+<div class='inplaceEdit' data-attribute='ingredient_list' data-url='<%= recipe_path(@recipe) %>'>
+  <a href='#'>edit</a>
+  <textarea><%= @recipe.ingredient_list%></textarea>
+  <div><%= @recipe.ingredient_list %></div>
+</div>
+
+<h3>Preparation method</h3>
+<div class='inplaceEdit' data-attribute='preparation_method' data-url='<%= recipe_path(@recipe) %>'>
+  <a href='#'>edit</a>
+  <textarea><%= @recipe.preparation_method%></textarea>
+  <div><%= @recipe.preparation_method %></div>
+</div>
 
 <%= link_to 'Edit this recipe', edit_recipe_path(@recipe) %>
 <%= link_to 'Delete this recipe', recipe_path(@recipe), :method => :delete, :confirm => 'Are you sure?' %>
