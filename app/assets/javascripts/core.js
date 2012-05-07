@@ -190,6 +190,7 @@ $(function() {
           self.dataUrl = self.container.data('url');
           self.dataClass = self.container.data('class');
           self.dataAttribute = self.container.data('attribute');
+          self.startPreviewTimer();
         },
         onEditClick: function(event) {
           self.textarea.show().focus();
@@ -206,6 +207,17 @@ $(function() {
             function(data) {
               self.div.html(markdown.toHTML(self.textarea.val()));
           });
+        },
+        checkForChanges: function() {
+          var currentValue = self.textarea.val();
+          if (self.originalValue != currentValue) {
+            self.originalValue = currentValue;
+            self.div.html(markdown.toHTML(self.textarea.val()));
+          }
+        },
+        startPreviewTimer: function() {
+          self.originalValue = self.textarea.val();
+          setInterval(self.checkForChanges, 1000);
         }
       };
       this.markdownInplaceEditor = self;
