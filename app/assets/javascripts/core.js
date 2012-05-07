@@ -204,7 +204,7 @@ $(function() {
           $.post(self.dataUrl,
             params,
             function(data) {
-              self.div.html(self.textarea.val());
+              self.div.html(markdown.toHTML(self.textarea.val()));
           });
         }
       };
