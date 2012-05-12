@@ -1,4 +1,6 @@
 Kitchen::Application.routes.draw do
+  devise_for :users
+
   resources :recipes
   resources :classes
   root :to => 'home#index'
