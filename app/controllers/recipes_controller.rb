@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
+
   def index
     # @recipes is a member variable (indicated by the '@' prefix). Rails makes member variables of a controller
     # automatically accessible from the view template that renders the response for the action.
