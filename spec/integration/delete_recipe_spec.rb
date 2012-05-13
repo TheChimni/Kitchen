@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe 'Delete an existing recipe' do
+  include_context :authentication
 
   before do
     @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :description => 'Yummy street food',

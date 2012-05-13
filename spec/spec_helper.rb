@@ -10,6 +10,20 @@ require "paperclip/matchers"
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+shared_context :authentication do
+  include Warden::Test::Helpers
+  Warden.test_mode!
+
+  before do
+    @user = User.create :email => 'bob@example.com', :password => 'secret', :password_confirmation => 'secret'
+    login_as(@user, :scope => :user) 
+  end
+
+  after do
+    logout(:user)
+  end
+end
+
 RSpec.configure do |config|
   # ## Mock Framework
   #

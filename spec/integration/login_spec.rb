@@ -32,5 +32,7 @@ describe 'Login' do
     current_path.should == new_user_session_path
   end
 
+  it 'the home page should not have a login link if I am already logged in'
+
 end
 

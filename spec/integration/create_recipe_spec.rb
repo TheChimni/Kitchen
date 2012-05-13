@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe 'Create a new recipe' do
+  include_context :authentication
 
   it 'should create a new recipe when all the required fields are specified' do
     visit recipes_path
