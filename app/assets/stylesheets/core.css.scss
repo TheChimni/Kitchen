@@ -52,6 +52,14 @@ body, html {
   margin: -10px 0;
 }
 
+#footer {
+  height: 40px;
+  position: fixed;
+  bottom: 0px;
+  z-index: 5;
+  width: 100%
+}
+
 
 #menu {
   margin: 0 auto;
