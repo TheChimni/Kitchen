@@ -250,7 +250,10 @@ $(function() {
           // hook the scroll event
           $(document).scroll(function(event) {
             var offset = $('body')[0].scrollTop;
-            console.log(offset);
+            var panels = $('.parallaxPanel');
+            panels.each(function(index, panel) {
+              $(panel).css({'background-position': '0px ' + (panel.offsetTop - offset/8) + 'px'});
+            });
           });
         }
       };
