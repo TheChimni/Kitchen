@@ -245,14 +245,15 @@ $(function() {
           // set the background images for each panel
           panels.each(function(index, panel) {
             var $panel = $(panel);
-            $panel.css({'background-image': "url('images/" + $panel.data('background') + "')"});
+            $panel.css({'background-image': "url('images/" + $panel.data('background') + "')",
+              'background-position': '0px ' + panel.offsetTop/8 + 'px'});
           });
           // hook the scroll event
           $(document).scroll(function(event) {
             var offset = $('body')[0].scrollTop;
             var panels = $('.parallaxPanel');
             panels.each(function(index, panel) {
-              $(panel).css({'background-position': '0px ' + (panel.offsetTop - offset/8) + 'px'});
+              $(panel).css({'background-position': '0px ' + (panel.offsetTop - offset)/8 + 'px'});
             });
           });
         }
