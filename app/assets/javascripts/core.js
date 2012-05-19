@@ -35,7 +35,7 @@ $(function() {
 
 // Plugin for Carousal
 (function($) {
-  var defaults = { width : 960 };
+  var defaults = { width : 1200 };
   $.fn.carousel = function(options) {
     var opts = $.extend({}, defaults, options);
     return this.each(function() {
@@ -52,15 +52,7 @@ $(function() {
             $panel = $(panel);
             self.panels['/' + ($panel.data('content') || '')] = $panel;
           });
-          this.fixedPanels = {}
-          $('.carouselItemFixed').each(function(index, panel) {
-            $panel = $(panel);
-            self.fixedPanels['/' + ($panel.data('content') || '')] = $panel;
-          });
           this.currentPanel = $('.carouselItem:first', $this);
-          $(window).resize(function() { self.onResize(); });
-          this.onResize();
-          this.currentPanel.css({'background-image': "url('images/" + this.currentPanel.attr('data-background') + "')"});
           this.currentPanel.show();
           // make sure carousel only works if you have at least 2 items
           if ($('#carousel .carouselItem').length < 2) {
@@ -79,16 +71,6 @@ $(function() {
               self.showNext();
             }
           });
-          this.fadeFixedPanels();
-          window.onpopstate = self.onPopState;
-        },
-        onResize: function() {
-           // Need to set the width of the carousel and position it so that it occupies full width
-          this.bodyWidth = $('body').width();
-          this.bodyHeight = $('body').height();
-          $this.width(this.bodyWidth).height(this.bodyHeight);
-          $('.carouselItem', $this).width(this.bodyWidth).height(this.bodyHeight);
-          $('.carouselItemFixed', $this).width(this.bodyWidth).height(this.bodyHeight);
         },
         showPrevious: function() {
           if (this.currentPanel.prev('.carouselItem').length > 0) {
@@ -107,10 +89,8 @@ $(function() {
         setCurrent: function(newCurrent, direction) {
           var oldPanel = this.currentPanel;
           this.currentPanel = newCurrent;
-          var startLeft = direction == 'left' ? this.bodyWidth : (this.bodyWidth * (-1));
+          var startLeft = direction == 'left' ? opts.width : (opts.width * (-1));
           this.currentPanel.css({ left: startLeft + 'px' });
-          this.currentPanel.css({'background-image': "url('images/" + this.currentPanel.attr('data-background') + "')"})
-
           // here 'this' is the object that we have assigned to the 'self' variable above
           this.currentPanel.show();
           this.currentPanel.animate({ left: '0px' }, 700, function() {
@@ -125,42 +105,6 @@ $(function() {
             oldPanel.hide();
             oldPanel.css({ left: '0px' });
           });
-          this.fadeFixedPanels(oldPanel);
-          this.loadContent();
-        },
-        fadeFixedPanels: function(oldPanel) {
-          console.log('fading');
-          if (oldPanel) {
-            this.getFixedPanel(oldPanel).animate({ opacity: 0.2 }, 500, function() {
-              console.log('fading in new panel after fading out old');
-              self.getFixedPanel(self.currentPanel).css({ display: 'block' }).animate({ opacity: 1.0 }, 500);
-              $(this).css({ display: 'none' });
-            });
-          } else {
-            console.log('fading in new panel');
-            this.getFixedPanel(self.currentPanel).css({ display: 'block' }).animate({ opacity: 1.0 }, 500);
-          }
-        },
-        getFixedPanel: function(panel) {
-          var content = '/' + (panel.data('content') || '');
-          return this.fixedPanels[content];
-        },
-        loadContent: function() {
-          var content = this.currentPanel.data('content');
-          this.location = '/' + content;
-          if (content) {
-            var fixedPanel = this.getFixedPanel(self.currentPanel);
-            $('.container', fixedPanel).load(this.location);
-          }
-          if (window.location.pathname != this.location){
-            history.pushState({}, '', this.location);  
-          }
-        },
-        onPopState: function(event) {
-          if (document.location.pathname != self.location) {
-            var nextPanel = self.panels[document.location.pathname];
-            if (nextPanel) { self.setCurrent(nextPanel, 'left'); }
-          }
         }
       };
       this.carousel = self;

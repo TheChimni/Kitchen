@@ -189,16 +189,15 @@ textarea {
 	display: none;
   position: absolute;
   height: 600px;
-  z-index: 3;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 1200px;
 }
 
-.carouselItemFixed {
-  padding: 40px 0 0 0;
-  position: relative;
-  opacity: 0.0;
-  z-index: 4;
+.carouselContent {
+ margin: 50px auto;
+ height: 400px;
+ width: 1000px;
+ background-color: $orange;
+
 }
 
 @mixin carouselText {
@@ -209,17 +208,21 @@ textarea {
   padding: 5px;
 }
 
-.carouselTitle {
+.carouselRecipeTitle {
   @include carouselText;
-  top: 10px;
-  font-size: 160%;
 }
 
-.carouselSubtitle {
-  @include carouselText;
-  font-size: 100%;
-  top: 10px;
-}
+// .carouselTitle {
+//   @include carouselText;
+//   top: 10px;
+//   font-size: 160%;
+// }
+
+// .carouselSubtitle {
+//   @include carouselText;
+//   font-size: 100%;
+//   top: 10px;
+// }
 
 .carouselButton {
 	top: 40%;

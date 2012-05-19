@@ -25,4 +25,10 @@ describe 'Home page' do
     current_path.should == recipes_path
   end
 
+  it "should have recipes" do
+    visit '/'
+    page.should have_content @recipe.title
+    page.should have_content @recipe.description
+  end
+
 end
