@@ -192,12 +192,11 @@ textarea {
   width: 1200px;
 }
 
-.carouselContent {
- margin: 50px auto;
- min-height: 670px;
- width: 1000px;
- background-color: $orange;
-
+.carouselItem .content {
+  margin: 50px auto;
+  min-height: 670px;
+  width: 1000px;
+  border: 1px solid;
 }
 
 @mixin carouselText {
@@ -208,8 +207,22 @@ textarea {
   padding: 5px;
 }
 
-.carouselRecipeTitle {
+.carouselItem .recipeTitle {
   @include carouselText;
+  font-size: 170%;
+}
+
+.carouselItem .recipeImage {
+  background-color: $white;
+  padding: 10px;
+  float: left;
+  margin-left: 70px;
+  margin-right: 40px;
+}
+
+.carouselItem .recipeDescription {
+  padding: 10px;
+  color: $white;
 }
 
 // .carouselTitle {

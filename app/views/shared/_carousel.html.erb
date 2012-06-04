@@ -2,9 +2,11 @@
   <!-- TODO: We will reuse this to display list of recipes -->
   <% @recipes.each do |recipe| %>
     <div class='carouselItem' data-id='1'>
-      <div class='carouselContent'>
-        <div class='carouselRecipeTitle'><%= recipe.title %></div>
-        <div class='carouselRecipeDescription'><%= recipe.description %></div>
+      <div class='content'>
+        <h2 class='recipeTitle'><%= recipe.title %></h2>
+        <div class='recipeImage'><%= image_tag recipe.picture.url(:medium) %></div>
+        <p class='recipeDescription'><%= recipe.description %></p>
+        <%= link_to 'More...', recipe_path(recipe) %>
       </div>
     </div>
   <% end %>
