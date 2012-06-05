@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310144659) do
+ActiveRecord::Schema.define(:version => 20120605135217) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "title"
@@ -28,21 +28,25 @@ ActiveRecord::Schema.define(:version => 20120310144659) do
   create_table "recipes", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",                              :null => false
-    t.datetime "updated_at",                              :null => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
     t.text     "ingredient_list"
     t.text     "preparation_method"
-    t.integer  "preparation_time",     :default => 30
-    t.integer  "cooking_time",         :default => 30
-    t.integer  "rating",               :default => 1
-    t.integer  "difficulty_level",     :default => 1
+    t.integer  "preparation_time",               :default => 30
+    t.integer  "cooking_time",                   :default => 30
+    t.integer  "rating",                         :default => 1
+    t.integer  "difficulty_level",               :default => 1
     t.string   "country"
     t.string   "region"
-    t.string   "serves",               :default => "1-2"
+    t.string   "serves",                         :default => "1-2"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "secondary_picture_file_name"
+    t.string   "secondary_picture_content_type"
+    t.integer  "secondary_picture_file_size"
+    t.datetime "secondary_picture_updated_at"
   end
 
 end
