@@ -222,6 +222,20 @@ textarea {
 .carouselItem .recipeDescription {
   padding: 10px;
   color: $white;
+  font-size: 150%;
+}
+
+.carouselItem .recipeMoreLink {
+  background: url("/assets/button-bg.png") 0 0 no-repeat;
+  display: inline-block;
+  width: 84px;
+  height: 84px;
+  text-align: center;
+  padding: 20px 0 0 0;
+  font-size: 130%;
+  text-decoration: none;
+  color: $orange;
+
 }
 
 // .carouselTitle {
