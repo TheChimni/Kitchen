@@ -180,12 +180,11 @@ textarea {
 	position: relative;
   /*The children of this container are all absolutely positioned and therefore cannot determine its height */
   /*so we need to explicitly size the height of the carousel */
-  height: 600px;
+  height: 800px;
   overflow: hidden;
 }
 
 .carouselItem {
-  padding: 40px 0 0 0;
 	display: none;
   position: absolute;
   height: 600px;
