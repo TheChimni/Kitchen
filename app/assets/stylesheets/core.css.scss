@@ -20,7 +20,7 @@ h1 {
 }
 
 #container, .container {
-	width: 960px;
+	width: 1200px;
 	margin: 0 auto;
 	height: 100%;
 }
@@ -50,6 +50,14 @@ body, html {
   color: $orange;
   float: left;
   margin: -10px 0;
+}
+
+#footer {
+  height: 40px;
+  position: fixed;
+  bottom: 0px;
+  z-index: 5;
+  width: 100%
 }
 
 
@@ -261,3 +269,32 @@ ul.recipeList {
 .markdownInplaceEditor textarea {
   display: none;
 }
+
+/* Parallax */
+
+.parallax {
+}
+
+.parallaxPanel {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.parallaxPanel .container{
+  min-height: 600px;
+}
+
+.parallaxTitle {
+  @include carouselText;
+  top: 10px;
+  font-size: 160%;
+}
+
+.parallaxSubtitle {
+  @include carouselText;
+  top: 10px;
+  font-size: 120%;
+}
+
+

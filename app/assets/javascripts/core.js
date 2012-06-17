@@ -6,6 +6,7 @@ $(function() {
   window.menu = $('#menu').menu();
   window.carousel = $('#carousel').carousel();
   $('.markdownInplaceEditor').markdownInplaceEditor();
+  $('#parallax').parallax();
 });
 
 // Plugin for menu
@@ -59,7 +60,7 @@ $(function() {
           this.currentPanel = $('.carouselItem:first', $this);
           $(window).resize(function() { self.onResize(); });
           this.onResize();
-          this.currentPanel.css({'background-image': "url('images/" + this.currentPanel.attr('data-background') + "')"})
+          this.currentPanel.css({'background-image': "url('images/" + this.currentPanel.attr('data-background') + "')"});
           this.currentPanel.show();
           // make sure carousel only works if you have at least 2 items
           if ($('#carousel .carouselItem').length < 2) {
@@ -221,6 +222,43 @@ $(function() {
         }
       };
       this.markdownInplaceEditor = self;
+      self.initialize();
+    });
+    return this;
+  };
+})(jQuery);
+
+// Plugin for parallax scrolling
+(function($) {
+  var defaults = {};
+  $.fn.parallax = function(options) {
+    var opts = $.extend({}, defaults, options);
+    return this.each(function() 
+    {
+      var $this = $(this);
+      if (this.parallax) { return false; }
+      var self = { 
+        initialize: function() {
+          self.container = $this;
+          // find the panels
+          var panels = $('.parallaxPanel', $this);
+          // set the background images for each panel
+          panels.each(function(index, panel) {
+            var $panel = $(panel);
+            $panel.css({'background-image': "url('images/" + $panel.data('background') + "')",
+              'background-position': '0px ' + panel.offsetTop/8 + 'px'});
+          });
+          // hook the scroll event
+          $(document).scroll(function(event) {
+            var offset = $('body')[0].scrollTop;
+            var panels = $('.parallaxPanel');
+            panels.each(function(index, panel) {
+              $(panel).css({'background-position': '0px ' + (panel.offsetTop - offset)/8 + 'px'});
+            });
+          });
+        }
+      };
+      this.parallax = self;
       self.initialize();
     });
     return this;
