@@ -11,6 +11,7 @@ $nicecolour: rgb(0, 68, 204);
 $buttonbackground: #006DCC;
 $extralightgrey : rgb(229, 229, 229);
 $orange: rgb(255, 165, 0);
+$maroon: rgb(89, 15, 15);
 
 $base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
 $heading_font: SamarkanNormal;
@@ -195,7 +196,6 @@ textarea {
   margin: 50px auto;
   min-height: 670px;
   width: 1000px;
-  border: 1px solid;
 }
 
 @mixin carouselText {
@@ -208,15 +208,28 @@ textarea {
 
 .carouselItem .recipeTitle {
   @include carouselText;
-  font-size: 170%;
+  font-size: 200%;
+  margin-left: 70px;
+}
+
+.carouselItem .images {
+  float: left;
+  margin-left: 70px;
+  margin-right: 40px;
+  position: relative;
 }
 
 .carouselItem .recipeImage {
   background-color: $white;
   padding: 10px;
-  float: left;
-  margin-left: 70px;
-  margin-right: 40px;
+}
+
+.carouselItem .recipeSecondaryImage {
+  top: 320px;
+  left: 390px;
+  position: absolute;
+  background-color: $white;
+  padding: 10px;
 }
 
 .carouselItem .recipeDescription {
@@ -326,4 +339,35 @@ ul.recipeList {
   font-size: 120%;
 }
 
+.parallaxPanel .twitterFeed {
+  float: right;
+  width: 500px;
+  margin-top: 60px;
+  border: 1px solid #CCC;
+}
+
+.parallaxPanel .twitterFeed img {
+  float: left;
+}
+
+.parallaxPanel .twitterFeed > ul {
+  position: relative;
+  color: $white;
+  background-color: $maroon;
+  list-style: none;
+  margin-left: 120px;
+  padding: 5px;
+} 
+
+.parallaxPanel .twitterFeed > ul:before {
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  border-color: transparent $maroon $maroon transparent;
+  border-style: solid;
+  border-width: 10px;
+  width: 0px;
+  height: 0px;
+  content: " ";
+}
 
