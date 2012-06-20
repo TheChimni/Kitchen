@@ -7,14 +7,8 @@ describe 'Home page' do
                              :ingredient_list => 'secret', :preparation_method => 'secret')
 
     # Stubbing the external twitter API
-    @tweets = ['I fancy chocolate pudding today.', 'I fancy indian veg roll today.', 'I am hungry!', 'I am not feeling well!']
+    @tweets = ['I fancy chocolate pudding today.', 'I fancy indian veg roll today.']
     Twitter.stub(:user_timeline => @tweets.collect { |tweet| stub(:text => tweet) })
-    # Alternatively, use the below code to stub.
-    # Twitter.stub(:user_timeline => [
-    #   stub(:text => 'I fancy chocolate pudding today.'),
-    #   stub(:text => 'I fancy indian veg roll today.'),
-    #   stub(:text => 'I am hungry!'),
-    #   stub(:text => 'I am not feeling well!')]) 
   end
 
   it 'should show a page header' do
@@ -42,16 +36,11 @@ describe 'Home page' do
     page.should have_content @recipe.description
   end
 
-  it "should have last 3 tweets" do
+  it "should have last 1 tweet" do
     visit '/'
-    @tweets[0..2].each { |tweet| page.should have_content tweet }
-    page.should_not have_content @tweets[3]
-
-    # Above line of code is a better way of doing the below
-    # ['I fancy chocolate pudding today.', 'I fancy indian veg roll today.', 'I am hungry!'].each do |tweet|
-    #   page.should have_content tweet
-    # end
-    # page.should_not have_content 'I am not feeling well!'
+    # @tweets[0..2].each { |tweet| page.should have_content tweet }
+    page.should have_content @tweets[0]
+    page.should_not have_content @tweets[1]
   end
 
 end

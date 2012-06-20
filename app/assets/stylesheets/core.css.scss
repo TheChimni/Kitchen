@@ -347,20 +347,19 @@ ul.recipeList {
   color: $white;
 }
 
-.parallaxPanel .twitterFeed img {
+.parallaxPanel .twitterFeed a {
   float: left;
-  // position: absolute; Question: should this be absolute or float?
+  //position: absolute;   //Question: should this be absolute or float?
   margin-left: 15px;
   margin-top: 25px;
+  width: 100px;
+  text-decoration: none;
+  color: $white;
 }
 
 .parallaxPanel .twitterFeed div {
-  // float: left;
-  position: absolute; // Note : positioned it absolute. Is it correct?
-  margin-left: 28px;
-  margin-top: 120px;
-  text-decoration: none;
-  }
+  text-align: center;
+}
 
 .parallaxPanel .twitterFeed > ul {
   position: relative;

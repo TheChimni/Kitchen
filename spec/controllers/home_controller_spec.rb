@@ -5,7 +5,7 @@ require 'spec_helper'
 describe HomeController do
 
   before do
-    @tweets = ['I fancy chocolate pudding today.', 'I fancy indian veg roll today.', 'I am hungry!', 'I am not feeling well!']
+    @tweets = ['I fancy chocolate pudding today.', 'I fancy indian veg roll today.']
     Twitter.stub(:user_timeline => @tweets.collect { |tweet| stub(:text => tweet) })
   end
 
@@ -15,9 +15,9 @@ describe HomeController do
       response.should be_success
     end
 
-    it "shows 3 tweets only" do
+    it "shows only 1 tweet" do
       get 'index'
-      assigns(:tweets).should == ['I fancy chocolate pudding today.', 'I fancy indian veg roll today.', 'I am hungry!']
+      assigns(:tweets).should == ['I fancy chocolate pudding today.']
     end
   end
 

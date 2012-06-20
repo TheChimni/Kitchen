@@ -24,12 +24,13 @@
       <div class='parallaxTitle'>Contact</div>
       <div class='parallaxSubtitle'>Don't be shy tweet, email or call us - we love to talk about tasty grub</div>
       <article class='twitterFeed'>
-        <%= link_to image_tag('twitter_logo.png', :size => '100x100', :alt => 'Recent tweets'), 'http://twitter.com/thechimni' %>
-        <div><%= link_to 'Follow us', 'http://twitter.com/thechimni' %></div>
+        <%= link_to 'http://twitter.com/thechimni' do %>
+          <%= image_tag('twitter_logo.png', :size => '100x100', :alt => 'Recent tweets') %>
+          <div>Follow us</div>
+        <% end %>
         <ul>
           <% @tweets.each do |tweet| %>
           <li><%= tweet %></li>
-          ........................................................................................
           <% end %>
         </ul>
       </article>
