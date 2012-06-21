@@ -21,3 +21,5 @@ Recipe.create!(:title => 'Bhindi',
                :preparation_method => 'secret',
                :picture => File.open('db/pictures/MeduVada.jpeg'))
 
+User.destroy_all
+User.create!(:email => 'admin@example.com', :password => 'secret', :password_confirmation => 'secret')
