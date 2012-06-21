@@ -23,17 +23,18 @@
     <div class='container'>
       <div class='parallaxTitle'>Contact</div>
       <div class='parallaxSubtitle'>Don't be shy tweet, email or call us - we love to talk about tasty grub</div>
-      <article class='twitterFeed'>
-        <%= link_to 'http://twitter.com/thechimni' do %>
-          <%= image_tag('twitter_logo.png', :size => '100x100', :alt => 'Recent tweets') %>
-          <div>Follow us</div>
-        <% end %>
-        <ul>
-          <% @tweets.each do |tweet| %>
-          <li><%= tweet %></li>
-          <% end %>
-        </ul>
-      </article>
+        <div id='social'>
+          <article id='twitter' class='twitterFeed'>
+            <%= link_to 'Follow us on Twitter', 'http://twitter.com/thechimni' %>
+            <%= image_tag('twitter_logo.png', :size => '100x100', :alt => 'Recent tweets') %>
+            <ul>
+              <% @tweets.each do |tweet| %>
+              <li><%= tweet %></li>
+              <% end %>
+            </ul>
+          </article>
+          <!-- <article id='Email' class='twitterFeed'>Email us</article> -->
+        </div>
     </div>
   </div>
 </div>

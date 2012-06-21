@@ -1,19 +1,29 @@
 $white: rgb(255,255,255);
-$lightblue: rgb(100,133,255);
-$blue: rgb(60,100,200);
+
 $lightgrey: rgb(244,244,244);
 $grey: rgb(128,128,128);
 $darkgrey: rgb(64,64,64);
 $extradarkgrey: rgb(32,32,32);
 $greytransparent: rgba(64,64,64,0.5);
-$darkblue: rgb(0, 51, 153) 9;
-$nicecolour: rgb(0, 68, 204);
+
 $buttonbackground: #006DCC;
 $extralightgrey : rgb(229, 229, 229);
 $orange: rgb(255, 165, 0);
-$maroon: rgb(89, 15, 15);
 
-$base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
+// Contact Us colour palette
+$maroon: rgb(89, 15, 15);
+$contactUsBorder: rgb(213, 195, 153);
+
+// Experimental
+$darkblue: rgb(0, 51, 153) 9;
+$nicecolour: rgb(0, 68, 204);
+$lightblue: rgb(100,133,255);
+$blue: rgb(60,100,200);
+$lightBeige: rgb(255, 255, 238);
+$exp1: rgb(237, 237, 225);
+
+
+$base_font: 100% 'Minister', Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $heading_font: SamarkanNormal;
 
 h1 {
@@ -339,26 +349,31 @@ ul.recipeList {
   font-size: 120%;
 }
 
+//  How to get this?
+.verticalLine {
+  border-left: 1px solid $contactUsBorder;
+}
+
 .parallaxPanel .twitterFeed {
   float: right;
   width: 500px;
-  margin-top: 60px;
-  // border: 1px solid #CCC;
+  height: 165px;
+  margin-top: 70px;
   color: $white;
+  border-bottom: 1px dashed $contactUsBorder;
+}
+
+.parallaxPanel .twitterFeed img {
+  float: left;
+  margin-top: 41px;
 }
 
 .parallaxPanel .twitterFeed a {
-  float: left;
-  //position: absolute;   //Question: should this be absolute or float?
-  margin-left: 15px;
-  margin-top: 25px;
-  width: 100px;
+  width: 370px;
+  margin-left: 5px;
   text-decoration: none;
-  color: $white;
-}
-
-.parallaxPanel .twitterFeed div {
-  text-align: center;
+  color: $contactUsBorder;
+  font-size: 130%;
 }
 
 .parallaxPanel .twitterFeed > ul {
@@ -366,7 +381,8 @@ ul.recipeList {
   color: $white;
   background-color: $maroon;
   list-style: none;
-  margin-left: 120px;
+  margin-left: 105px;
+  width: 360px;
   padding: 10px;
 } 
 
