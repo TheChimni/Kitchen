@@ -12,6 +12,7 @@ $orange: rgb(255, 165, 0);
 
 // Contact Us colour palette
 $maroon: rgb(89, 15, 15);
+$lightMaroon: rgb(162, 66, 66);
 $contactUsBorder: rgb(213, 195, 153);
 
 // Experimental
@@ -351,7 +352,7 @@ ul.recipeList {
 
 //  How to get this?
 #social {
-  border-left: 1px dashed $contactUsBorder;
+  border-left: 1px dashed $lightMaroon;
   padding-left: 10px;
   float: right;
   width: 500px;
@@ -362,7 +363,7 @@ ul.recipeList {
 
 #social article {
   height: 165px;
-  border-bottom: 1px dashed $contactUsBorder;
+  border-bottom: 1px dashed $lightMaroon;
 }
 
 #social article img {
