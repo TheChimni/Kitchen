@@ -1,18 +1,30 @@
 $white: rgb(255,255,255);
-$lightblue: rgb(100,133,255);
-$blue: rgb(60,100,200);
+
 $lightgrey: rgb(244,244,244);
 $grey: rgb(128,128,128);
 $darkgrey: rgb(64,64,64);
 $extradarkgrey: rgb(32,32,32);
 $greytransparent: rgba(64,64,64,0.5);
-$darkblue: rgb(0, 51, 153) 9;
-$nicecolour: rgb(0, 68, 204);
+
 $buttonbackground: #006DCC;
 $extralightgrey : rgb(229, 229, 229);
 $orange: rgb(255, 165, 0);
 
-$base_font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
+// Contact Us colour palette
+$maroon: rgb(89, 15, 15);
+$lightMaroon: rgb(162, 66, 66);
+$contactUsBorder: rgb(213, 195, 153);
+
+// Experimental
+$darkblue: rgb(0, 51, 153) 9;
+$nicecolour: rgb(0, 68, 204);
+$lightblue: rgb(100,133,255);
+$blue: rgb(60,100,200);
+$lightBeige: rgb(255, 255, 238);
+$exp1: rgb(237, 237, 225);
+
+
+$base_font: 100% 'Minister', Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $heading_font: SamarkanNormal;
 
 h1 {
@@ -180,25 +192,21 @@ textarea {
 	position: relative;
   /*The children of this container are all absolutely positioned and therefore cannot determine its height */
   /*so we need to explicitly size the height of the carousel */
-  height: 600px;
+  height: 800px;
   overflow: hidden;
 }
 
 .carouselItem {
-  padding: 40px 0 0 0;
 	display: none;
   position: absolute;
   height: 600px;
-  z-index: 3;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 1200px;
 }
 
-.carouselItemFixed {
-  padding: 40px 0 0 0;
-  position: relative;
-  opacity: 0.0;
-  z-index: 4;
+.carouselItem .content {
+  margin: 50px auto;
+  min-height: 670px;
+  width: 1000px;
 }
 
 @mixin carouselText {
@@ -209,17 +217,62 @@ textarea {
   padding: 5px;
 }
 
-.carouselTitle {
+.carouselItem .recipeTitle {
   @include carouselText;
-  top: 10px;
-  font-size: 160%;
+  font-size: 200%;
+  margin-left: 70px;
 }
 
-.carouselSubtitle {
-  @include carouselText;
-  font-size: 100%;
-  top: 10px;
+.carouselItem .images {
+  float: left;
+  margin-left: 70px;
+  margin-right: 40px;
+  position: relative;
 }
+
+.carouselItem .recipeImage {
+  background-color: $white;
+  padding: 10px;
+}
+
+.carouselItem .recipeSecondaryImage {
+  top: 320px;
+  left: 390px;
+  position: absolute;
+  background-color: $white;
+  padding: 10px;
+}
+
+.carouselItem .recipeDescription {
+  padding: 10px;
+  color: $white;
+  font-size: 150%;
+}
+
+.carouselItem .recipeMoreLink {
+  background: url("/assets/button-bg.png") 0 0 no-repeat;
+  display: inline-block;
+  width: 84px;
+  height: 84px;
+  text-align: center;
+  padding: 20px 0 0 0;
+  font-size: 130%;
+  text-decoration: none;
+  color: $orange;
+
+}
+
+// .carouselTitle {
+//   @include carouselText;
+//   top: 10px;
+//   font-size: 160%;
+// }
+
+// .carouselSubtitle {
+//   @include carouselText;
+//   font-size: 100%;
+//   top: 10px;
+// }
 
 .carouselButton {
 	top: 40%;
@@ -297,4 +350,54 @@ ul.recipeList {
   font-size: 120%;
 }
 
+//  How to get this?
+#social {
+  border-left: 1px dashed $lightMaroon;
+  padding-left: 10px;
+  float: right;
+  width: 500px;
+  margin-top: 70px;
+  color: $white;
+  height: 400px;
+}
+
+#social article {
+  height: 165px;
+  border-bottom: 1px dashed $lightMaroon;
+}
+
+#social article img {
+  float: left;
+  margin-top: 41px;
+}
+
+#social article a {
+  width: 370px;
+  margin-left: 5px;
+  text-decoration: none;
+  color: $contactUsBorder;
+  font-size: 130%;
+}
+
+#social article > ul {
+  position: relative;
+  color: $white;
+  background-color: $maroon;
+  list-style: none;
+  margin-left: 105px;
+  width: 360px;
+  padding: 10px;
+} 
+
+#social article > ul:before {
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  border-color: transparent $maroon $maroon transparent;
+  border-style: solid;
+  border-width: 10px;
+  width: 0px;
+  height: 0px;
+  content: " ";
+}
 

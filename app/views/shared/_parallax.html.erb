@@ -10,6 +10,7 @@
     <div class='container'>
       <div class='parallaxTitle'>Recipes</div>
       <div class='parallaxSubtitle'>Tasty treats for all the family...</div>
+      <%= render :partial => 'shared/carousel' %>
     </div>
   </div>
   <div id='classesPanel' class='parallaxPanel' data-content='classes' data-background='market.jpg'>
@@ -18,10 +19,22 @@
       <div class='parallaxSubtitle'>Come learn from Indian cooking...</div>
     </div>
   </div>
-  <div id='contactPanel' class='parallaxPanel' data-content='contact' data-background='chillies.jpg'>
+  <div id='contactPanel' class='parallaxPanel' data-content='contact' data-background='contacts.png'>
     <div class='container'>
       <div class='parallaxTitle'>Contact</div>
       <div class='parallaxSubtitle'>Don't be shy tweet, email or call us - we love to talk about tasty grub</div>
+      <div id='social'>
+        <article id='twitter' class='twitterFeed'>
+          <%= link_to 'Follow us on Twitter', 'http://twitter.com/thechimni' %>
+          <%= image_tag('twitter_logo.png', :size => '100x100', :alt => 'Recent tweets') %>
+          <ul>
+            <% @tweets.each do |tweet| %>
+            <li><%= tweet %></li>
+            <% end %>
+          </ul>
+        </article>
+        <article id='Email' class='twitterFeed'>Email us</article>
+      </div>
     </div>
   </div>
 </div>
