@@ -350,25 +350,27 @@ ul.recipeList {
 }
 
 //  How to get this?
-.verticalLine {
-  border-left: 1px solid $contactUsBorder;
-}
-
-.parallaxPanel .twitterFeed {
+#social {
+  border-left: 1px dashed $contactUsBorder;
+  padding-left: 10px;
   float: right;
   width: 500px;
-  height: 165px;
   margin-top: 70px;
   color: $white;
+  height: 400px;
+}
+
+#social article {
+  height: 165px;
   border-bottom: 1px dashed $contactUsBorder;
 }
 
-.parallaxPanel .twitterFeed img {
+#social article img {
   float: left;
   margin-top: 41px;
 }
 
-.parallaxPanel .twitterFeed a {
+#social article a {
   width: 370px;
   margin-left: 5px;
   text-decoration: none;
@@ -376,7 +378,7 @@ ul.recipeList {
   font-size: 130%;
 }
 
-.parallaxPanel .twitterFeed > ul {
+#social article > ul {
   position: relative;
   color: $white;
   background-color: $maroon;
@@ -386,7 +388,7 @@ ul.recipeList {
   padding: 10px;
 } 
 
-.parallaxPanel .twitterFeed > ul:before {
+#social article > ul:before {
   position: absolute;
   top: 10px;
   left: -20px;
