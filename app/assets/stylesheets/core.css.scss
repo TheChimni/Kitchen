@@ -22,6 +22,7 @@ $lightblue: rgb(100,133,255);
 $blue: rgb(60,100,200);
 $lightBeige: rgb(255, 255, 238);
 $exp1: rgb(237, 237, 225);
+$expForBorder: rgb(80, 6, 6);
 
 
 $base_font: 100% 'Minister', Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -352,8 +353,8 @@ ul.recipeList {
 
 //  How to get this?
 #social {
-  border-left: 1px dashed $lightMaroon;
-  padding-left: 10px;
+  border-left: 2px solid $expForBorder;
+  padding-left: 20px;
   float: right;
   width: 500px;
   margin-top: 70px;
@@ -363,7 +364,18 @@ ul.recipeList {
 
 #social article {
   height: 165px;
-  border-bottom: 1px dashed $lightMaroon;
+  border-bottom: 1px dashed $expForBorder;
+
+  
+  // margin-left: 5px;
+  // color: $contactUsBorder;
+  // font-size: 130%;
+}
+
+#email {
+  color: $contactUsBorder;
+  font-size: 130%;
+  margin-left: 105px;
 }
 
 #social article img {

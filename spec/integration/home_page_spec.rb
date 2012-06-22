@@ -36,6 +36,14 @@ describe 'Home page' do
     page.should have_content @recipe.description
   end
 
+  it 'should have a link to the recipe show page' do
+    visit '/'
+    pending
+    # Find the link 'tell me more'
+    # click
+    # verify that it takes you to the recipe show page
+  end
+
   it "should have last 1 tweet" do
     visit '/'
     # @tweets[0..2].each { |tweet| page.should have_content tweet }

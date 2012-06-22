@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605135217) do
+ActiveRecord::Schema.define(:version => 20120621190911) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "title"
@@ -47,6 +47,12 @@ ActiveRecord::Schema.define(:version => 20120605135217) do
     t.string   "secondary_picture_content_type"
     t.integer  "secondary_picture_file_size"
     t.datetime "secondary_picture_updated_at"
+  end
+
+  create_table "tweets", :force => true do |t|
+    t.string   "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
