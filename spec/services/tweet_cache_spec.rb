@@ -46,8 +46,14 @@ describe TweetCache do
   end
 
   context 'when there is nothing in the cache but a record exist in the Tweet database and the Twitter API throws an exception' do
+    before do
+      Twitter.should_receive(:user_timeline).and_raise
+      Tweet.create! :text => 'bonkers'
+    end
 
-    it 'should return the last tweet from the the database'
+    it 'should return the last tweet from the the database' do
+      TweetCache.last_tweet.should eql(['bonkers'])
+    end
 
   end
 
