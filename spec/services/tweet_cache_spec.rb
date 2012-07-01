@@ -63,18 +63,32 @@ describe TweetCache do
   context 'when there is a tweet in the cache that is less than 5 minutes old' do
 
     it 'should return the last tweet from the the cache' do
-      #Rails.cache.write('latest_tweet', ['dumbo'])
+      Rails.cache.write('latest_tweet', ['dumbo'])
       Twitter.should_not_receive(:user_timeline)
-      # TODO: Work out a better way to assert that the user_timeline does not get called
-      # (as is the should_not_receive exception is being swallowed by the rescue claues in code under test)
       TweetCache.last_tweet.should eql(['dumbo'])
     end
 
   end
 
   context 'when there is a tweet in the cache that is more than 5 minutes old' do
+    before do
+      Timecop.freeze(Time.local(2012, 1, 1, 12, 0, 0))
+       timeline_stub = stub('User Timeline Stub')
+      tweet_stub = stub('Stubbed Tweet')
+      tweet_stub.stub(:text => 'nutcase')
+      timeline_stub.stub(:first).and_return([tweet_stub])
+      Twitter.should_receive(:user_timeline).and_return(timeline_stub)
+    end
 
-    it 'should call the Twitter API'
+    after do
+      Timecop.return
+    end
+
+    it 'should call the Twitter API' do
+      Rails.cache.write('latest_tweet', ['dumbo'], :expires_in => 5.minutes)
+      Timecop.travel(Time.local(2012, 1, 1, 12, 10, 0))
+      TweetCache.last_tweet.should eql(['nutcase'])
+    end
 
   end
 end

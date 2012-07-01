@@ -45,4 +45,5 @@ group :test, :development do
   gem "launchy"
   gem "capybara"
   gem 'shoulda-matchers'
+  gem 'timecop'
 end
