@@ -40,7 +40,7 @@ h1 {
 
 body {
 	margin: 0;
-	font: $base_font;
+  font: $base_font;
   background-color: $grey;
 }
 
@@ -383,7 +383,7 @@ ul.recipeList {
   margin-top: 41px;
 }
 
-#social article a {
+#social article > a {
   width: 370px;
   margin-left: 5px;
   text-decoration: none;

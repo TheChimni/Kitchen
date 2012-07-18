@@ -29,7 +29,7 @@
           <%= image_tag('twitter_logo.png', :size => '100x100', :alt => 'Recent tweets') %>
           <ul>
             <% @tweets.each do |tweet| %>
-            <li><%= tweet %></li>
+            <li><%= auto_link(tweet) %></li>
             <% end %>
           </ul>
         </article>
