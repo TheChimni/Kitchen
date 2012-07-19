@@ -3,6 +3,7 @@ Kitchen::Application.routes.draw do
 
   resources :recipes
   resources :classes
+  resources :subscriptions, :only => [:create]
   root :to => 'home#index'
 
   # The priority is based upon order of creation:
