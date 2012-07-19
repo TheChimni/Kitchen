@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120719125659) do
+=======
+ActiveRecord::Schema.define(:version => 20120512192135) do
+>>>>>>> Removed database.yml from the repo.
 
   create_table "ingredients", :force => true do |t|
     t.string   "title"
@@ -49,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20120719125659) do
     t.datetime "secondary_picture_updated_at"
   end
 
+<<<<<<< HEAD
   create_table "subscriptions", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -62,6 +67,8 @@ ActiveRecord::Schema.define(:version => 20120719125659) do
     t.datetime "updated_at", :null => false
   end
 
+=======
+>>>>>>> Removed database.yml from the repo.
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
