@@ -197,15 +197,22 @@ textarea {
   overflow: hidden;
 }
 
+#carouselItems {
+  position: relative;
+  width: 1000px;
+  height: 700px;
+  left: 100px;
+  overflow: hidden;
+}
+
 .carouselItem {
 	display: none;
   position: absolute;
   height: 600px;
-  width: 1200px;
+  width: 1000px;
 }
 
 .carouselItem .content {
-  margin: 50px auto;
   min-height: 670px;
   width: 1000px;
 }
