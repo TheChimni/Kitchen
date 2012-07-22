@@ -66,5 +66,14 @@ describe 'Home page' do
       visit '/'
       page.should have_field 'Email'
     end
+
+    it "should save a valid subscription" do
+      visit '/'
+      fill_in 'Email', :with => 'puppy@woof.com'
+      click_button 'Subscribe'
+      page.current_path.should == root_path
+      Subscription.count.should == 1
+      page.should have_content 'Thankyou, your subscription has been created'
+    end
   end
 end
