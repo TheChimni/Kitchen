@@ -5,6 +5,7 @@ describe Subscription do
   it { should validate_presence_of :email }
   it { should_not validate_presence_of :name }
   it { should respond_to :name, :email, :created_at, :updated_at }
+  it { should validate_format_of(:email).not_with('hello').with_message(/invalid/) }
 
   context 'uniqueness constraints' do
     before { Subscription.create! :email => 'bob@example.com', :name => 'bob' }
