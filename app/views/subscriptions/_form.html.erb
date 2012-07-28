@@ -1,7 +1,7 @@
 <%= form_for @subscription do |form| %>
-  <% if flash[:notice] %>
-    <p class='notice'><%= flash[:notice] %></p>
-  <% end %>
+  <div>
+    <%= errors_for(@subscription).html_safe %>
+  </div>
   <div>
     <%= form.label :name, 'Name' %>
     <%= form.text_field :name %>

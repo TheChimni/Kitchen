@@ -75,5 +75,14 @@ describe 'Home page' do
       Subscription.count.should == 1
       page.should have_content 'Thankyou, your subscription has been created'
     end
+
+    it "should not save an invalid subscription and throw error" do
+      visit '/'
+      fill_in 'Email', :with => 'puppy'
+      click_button 'Subscribe'
+      page.current_path.should == root_path
+      Subscription.count.should == 0
+      page.should have_content 'Your subscription could not be created'
+    end
   end
 end
