@@ -1,5 +1,6 @@
-<%= form_for @subscription do |form| %>
+<%= form_for @subscription, :remote => true do |form| %>
   <div>
+    <!-- The errors here are only rendered for an Ajax response -->
     <%= errors_for(@subscription).html_safe %>
   </div>
   <div>
