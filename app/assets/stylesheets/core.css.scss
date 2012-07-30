@@ -23,9 +23,9 @@ $blue: rgb(60,100,200);
 $lightBeige: rgb(255, 255, 238);
 $exp1: rgb(237, 237, 225);
 $expForBorder: rgb(80, 6, 6);
+$mandatory: rgb(156,141,108);
 
-
-$base_font: 100% 'Minister', Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base_font: 100% Georgia, serif;
 $heading_font: SamarkanNormal;
 
 h1 {
@@ -120,12 +120,24 @@ label {
 	margin: 10px 0 4px;
 }
 
+label > span {
+  color: $mandatory;
+  margin-left: 5px;
+  font-size: 70%;
+  font-style: italic;
+}
+
 input, textarea {
-	font: $base_font;
-	border: 1px solid #CCC;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
+  font: $base_font;
+  border: 1px solid #CCC;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+input[type='text'], input[type='email'] {
+  padding: 10px;
+  width: 500px;
 }
 
 textarea {
@@ -137,8 +149,6 @@ textarea {
 	padding: 17px 20px 18px 0px;
 	margin-top: 18px;
 	margin-bottom: 18px;
-	background-color: $lightgrey;
-	border-top: 1px solid #DDD;
 }
 
 .formButton {
@@ -158,10 +168,6 @@ textarea {
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
-
-  // box-shadow: 1px 3px 5px #555;
-  // -webkit-box-shadow: 1px 3px 5px #555;
-  // -moz-box-shadow: 1px 3px 5px #555;
 
   background-color: $buttonbackground;
   background-color:#0088cc;
@@ -343,7 +349,7 @@ ul.recipeList {
 }
 
 .parallaxPanel .container{
-  min-height: 1000px;
+  min-height: 800px;
 }
 
 .parallaxTitle {
@@ -373,15 +379,13 @@ ul.recipeList {
   height: 165px;
   border-bottom: 1px dashed $expForBorder;
 
-  
   // margin-left: 5px;
   // color: $contactUsBorder;
   // font-size: 130%;
 }
 
-#email {
-  color: $contactUsBorder;
-  font-size: 130%;
+#email .title {
+  padding: 20px 0 0;
   margin-left: 105px;
 }
 
@@ -394,8 +398,6 @@ ul.recipeList {
   width: 370px;
   margin-left: 5px;
   text-decoration: none;
-  color: $contactUsBorder;
-  font-size: 130%;
 }
 
 #social article > ul {
@@ -406,7 +408,13 @@ ul.recipeList {
   margin-left: 105px;
   width: 360px;
   padding: 10px;
-} 
+}
+
+/* override the Browser default styles for <a> embedded in Tweets within the contact panel */
+#social article > ul a {
+  text-decoration: none;
+  color: $contactUsBorder;
+}
 
 #social article > ul:before {
   position: absolute;
@@ -418,5 +426,29 @@ ul.recipeList {
   width: 0px;
   height: 0px;
   content: " ";
+}
+
+#contactPanel .title {
+  color: $contactUsBorder;
+  font-size: 130%;
+}
+
+#newsletterSignUp {
+  color: $contactUsBorder;
+  margin-top: 70px;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 400px;
+  width: 620px;
+}
+
+#subscriptionFormContainer {
+  color: $white;
+  font-size: 100%;
+}
+
+.subscribeButton {
+  margin: 0 20px 0 0;
 }
 

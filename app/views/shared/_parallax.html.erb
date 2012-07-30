@@ -24,12 +24,15 @@
     <div class='container'>
       <div class='parallaxTitle'>Contact</div>
       <div class='parallaxSubtitle'>Don't be shy tweet, email or call us - we love to talk about tasty grub</div>
-      <div id='subscriptionFormContainer'>
-        <%= render :partial => 'subscriptions/form' %>
+      <div id='newsletterSignUp'>
+        <article class='title'>Still want to hear more from us? Sign up for our monthly newsletter :-)</article>
+        <article id='subscriptionFormContainer'>
+          <%= render :partial => 'subscriptions/form' %>
+        </article>
       </div>
       <div id='social'>
         <article id='twitter'>
-          <%= link_to 'Follow us on Twitter', 'http://twitter.com/thechimni' %>
+          <%= link_to 'Follow us on Twitter', 'http://twitter.com/thechimni', :class => 'title' %>
           <%= image_tag('twitter_logo.png', :size => '100x100', :alt => 'Recent tweets') %>
           <ul>
             <% @tweets.each do |tweet| %>
@@ -37,7 +40,9 @@
             <% end %>
           </ul>
         </article>
-        <article id='email'>Email us</article>
+        <article id='email'>
+          <div class='title'>Email us</div>
+        </article>
       </div>
     </div>
   </div>

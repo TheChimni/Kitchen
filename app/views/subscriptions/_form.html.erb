@@ -8,10 +8,10 @@
     <%= form.text_field :name %>
   </div>
   <div>
-    <%= form.label :email, 'Email' %>
+    <%= form.label :email, "Email <span class='mandatory'>Required</span>".html_safe %>
     <%= form.email_field :email, :required => 'true' %>
   </div>
-  <div class="formActions">
-    <%= form.submit('Subscribe', :class => 'formButton') %>    
+  <div class='formActions'>
+    <%= form.submit('Subscribe', :class => 'subscribeButton') %>    
   </div>
 <% end %>
