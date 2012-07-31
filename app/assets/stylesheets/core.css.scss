@@ -92,6 +92,10 @@ body, html {
 	float: left;
 }
 
+#menu li.right {
+	float: right;
+}
+
 #menu li > a {
 	display: block;
 	width: 100px;
@@ -135,7 +139,7 @@ input, textarea {
   border-radius: 3px;
 }
 
-input[type='text'], input[type='email'] {
+input[type='text'], input[type='email'], input[type='password'] {
   padding: 10px;
   width: 500px;
 }
@@ -273,7 +277,6 @@ textarea {
   font-size: 130%;
   text-decoration: none;
   color: $orange;
-
 }
 
 // .carouselTitle {
@@ -349,18 +352,17 @@ ul.recipeList {
 }
 
 .parallaxPanel .container{
+  padding: 50px 0 0;
   min-height: 800px;
 }
 
 .parallaxTitle {
   @include carouselText;
-  top: 10px;
   font-size: 160%;
 }
 
 .parallaxSubtitle {
   @include carouselText;
-  top: 10px;
   font-size: 120%;
 }
 
