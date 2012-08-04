@@ -25,11 +25,15 @@ $exp1: rgb(237, 237, 225);
 $expForBorder: rgb(80, 6, 6);
 $mandatory: rgb(156,141,108);
 
-$base_font: 100% Georgia, serif;
+$base_font: 100% 'Gill Sans', 'Helvetica Neue', sans-serif;
 $heading_font: SamarkanNormal;
 
 h1 {
-	color: #f00;
+  color: #f00;
+}
+
+h2 {
+  font-weight: normal;
 }
 
 #container, .container {
@@ -232,7 +236,6 @@ textarea {
   position: relative;
   left: 0px;
   color: $white;
-  font-style: italic;
   padding: 5px;
 }
 
@@ -359,12 +362,12 @@ ul.recipeList {
 
 .parallaxTitle {
   @include carouselText;
-  font-size: 160%;
+  font-size: 200%;
 }
 
 .parallaxSubtitle {
   @include carouselText;
-  font-size: 120%;
+  font-size: 150%;
 }
 
 //  How to get this?
