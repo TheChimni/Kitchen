@@ -16,7 +16,7 @@ describe 'Home page' do
 
     it 'should show a page header' do
       visit '/'
-      page.should have_content "Kitchen Sanskriti"
+      page.should have_content "Zanzaneet"
     end
 
     it "should have a link to the home page" do
