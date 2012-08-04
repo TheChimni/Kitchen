@@ -345,13 +345,17 @@ ul.recipeList {
 
 .recipeList li {
   position: relative;
-  width: 320px;
+  width: 337px;
   height: 480px;
   margin: 0 46px 36px 0;
   padding: 15px;
   border: 1px solid $extralightgrey;
   float: left;
 	background-color: rgba(255, 255, 255, 0.75);
+}
+
+.recipeList li.end_of_line {
+  margin: 0 0 36px 0;
 }
 
 .recipeList li .title {
@@ -374,6 +378,10 @@ ul.recipeList {
 .recipeList li .description {
   font-size: 110%;
 	text-align:	left;
+}
+
+.pagination {
+  text-align: right;
 }
 
 .markdownInplaceEditor textarea {
