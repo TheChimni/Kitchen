@@ -354,8 +354,19 @@ ul.recipeList {
 	background-color: rgba(255, 255, 255, 0.75);
 }
 
-.recipeList li .title a {
+.recipeList li .title {
   font-size: 140%;
+  color: $maroon;
+}
+
+.recipeList li .link {
+	text-align:	right;
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+}
+
+.recipeList li .link a {
   text-decoration: none;
   color: $maroon;
 }
