@@ -2,9 +2,11 @@ class RecipesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
 
   def index
+    # using kaminari for paging
+    page = params[:page] || 1
     # @recipes is a member variable (indicated by the '@' prefix). Rails makes member variables of a controller
     # automatically accessible from the view template that renders the response for the action.
-    @recipes = Recipe.all
+    @recipes = Recipe.page(page.to_i).per(3)
     return render :layout => false if request.xhr?
   end
 
