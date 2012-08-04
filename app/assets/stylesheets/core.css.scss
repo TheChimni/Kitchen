@@ -25,7 +25,7 @@ $exp1: rgb(237, 237, 225);
 $expForBorder: rgb(80, 6, 6);
 $mandatory: rgb(156,141,108);
 
-$base_font: 100% 'Gill Sans', 'Helvetica Neue', sans-serif;
+$base_font: 13pt 'Gill Sans', 'Helvetica Neue', sans-serif;
 $heading_font: SamarkanNormal;
 
 h1 {
@@ -34,6 +34,10 @@ h1 {
 
 h2 {
   font-weight: normal;
+}
+
+.clear {
+  clear: both;
 }
 
 #container, .container {
@@ -326,6 +330,12 @@ textarea {
 	left: 50px;
 }
 
+.recipeSearch {
+  padding: 60px 0;
+  margin: 0 auto;
+  width: 600px;
+}
+
 ul.recipeList {
 	margin: 0;
 	padding: 0;
@@ -335,13 +345,24 @@ ul.recipeList {
 
 .recipeList li {
   position: relative;
-  width: 200px;
-  height: 430px;
-  margin: 0 24px 28px 0;
-  padding: 10px;
+  width: 320px;
+  height: 480px;
+  margin: 0 46px 36px 0;
+  padding: 15px;
   border: 1px solid $extralightgrey;
   float: left;
 	background-color: rgba(255, 255, 255, 0.75);
+}
+
+.recipeList li .title a {
+  font-size: 140%;
+  text-decoration: none;
+  color: $maroon;
+}
+
+.recipeList li .description {
+  font-size: 110%;
+	text-align:	left;
 }
 
 .markdownInplaceEditor textarea {

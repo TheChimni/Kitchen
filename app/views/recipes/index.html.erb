@@ -1,11 +1,21 @@
-<section id="main">
-<ul class='recipeList'>
-  <% @recipes.each do |recipe| %>
-    <li>
-      <%= render :partial => 'recipe', :locals => { :recipe => recipe } %>
-    </li>
-  <% end %>
-</ul>
+<section id="main" class="container">
+  <div class="recipeSearch">
+    <%= text_field_tag 'search', nil, :class => 'watermark', :data => { :'watermark-text' => 'Search by ingredient or recipe' } %> 
+    <%= link_to 'Go' %>
+  </div>
 
-<%= link_to 'New recipe', new_recipe_path %>
+  <div>
+    <ul class='recipeList'>
+      <% @recipes.each do |recipe| %>
+        <li>
+          <%= render :partial => 'recipe', :locals => { :recipe => recipe } %>
+        </li>
+      <% end %>
+    </ul>
+    <div class='clear'></div>
+  </div>
+
+  <div>
+    <%= link_to 'New recipe', new_recipe_path %>
+  </div>
 </section>
