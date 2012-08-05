@@ -1,7 +1,7 @@
-<div class='container'>
+<div class='container recipeContainer'>
   <h2><%= @recipe.title %></h2>
 
-  <div><%= @recipe.description %></div>
+  <p><%= @recipe.description %></p>
   <%= image_tag @recipe.picture.url(:medium) %>
 
   <h3>Ingredients</h3>

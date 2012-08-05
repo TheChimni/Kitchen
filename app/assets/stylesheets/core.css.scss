@@ -32,7 +32,7 @@ h1 {
   color: #f00;
 }
 
-h2 {
+h1, h2, h3, h4 {
   font-weight: normal;
 }
 
@@ -47,6 +47,7 @@ h2 {
 }
 
 .mainSection {
+	height: 100%;
   padding: 50px 0 0;
 }
 
@@ -375,6 +376,11 @@ ul.recipeList {
 .recipeList li .description {
   font-size: 110%;
 	text-align:	left;
+}
+
+.recipeContainer {
+  background: white;
+  padding: 10px 20px;
 }
 
 .pagination {
