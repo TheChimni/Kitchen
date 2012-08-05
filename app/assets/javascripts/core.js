@@ -7,7 +7,7 @@ $(function() {
   window.carousel = $('#carousel').carousel();
   $('.markdownInplaceEditor').markdownInplaceEditor();
   $('#parallax').parallax();
-  $('#search').watermark();
+  $('.watermark').watermark();
 });
 
 // Plugin for menu
@@ -35,17 +35,25 @@ $(function() {
 
 
 // Plugin for watermark
-(function($){
+(function($) {
   var defaults = {};
   $.fn.watermark = function(options) {
     var opts = $.extend({}, defaults, options);
     return this.each(function() {
-      
       if (this.watermark) { return false; }
+      var $this = $(this);
+      watermarkText = $this.data('watermark-text');
+      $this.val(watermarkText);
       var self = {
         initialize: function() {
-          // console.log(this);
-          console.log($("#search").val());
+          $this.focus(function() {
+            $this.val('');
+          });
+          $this.blur(function() {
+            if ($this.val() == '') {
+              $this.val(watermarkText);
+            }
+          });
         }
       };
       this.watermark = self;
@@ -54,8 +62,6 @@ $(function() {
     return this;
   };
 })(jQuery);
-
-
 
 
 // Plugin for Carousal
