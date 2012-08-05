@@ -387,6 +387,25 @@ ul.recipeList {
   text-align: right;
 }
 
+.pagination span {
+  background-color: $extralightgrey;
+  padding: 3px 2px 3px 5px;
+  margin: 0 3px;
+}
+
+.pagination span:hover {
+  background-color: $orange;
+}
+
+.pagination span.current:hover, .pagination span.current {
+  background-color: $white;
+}
+
+.pagination span a {
+  color: #000;
+  text-decoration: none;
+}
+
 .markdownInplaceEditor textarea {
   display: none;
 }
