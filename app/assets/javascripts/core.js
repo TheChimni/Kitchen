@@ -7,6 +7,7 @@ $(function() {
   window.carousel = $('#carousel').carousel();
   $('.markdownInplaceEditor').markdownInplaceEditor();
   $('#parallax').parallax();
+  $('#search').watermark();
 });
 
 // Plugin for menu
@@ -31,6 +32,30 @@ $(function() {
     return this;
   };
 })(jQuery);
+
+
+// Plugin for watermark
+(function($){
+  var defaults = {};
+  $.fn.watermark = function(options) {
+    var opts = $.extend({}, defaults, options);
+    return this.each(function() {
+      
+      if (this.watermark) { return false; }
+      var self = {
+        initialize: function() {
+          // console.log(this);
+          console.log($("#search").val());
+        }
+      };
+      this.watermark = self;
+      self.initialize();
+    });
+    return this;
+  };
+})(jQuery);
+
+
 
 
 // Plugin for Carousal
