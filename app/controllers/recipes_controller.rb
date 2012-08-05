@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
     # @recipes is a member variable (indicated by the '@' prefix). Rails makes member variables of a controller
     # automatically accessible from the view template that renders the response for the action.
     @recipes = Recipe.page(page.to_i).per(3)
-    return render :layout => false if request.xhr?
+    return render :partial => 'recipe_list' if request.xhr?
   end
 
   def new
