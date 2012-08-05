@@ -47,10 +47,19 @@ $(function() {
       var self = {
         initialize: function() {
           $this.focus(function() {
-            $this.val('');
+            $this.removeClass('watermark');
+            if ($this.val() != watermarkText) {
+              $this.val($this.val());
+            }
+            else if ($this.val() == '') {
+              $this.val(watermarkText);
+            } else {
+              $this.val('');              
+            }
           });
           $this.blur(function() {
             if ($this.val() == '') {
+              $this.addClass('watermark');
               $this.val(watermarkText);
             }
           });

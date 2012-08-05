@@ -25,6 +25,7 @@ $exp1: rgb(237, 237, 225);
 $expForBorder: rgb(80, 6, 6);
 $mandatory: rgb(156,141,108);
 
+$watermark: rgb(112, 111, 111);
 $base_font: lighter 13pt 'Gill Sans', 'Helvetica Neue', sans-serif;
 $heading_font: SamarkanNormal;
 
@@ -332,6 +333,10 @@ textarea {
   padding: 60px 0;
   margin: 0 auto;
   width: 600px;
+}
+
+.watermark {
+  color: $watermark;
 }
 
 ul.recipeList {
