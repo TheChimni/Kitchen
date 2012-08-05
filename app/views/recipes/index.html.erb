@@ -17,6 +17,6 @@
   </div>
 
   <div>
-    <%= link_to 'New recipe', new_recipe_path %>
+    <%= link_to 'New recipe', new_recipe_path if user_signed_in? %>
   </div>
 </section>
