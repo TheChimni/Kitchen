@@ -223,7 +223,7 @@ textarea {
 #carouselItems {
   position: relative;
   width: 1000px;
-  height: 700px;
+  height: 800px;
   left: 100px;
   overflow: hidden;
 }
@@ -231,7 +231,7 @@ textarea {
 .carouselItem {
 	display: none;
   position: absolute;
-  height: 600px;
+  height: 700px;
   width: 1000px;
 }
 
@@ -260,17 +260,14 @@ textarea {
   position: relative;
 }
 
-.carouselItem .recipeImage {
-  background-color: $white;
-  padding: 10px;
+.carouselItem .recipeSecondaryImage img, .carouselItem .recipeImage img {
+  box-shadow: 0 0 6px 6px $maroon;
 }
 
 .carouselItem .recipeSecondaryImage {
   top: 320px;
   left: 390px;
   position: absolute;
-  background-color: $white;
-  padding: 10px;
 }
 
 .carouselItem .recipeDescription {
