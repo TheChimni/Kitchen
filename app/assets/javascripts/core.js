@@ -73,7 +73,7 @@ $(function() {
 })(jQuery);
 
 
-// Plugin for Carousal
+// Plugin for Carousel
 (function($) {
   var defaults = { width : 1200 };
   $.fn.carousel = function(options) {
@@ -111,6 +111,17 @@ $(function() {
               self.showNext();
             }
           });
+          $(document).keydown(self.handleKey);
+        },
+        handleKey: function(e) {
+          if (self.buttonsVisible()) {
+            // TODO: find out what key was pressed
+            // if its the left key/right key move the carousel otherwise do nothing
+          }
+          console.log('handleKey');
+        },
+        buttonsVisible: function() {
+          // TODO: return true iff the carousel buttons are visible (using window scrollOffset)
         },
         showPrevious: function() {
           if (this.currentPanel.prev('.carouselItem').length > 0) {
