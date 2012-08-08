@@ -113,15 +113,27 @@ $(function() {
           });
           $(document).keydown(self.handleKey);
         },
+        // This is to allow carousel navigation using keyboard
         handleKey: function(e) {
           if (self.buttonsVisible()) {
-            // TODO: find out what key was pressed
+            //Find out what key was pressed
             // if its the left key/right key move the carousel otherwise do nothing
+            if (e.which == 37) {
+              self.showPrevious();
+              return false;
+            } else if (e.which == 39) {
+              self.showNext();
+              return false;
+            }
           }
-          console.log('handleKey');
         },
         buttonsVisible: function() {
-          // TODO: return true iff the carousel buttons are visible (using window scrollOffset)
+          // return true iff the carousel buttons are visible (using window scrollOffset)
+          if ($(window).scrollTop() >= 577 && $(window).scrollTop() <= 1314) {
+            return true;
+          } else {
+            return false;
+          }
         },
         showPrevious: function() {
           if (this.currentPanel.prev('.carouselItem').length > 0) {
