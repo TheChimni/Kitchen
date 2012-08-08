@@ -119,21 +119,27 @@ $(function() {
             //Find out what key was pressed
             // if its the left key/right key move the carousel otherwise do nothing
             if (e.which == 37) {
-              self.showPrevious();
+              self.ifNotAnimating(self.showPrevious);
               return false;
             } else if (e.which == 39) {
-              self.showNext();
+              self.ifNotAnimating(self.showNext);
               return false;
             }
           }
         },
+        ifNotAnimating: function(callback) {
+          if (!self.isAnimating) {
+            self.isAnimating = true;
+            // Call the callback in the context of self
+            callback.call(self);
+          }
+        },
         buttonsVisible: function() {
           // return true iff the carousel buttons are visible (using window scrollOffset)
-          if ($(window).scrollTop() >= 577 && $(window).scrollTop() <= 1314) {
-            return true;
-          } else {
-            return false;
-          }
+          var buttonOffset = $('.carouselButton').offset().top;
+          var windowHeight = $(window).height();
+          var scrollTop = $(window).scrollTop();
+          return ((scrollTop + windowHeight) > buttonOffset && scrollTop < buttonOffset);
         },
         showPrevious: function() {
           if (this.currentPanel.prev('.carouselItem').length > 0) {
