@@ -1,3 +1,4 @@
 var renderedList = "<%= j render :partial => 'recipes/recipes' %>";
-$('#recipeListContainer').html(renderedList);
-
+var container = $('#recipeListContainer');
+$('nav.pagination', container).remove();
+container.append(renderedList);

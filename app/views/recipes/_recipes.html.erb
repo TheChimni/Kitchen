@@ -6,5 +6,8 @@
   <% end %>
 </ul>
 <div class='clear'></div>
-<%= paginate @recipes, :remote => true %>
-
+<nav class='pagination'>
+  <span class="next">
+    <%= link_to_next_page @recipes, 'More', :remote => true %>
+  </span>
+</nav>
