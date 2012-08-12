@@ -44,7 +44,7 @@ Recipe.create!(:title => 'Shepu chi bhaji (Dill Sabzi)',
                :description => shepu_description,
                :ingredient_list => shepu_ingredient_list,
                :preparation_method => shepu_preparation_method,
-               :picture => File.open('db/pictures/Shepu.jpeg'))
+               :picture => File.open('db/pictures/dill1.jpg'))
 
 User.destroy_all
 User.create!(:email => 'admin@example.com', :password => 'secret', :password_confirmation => 'secret')
