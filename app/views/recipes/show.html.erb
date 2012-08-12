@@ -2,7 +2,7 @@
   <h2><%= @recipe.title %></h2>
 
   <p><%= @recipe.synopsis %></p>
-  <p><%= @recipe.description %></p>
+  <p><%= md_to_html @recipe.description %></p>
   <%= image_tag @recipe.picture.url(:medium) %>
 
   <h3>Ingredients</h3>
@@ -11,7 +11,7 @@
       <a href='#'>edit</a>
     <% end %>
     <textarea><%= @recipe.ingredient_list%></textarea>
-    <div><%= @recipe.ingredient_list %></div>
+    <div><%= md_to_html @recipe.ingredient_list %></div>
   </div>
 
   <h3>Preparation method</h3>
@@ -20,7 +20,7 @@
       <a href='#'>edit</a>
     <% end %>
     <textarea><%= @recipe.preparation_method%></textarea>
-    <div><%= @recipe.preparation_method %></div>
+    <div><%= md_to_html @recipe.preparation_method %></div>
   </div>
 
   <% if user_signed_in? %>

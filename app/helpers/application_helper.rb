@@ -21,4 +21,8 @@ module ApplicationHelper
     end
     html
   end
+
+  def md_to_html(markdown)
+    BlueCloth.new(markdown).to_html.html_safe
+  end
 end

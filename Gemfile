@@ -11,6 +11,7 @@ gem 'rails_autolink'
 gem 'pg'
 gem 'devise'
 gem 'kaminari'
+gem 'bluecloth', '>= 2.0.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
