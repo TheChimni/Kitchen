@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'Update an existing recipe' do
 
   before do
-    @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :description => 'Yummy street food',
+    @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :synopsis => 'Yummy street food',
                              :ingredient_list => 'secret', :preparation_method => 'secret')
   end
 
@@ -23,10 +23,10 @@ describe 'Update an existing recipe' do
       current_path.should == recipe_path(@recipe)
       click_link 'Edit this recipe'
       current_path.should == edit_recipe_path(@recipe)
-      fill_in 'Description', :with => 'new description'
+      fill_in 'Synopsis', :with => 'new synopsis'
       click_button 'Update'
       @recipe.reload
-      @recipe.description.should == 'new description'
+      @recipe.synopsis.should == 'new synopsis'
       current_path.should == recipe_path(@recipe)
     end
 
@@ -36,10 +36,10 @@ describe 'Update an existing recipe' do
       current_path.should == recipe_path(@recipe)
       click_link 'Edit this recipe'
       current_path.should == edit_recipe_path(@recipe)
-      fill_in 'Description', :with => 'new description'
+      fill_in 'Synopsis', :with => 'new synopsis'
       click_link 'Cancel'
       @recipe.reload
-      @recipe.description.should == 'Yummy street food'
+      @recipe.synopsis.should == 'Yummy street food'
       current_path.should == recipe_path(@recipe)
     end
   end

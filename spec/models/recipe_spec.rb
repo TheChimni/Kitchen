@@ -15,7 +15,8 @@ describe Recipe do
   end
 
   it { should validate_presence_of :title }
-  it { should validate_presence_of :description }
+  it { should_not validate_presence_of :description }
+  it { should validate_presence_of :synopsis }
   it { should validate_presence_of :ingredient_list }
   it { should validate_presence_of :preparation_method }
 
@@ -38,7 +39,7 @@ describe Recipe do
   context "when CREATING recipe" do
     # create
     it "saves a new ingredient if it doesn't already exist" do
-      recipe = Recipe.new :title => 'test dal', :description => 'try it' , :ingredient_list => '100gms of *masoor dal*',
+      recipe = Recipe.new :title => 'test dal', :synopsis => 'try it' , :ingredient_list => '100gms of *masoor dal*',
         :preparation_method => 'test'
       recipe.save
       Ingredient.count.should == 1
@@ -46,7 +47,7 @@ describe Recipe do
     end
 
     it 'links an ingredient to a receipe if the ingredient in the recipe exists' do
-      recipe = Recipe.new :title => 'test dal', :description => 'try it' , :ingredient_list => '100gms of *masoor dal*',
+      recipe = Recipe.new :title => 'test dal', :synopsis => 'try it' , :ingredient_list => '100gms of *masoor dal*',
         :preparation_method => 'test'
       ingredient = Ingredient.create :title => 'masoor dal'
       recipe.save
@@ -59,7 +60,7 @@ describe Recipe do
   context 'when UPDATING recipe' do
   # updates
       it 'creates a new ingredient if we update the existing recipe and add a new ingredient to it.' do
-        recipe = Recipe.create :title => 'test dal', :description => 'try it' , :ingredient_list => 'pending',
+        recipe = Recipe.create :title => 'test dal', :synopsis => 'try it' , :ingredient_list => 'pending',
           :preparation_method => 'test'
         recipe.ingredient_list = '100gms of *toor dal*'
         recipe.save
@@ -69,7 +70,7 @@ describe Recipe do
       end
 
       it 'Adds a new ingredient to the recipe and retains the original ingredient' do
-        recipe = Recipe.create :title => 'test dal', :description => 'try it' , :ingredient_list => '*masala*',
+        recipe = Recipe.create :title => 'test dal', :synopsis => 'try it' , :ingredient_list => '*masala*',
           :preparation_method => 'test'
         recipe.ingredient_list << '100gms of *toor dal*'
         recipe.save
@@ -79,7 +80,7 @@ describe Recipe do
       end
 
       it 'When overwriting the ingredient_list, adds a new ingredient to the recipe and unlinks the original ingredient' do
-        recipe = Recipe.create :title => 'test dal', :description => 'try it' , :ingredient_list => '*masala*',
+        recipe = Recipe.create :title => 'test dal', :synopsis => 'try it' , :ingredient_list => '*masala*',
           :preparation_method => 'test'
         recipe.ingredient_list = '100gms of *toor dal*'
         recipe.save

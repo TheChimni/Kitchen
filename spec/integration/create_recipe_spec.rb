@@ -8,14 +8,14 @@ describe 'Create a new recipe' do
     click_link 'New recipe'
     current_path.should == new_recipe_path
     fill_in 'Title', :with => 'Test recipe'
-    fill_in 'Description', :with => 'Test description'
+    fill_in 'Synopsis', :with => 'Test synopsis'
     fill_in 'Ingredients', :with => 'secret'
     fill_in 'Preparation method', :with => 'secret'
     click_button 'Save'
     Recipe.where(:title => 'Test recipe').count.should == 1
   end
 
-  it 'should display the form again with an error message when the description is not specified' do
+  it 'should display the form again with an error message when the synopsis is not specified' do
     visit recipes_path
     click_link 'New recipe'
     current_path.should == new_recipe_path
@@ -24,7 +24,7 @@ describe 'Create a new recipe' do
     fill_in 'Preparation method', :with => 'secret'
     click_button 'Save'
     Recipe.where(:title => 'Test recipe').count.should == 0
-    page.should have_content "Description can't be blank"
+    page.should have_content "Synopsis can't be blank"
   end
 
   it 'should not create a new recipe when we press Cancel button' do
@@ -32,7 +32,7 @@ describe 'Create a new recipe' do
     click_link 'New recipe'
     current_path.should == new_recipe_path
     fill_in 'Title', :with => 'Test recipe'
-    fill_in 'Description', :with => 'Test description'
+    fill_in 'Synopsis', :with => 'Test synopsis'
     fill_in 'Ingredients', :with => 'secret'
     fill_in 'Preparation method', :with => 'secret'
     click_link 'Cancel'

@@ -1,6 +1,6 @@
 <div>
   <p class='thumb'><%= image_tag recipe.picture.url(:thumb) %></p>
   <p class='title'><%= recipe.title %></p>
-  <p class='description'><%= recipe.description %></p>
+  <p class='description'><%= recipe.synopsis %></p>
   <p class='link'><%= link_to 'Read >>', recipe_path(recipe) %></p>
 </div>

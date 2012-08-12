@@ -5,7 +5,7 @@ describe 'Show an existing recipe' do
   context 'with proper desi food' do
     
     before do
-      @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :description => 'Yummy street food',
+      @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :synopsis => 'Yummy street food', :description => 'This is...',
                                :ingredient_list => 'secret sauce', :preparation_method => 'secret method')
     end
 
@@ -15,9 +15,14 @@ describe 'Show an existing recipe' do
       current_path.should == recipes_path
     end
   
-    it "should show you the description of the recipe" do
+    it "should show you the synopsis of the recipe" do
       visit recipe_path(@recipe)
       page.should have_content 'Yummy street food'
+    end
+  
+    it "should show you the description of the recipe" do
+      visit recipe_path(@recipe)
+      page.should have_content 'This is...'
     end
   
     it "should show you the ingredients of the recipe" do
@@ -34,11 +39,11 @@ describe 'Show an existing recipe' do
   
   context 'Fish and chips' do
     before do
-      @recipe = Recipe.create!(:title => 'Fish and chips', :description => 'Not so Yummy street food',
+      @recipe = Recipe.create!(:title => 'Fish and chips', :synopsis => 'Not so Yummy street food',
                                :ingredient_list => 'greasy stuff', :preparation_method => 'toss into fryer')
     end
     
-    it 'should show the description of the recipe' do
+    it 'should show the synopsis of the recipe' do
       visit recipe_path(@recipe)
       page.should have_content 'Not so Yummy street food'
     end

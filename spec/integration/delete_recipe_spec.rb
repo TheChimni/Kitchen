@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Delete an existing recipe' do
   before do
-    @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :description => 'Yummy street food',
+    @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :synopsis => 'Yummy street food',
                              :ingredient_list => 'secret', :preparation_method => 'secret')
   end
 

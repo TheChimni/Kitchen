@@ -1,6 +1,7 @@
 <div class='container recipeContainer'>
   <h2><%= @recipe.title %></h2>
 
+  <p><%= @recipe.synopsis %></p>
   <p><%= @recipe.description %></p>
   <%= image_tag @recipe.picture.url(:medium) %>
 

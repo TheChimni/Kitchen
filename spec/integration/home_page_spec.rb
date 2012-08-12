@@ -10,7 +10,7 @@ describe 'Home page' do
 
   context "with a recipe" do
     before do
-      @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :description => 'Yummy street food',
+      @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :synopsis => 'Yummy street food',
        :ingredient_list => 'secret', :preparation_method => 'secret')
     end
 
@@ -36,7 +36,7 @@ describe 'Home page' do
     it "should have recipes" do
       visit '/'
       page.should have_content @recipe.title
-      page.should have_content @recipe.description
+      page.should have_content @recipe.synopsis
     end
 
     it 'should have a link to the recipe show page' do
