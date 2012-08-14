@@ -9,7 +9,7 @@
             <div class='recipeImage'><%= image_tag recipe.picture.url(:medium) %></div>
             <div class='recipeSecondaryImage'><%= image_tag recipe.picture.url(:small) %></div>
           </div>
-          <p class='recipeDescription'><%= recipe.synopsis %></p>
+          <p class='recipeSynopsis'><%= recipe.synopsis %></p>
           <%= link_to 'tell me more', recipe_path(recipe), :class => 'recipeMoreLink' %>
         </div>
       </div>

@@ -272,7 +272,7 @@ textarea {
   position: absolute;
 }
 
-.carouselItem .recipeDescription {
+.carouselItem .recipeSynopsis {
   padding: 10px;
   color: $white;
   font-size: 150%;
@@ -378,7 +378,7 @@ ul.recipeList {
   color: $maroon;
 }
 
-.recipeList li .description {
+.recipeList li .synopsis {
   font-size: 110%;
 	text-align:	left;
 }
