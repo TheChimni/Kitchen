@@ -10,6 +10,9 @@ class RecipesController < ApplicationController
     return render :partial => 'recipe_list' if request.xhr?
   end
 
+  def search
+  end
+
   def new
     @recipe = Recipe.new
   end

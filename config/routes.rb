@@ -1,7 +1,11 @@
 Kitchen::Application.routes.draw do
   devise_for :users
 
-  resources :recipes
+  resources :recipes do
+    collection do
+      get 'search'
+    end
+  end
   resources :classes
   resources :subscriptions, :only => [:create]
   root :to => 'home#index'
