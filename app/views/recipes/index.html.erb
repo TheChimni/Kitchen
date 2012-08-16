@@ -1,8 +1,10 @@
 <section id="main" class="container">
   <div class="recipeSearch">
-    <%= form_tag search_recipes_path, :method => "get", :remote => true do %>
-    <%= text_field_tag 'search', nil, :class => 'watermark', :data => { :'watermark-text' => 'Search by ingredient or recipe' } %>
-    <%= link_to 'Go' %>
+    <%= form_tag search_recipes_path, :method => 'get', :remote => true do %>
+    <%= text_field_tag 'search', nil, :placeholder => 'Search by ingredient or recipe' %>
+    <%# Below line is now commented out as it is redundant. Using the Rails built-in :placeholder which does the job.%>
+    <%#= text_field_tag 'search', nil, :class => 'watermark', :data => { :'watermark-text' => 'Search by ingredient or recipe' } %>
+    <%= submit_tag 'Go' %>
     <% end %>
   </div>
 

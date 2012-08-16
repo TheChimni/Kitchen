@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show, :search]
 
   def index
     # using kaminari for paging
@@ -11,6 +11,14 @@ class RecipesController < ApplicationController
   end
 
   def search
+    search_term = params[:search]
+
+
+    # @recipes = Recipe.where().page(1).per(3)
+    # return render :partial => 'recipe_search' if request.xhr?
+    @recipes = Recipe.page(1).per(3)
+    return render :partial => 'recipe_list' if request.xhr?
+
   end
 
   def new

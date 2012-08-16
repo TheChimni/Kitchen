@@ -7,7 +7,7 @@ $(function() {
   window.carousel = $('#carousel').carousel();
   $('.markdownInplaceEditor').markdownInplaceEditor();
   $('#parallax').parallax();
-  $('.watermark').watermark();
+  // $('.watermark').watermark();
 });
 
 // Plugin for menu
@@ -61,6 +61,12 @@ $(function() {
             if ($this.val() == '') {
               $this.addClass('watermark');
               $this.val(watermarkText);
+            }
+          });
+          $this.closest('form').submit(function(e) {
+            if ($this.val() == watermarkText) {
+              e.preventDefault();
+              return false;
             }
           });
         }
