@@ -12,11 +12,12 @@ class RecipesController < ApplicationController
 
   def search
     search_term = params[:search]
+    @recipes =  Recipe.joins(:ingredients).where('ingredients.title ILIKE ?', '%'+search_term+'%').page(1).per(3)
 
 
     # @recipes = Recipe.where().page(1).per(3)
     # return render :partial => 'recipe_search' if request.xhr?
-    @recipes = Recipe.page(1).per(3)
+    # @recipes = Recipe.page(1).per(3)
     return render :partial => 'recipe_list' if request.xhr?
 
   end
