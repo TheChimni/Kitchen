@@ -12,8 +12,9 @@ class RecipesController < ApplicationController
 
   def search
     search_term = params[:search]
-    @recipes =  Recipe.joins(:ingredients).where('ingredients.title ILIKE ?', '%'+search_term+'%').page(1).per(3)
-
+    # @recipes =  Recipe.joins(:ingredients).where('ingredients.title ILIKE ? OR recipes.title ILIKE ?', "%#{search_term}%", "%#{search_term}%").uniq.page(1).per(3)
+    @recipes =  Recipe.joins("LEFT OUTER JOIN ingredients_recipes ON ingredients_recipes.recipe_id = recipes.id LEFT OUTER JOIN ingredients ON ingredients.id = ingredients_recipes.ingredient_id")
+      .where('ingredients.title ILIKE ? OR recipes.title ILIKE ?', "%#{search_term}%", "%#{search_term}%").uniq.page(1).per(3)
 
     # @recipes = Recipe.where().page(1).per(3)
     # return render :partial => 'recipe_search' if request.xhr?
