@@ -16,11 +16,7 @@ class RecipesController < ApplicationController
     @recipes =  Recipe.joins("LEFT OUTER JOIN ingredients_recipes ON ingredients_recipes.recipe_id = recipes.id LEFT OUTER JOIN ingredients ON ingredients.id = ingredients_recipes.ingredient_id")
       .where('ingredients.title ILIKE ? OR recipes.title ILIKE ?', "%#{search_term}%", "%#{search_term}%").uniq.page(1).per(3)
 
-    # @recipes = Recipe.where().page(1).per(3)
-    # return render :partial => 'recipe_search' if request.xhr?
-    # @recipes = Recipe.page(1).per(3)
-    return render :partial => 'recipe_list' if request.xhr?
-
+    return render :partial => 'recipe_search' if request.xhr?
   end
 
   def new
