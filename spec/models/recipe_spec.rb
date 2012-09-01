@@ -22,6 +22,7 @@ describe Recipe do
 
   it { should have_attached_file :picture }
   it { should have_and_belong_to_many :ingredients }
+  it { should have_many :recipe_photos }
 
   describe 'ingredients' do
     it 'extracts ingredients from a recipe' do
