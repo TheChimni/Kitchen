@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails'
 gem 'paperclip'
+gem 'carrierwave'
 gem 'twitter'
 gem 'rails_autolink'
 
@@ -49,4 +50,5 @@ group :test, :development do
   gem "capybara"
   gem 'shoulda-matchers'
   gem 'timecop'
+  gem 'rb-fsevent', '~> 0.9.1'
 end
