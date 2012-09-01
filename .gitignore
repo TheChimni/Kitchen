@@ -14,5 +14,6 @@
 /log/*.log
 /tmp
 /public/system/*
+/public/uploads/*
 .DS_Store
 /config/database.yml

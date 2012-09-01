@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails'
 gem 'paperclip'
+gem 'rmagick'
 gem 'carrierwave'
 gem 'twitter'
 gem 'rails_autolink'
