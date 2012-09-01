@@ -2,15 +2,16 @@ class Recipe < ActiveRecord::Base
   validates_presence_of :title, :synopsis, :ingredient_list, :preparation_method
   has_and_belongs_to_many :ingredients
   has_many :recipe_photos
-  has_attached_file :picture, :styles => { :wide => "960x600#", :large => "800x600>", :medium =>"500x375>", :small => "400x300>", :thumb => "280x280>" }
-  has_attached_file :secondary_picture, :styles => { :wide => "960x600#", :large => "800x600>", :medium =>"500x375>", :small => "400x300>", :thumb => "280x280>" }
-
 
   before_save :save_ingredients
 
   def parse_ingredients
     regex = /\*([a-zA-Z\s]+)\*/
     ingredient_list.scan(regex).flatten
+  end
+
+  def primary_photo
+    recipe_photos.first
   end
 
   private

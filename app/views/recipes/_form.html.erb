@@ -22,10 +22,6 @@
     <%= form.label :preparation_method, 'Preparation method' %>
     <%= form.text_area :preparation_method %>
   </div>
-  <div>
-    <%= form.label :picture, 'Picture' %>
-    <%= form.file_field :picture %>
-  </div>
   <div class="formActions">
     <%= form.submit(params[:action] == 'edit' ? 'Update' : 'Save', :class => 'formButton') %>
     <%= link_to 'Cancel', params[:action] == 'edit' ? recipe_path(@recipe) : recipes_path , :class => 'formButton' %>

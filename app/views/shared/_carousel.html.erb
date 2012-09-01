@@ -6,8 +6,8 @@
         <div class='content'>
           <h2 class='recipeTitle'><%= recipe.title %></h2>
           <div class='images'>
-            <div class='recipeImage'><%= image_tag recipe.picture.url(:medium) %></div>
-            <div class='recipeSecondaryImage'><%= image_tag recipe.picture.url(:small) %></div>
+            <div class='recipeImage'><%= image_tag recipe.primary_photo.image.medium.url if recipe.primary_photo %></div>
+            <div class='recipeSecondaryImage'><%= image_tag recipe.primary_photo.image.small.url if recipe.primary_photo %></div>
           </div>
           <p class='recipeSynopsis'><%= recipe.synopsis %></p>
           <%= link_to 'tell me more', recipe_path(recipe), :class => 'recipeMoreLink' %>
