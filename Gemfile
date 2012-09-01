@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'rmagick'
 gem 'carrierwave'
+gem 'cloudinary'
 gem 'twitter'
 gem 'rails_autolink'
 
