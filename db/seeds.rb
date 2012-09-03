@@ -47,4 +47,4 @@ recipe4 = Recipe.create!(:title => 'Shepu chi bhaji (Dill Sabzi)',
 RecipePhoto.create!(:recipe => recipe4, :title => 'Dill Sabzi', :image => File.open('db/pictures/dill1.jpeg'))
 
 User.destroy_all
-User.create!(:email => 'admin@example.com', :password => 'secret', :password_confirmation => 'secret')
+User.create!(:email => 'rieethaa@zanzaneet.com', :password => 'secret', :password_confirmation => 'secret')
