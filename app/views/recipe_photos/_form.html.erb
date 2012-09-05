@@ -1,0 +1,16 @@
+<%= form_for @recipe_photo do |form| %>
+  <div>
+    <%= errors_for(@recipe_photo, "Could not save the photo").html_safe %>
+  </div>
+  <div>
+    <%= form.label :title, 'Title' %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :image, 'Image file' %>
+    <%= form.file_field :image %>
+  </div>
+  <div class="formActions">
+    <%= form.submit(params[:action] == 'edit' ? 'Update' : 'Save', :class => 'formButton') %>
+  </div>
+<% end %>

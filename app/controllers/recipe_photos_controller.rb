@@ -1,5 +1,6 @@
 class RecipePhotosController < ApplicationController
-
+  before_filter :authenticate_user!
+  
   def new
   end
 
@@ -14,5 +15,5 @@ class RecipePhotosController < ApplicationController
 
   def destroy
   end
-  
+
 end
