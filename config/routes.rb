@@ -5,6 +5,7 @@ Kitchen::Application.routes.draw do
     collection do
       get 'search'
     end
+    resources :recipe_photos, :except => [:index, :show]
   end
   resources :classes
   resources :subscriptions, :only => [:create]
