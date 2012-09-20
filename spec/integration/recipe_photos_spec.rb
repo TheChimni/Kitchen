@@ -25,29 +25,37 @@ describe 'Recipe photos' do
         page.should have_field('Title')
         page.should have_field('Image')
       end
+
+      it "should create a new photo when I fill out the form and submit it"
     end
   end
 
-  describe 'Viewing the photos for a recipe' do
+  describe 'Managing and viewing photos within a recipe' do
 
     before do
       @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :synopsis => 'Yummy street food',
        :ingredient_list => 'secret', :preparation_method => 'secret')
-      RecipePhoto.create!(:recipe => recipe, :title => 'test1', :image => File.open('db/pictures/salmoncloseup1.jpg'))
-      RecipePhoto.create!(:recipe => recipe, :title => 'test2', :image => File.open('db/pictures/dill1.jpg'))
-      RecipePhoto.create!(:recipe => recipe, :title => 'test3', :image => File.open('db/pictures/test.jpeg'))
+      RecipePhoto.create!(:recipe => @recipe, :title => 'test1', :image => File.open('db/pictures/test.jpeg'))
+      RecipePhoto.create!(:recipe => @recipe, :title => 'test2', :image => File.open('db/pictures/test.jpeg'))
+      RecipePhoto.create!(:recipe => @recipe, :title => 'test3', :image => File.open('db/pictures/test.jpeg'))
     end
 
-    it 'should show the photos' do
-    end
+    describe "Viewing photos on the show page" do
 
-    context 'when logged in' do
-      include_context :authentication
-      it 'should have a new photo link' do
-        visit recipe(@recipe)
-        page.should have_link 'New'
+      it 'should show the photos' do
+        pending 'visit the show page for the recipe and check that the photos are displayed'
       end
-      it 'should have edit links for each photo'
+    end
+
+    describe "Managing photos on the edit page" do
+      context 'when logged in' do
+        include_context :authentication
+        it 'should have a new photo link' do
+          visit edit_recipe_path(@recipe)
+          page.should have_link 'New'
+        end
+        it 'should have edit links for each photo'
+      end
     end
 
   end  
