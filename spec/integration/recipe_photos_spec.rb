@@ -35,9 +35,10 @@ describe 'Recipe photos' do
     before do
       @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :synopsis => 'Yummy street food',
        :ingredient_list => 'secret', :preparation_method => 'secret')
-      RecipePhoto.create!(:recipe => @recipe, :title => 'test1', :image => File.open('db/pictures/test.jpeg'))
-      RecipePhoto.create!(:recipe => @recipe, :title => 'test2', :image => File.open('db/pictures/test.jpeg'))
-      RecipePhoto.create!(:recipe => @recipe, :title => 'test3', :image => File.open('db/pictures/test.jpeg'))
+      @photos = []
+      @photos << RecipePhoto.create!(:recipe => @recipe, :title => 'test1', :image => File.open('db/pictures/test.jpeg'))
+      @photos << RecipePhoto.create!(:recipe => @recipe, :title => 'test2', :image => File.open('db/pictures/test.jpeg'))
+      @photos << RecipePhoto.create!(:recipe => @recipe, :title => 'test3', :image => File.open('db/pictures/test.jpeg'))
     end
 
     describe "Viewing photos on the show page" do
@@ -54,7 +55,13 @@ describe 'Recipe photos' do
           visit edit_recipe_path(@recipe)
           page.should have_link 'New Photo'
         end
-        it 'should have edit links for each photo'
+        
+        it 'should have edit links for each photo' do
+          visit edit_recipe_path(@recipe)
+          @photos.each do |photo|
+            page.should have_link 'Edit', :href => edit_recipe_recipe_photo_path(@recipe, photo) 
+          end
+        end
       end
     end
 

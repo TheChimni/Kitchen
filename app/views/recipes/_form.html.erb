@@ -23,7 +23,17 @@
     <%= form.text_area :preparation_method %>
   </div>
   <div>
-    <%= link_to 'New Photo',  new_recipe_recipe_photo_path(@recipe) if params[:action] == 'edit' %>
+    <% @recipe.recipe_photos.each do |photo| %>
+    <div>
+      <%= photo.id %>
+      <%= image_tag photo.image.thumb.url %>
+      <%= photo.title %>
+    </div>
+    <%= link_to 'Edit', edit_recipe_recipe_photo_path(@recipe, photo) %> 
+    <% end %>
+  </div>
+  <div>
+    <%= link_to 'New Photo', new_recipe_recipe_photo_path(@recipe) if params[:action] == 'edit' %>
   </div>
   <div class="formActions">
     <%= form.submit(params[:action] == 'edit' ? 'Update' : 'Save', :class => 'formButton') %>

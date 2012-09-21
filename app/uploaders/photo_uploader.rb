@@ -51,8 +51,11 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :small do
     process :resize_to_fill => [400, 300]
   end
-  version :thumb do
+  version :extra_small do
     process :resize_to_fill => [280, 280]
+  end
+  version :thumb do
+    process :resize_to_fill => [120, 120]
   end
   #has_attached_file :picture, :styles => { :wide => "960x600#", :large => "800x600>", :medium =>"500x375>", :small => "400x300>", :thumb => "280x280>" }
   #has_attached_file :secondary_picture, :styles => { :wide => "960x600#", :large => "800x600>", :medium =>"500x375>", :small => "400x300>", :thumb => "280x280>" }
