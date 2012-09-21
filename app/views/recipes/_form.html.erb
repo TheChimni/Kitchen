@@ -22,9 +22,9 @@
     <%= form.label :preparation_method, 'Preparation method' %>
     <%= form.text_area :preparation_method %>
   </div>
-<!--   <div>
-    <%= link_to 'New',  %>
-  </div> -->
+  <div>
+    <%= link_to 'New Photo',  new_recipe_recipe_photo_path(@recipe) if params[:action] == 'edit' %>
+  </div>
   <div class="formActions">
     <%= form.submit(params[:action] == 'edit' ? 'Update' : 'Save', :class => 'formButton') %>
     <%= link_to 'Cancel', params[:action] == 'edit' ? recipe_path(@recipe) : recipes_path , :class => 'formButton' %>

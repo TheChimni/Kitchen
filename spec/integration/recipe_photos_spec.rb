@@ -52,7 +52,7 @@ describe 'Recipe photos' do
         include_context :authentication
         it 'should have a new photo link' do
           visit edit_recipe_path(@recipe)
-          page.should have_link 'New'
+          page.should have_link 'New Photo'
         end
         it 'should have edit links for each photo'
       end
