@@ -10,6 +10,8 @@ class RecipePhotosController < ApplicationController
   end
 
   def edit
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipe_photo = RecipePhoto.find(params[:id])
   end
 
   def update

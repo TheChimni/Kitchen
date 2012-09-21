@@ -25,11 +25,10 @@
   <div>
     <% @recipe.recipe_photos.each do |photo| %>
     <div>
-      <%= photo.id %>
-      <%= image_tag photo.image.thumb.url %>
+      <%= image_tag photo.image.extra_small.url %>
       <%= photo.title %>
+      <%= link_to 'Edit', edit_recipe_recipe_photo_path(@recipe, photo) %> 
     </div>
-    <%= link_to 'Edit', edit_recipe_recipe_photo_path(@recipe, photo) %> 
     <% end %>
   </div>
   <div>
