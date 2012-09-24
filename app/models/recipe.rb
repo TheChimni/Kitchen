@@ -2,6 +2,7 @@ class Recipe < ActiveRecord::Base
   validates_presence_of :title, :synopsis, :ingredient_list, :preparation_method
   has_and_belongs_to_many :ingredients
   has_many :recipe_photos
+  # attr_accessible :title, :synopsis, :ingredient_list, :preparation_method, :ingredients, :recipe_photos
 
   before_save :save_ingredients
 

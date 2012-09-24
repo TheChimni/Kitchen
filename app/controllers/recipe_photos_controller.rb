@@ -15,6 +15,14 @@ class RecipePhotosController < ApplicationController
   end
 
   def update
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipe_photo = RecipePhoto.find(params[:id])
+    # raise params.inspect
+    if @recipe_photo.update_attributes(params[:recipe_photo])
+      redirect_to edit_recipe_path(@recipe)
+    else
+      render :edit
+    end
   end
 
   def destroy

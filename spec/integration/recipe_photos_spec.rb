@@ -62,6 +62,18 @@ describe 'Recipe photos' do
             page.should have_link 'Edit', :href => edit_recipe_recipe_photo_path(@recipe, photo) 
           end
         end
+
+        it "should update the recipe when the recipe photo image is changed" do
+          visit edit_recipe_path(@recipe)
+          click_link 'Edit'
+          current_path.should == edit_recipe_recipe_photo_path(@recipe, @photos.first)
+          page.attach_file('Image file', 'db/pictures/test1.jpg')
+          click_button 'Update'
+          @recipe.reload
+          current_path.should == edit_recipe_path(@recipe)
+          @recipe.recipe_photos.select{|photo| photo.image.current_path =~ /test1\.jpg/}.should have(1).items
+          # @recipe.recipe_photos.should include(:image => File.open('db/pictures/test1.jpg'))
+        end
       end
     end
 
