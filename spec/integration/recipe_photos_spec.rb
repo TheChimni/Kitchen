@@ -74,6 +74,13 @@ describe 'Recipe photos' do
           @recipe.recipe_photos.select{|photo| photo.image.current_path =~ /test1\.jpg/}.should have(1).items
           # @recipe.recipe_photos.should include(:image => File.open('db/pictures/test1.jpg'))
         end
+
+        it "should remove a photo from the recipe when the delete link is clicked" do
+          visit edit_recipe_path(@recipe)
+          click_link 'Delete'
+          current_path.should == edit_recipe_path(@recipe)
+          @recipe.recipe_photos.should have(2).items
+        end
       end
     end
 

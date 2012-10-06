@@ -26,6 +26,10 @@ class RecipePhotosController < ApplicationController
   end
 
   def destroy
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipe_photo = RecipePhoto.find(params[:id])
+    @recipe_photo.destroy
+    redirect_to edit_recipe_path(@recipe)
   end
 
 end

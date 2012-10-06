@@ -27,7 +27,8 @@
     <div>
       <%= image_tag photo.image.extra_small.url %>
       <%= photo.title %>
-      <%= link_to 'Edit', edit_recipe_recipe_photo_path(@recipe, photo) %> 
+      <%= link_to 'Edit', edit_recipe_recipe_photo_path(@recipe, photo) %>
+      <%= link_to 'Delete', recipe_recipe_photo_path(@recipe, photo), :method => :delete, :confirm => "Are you sure?" %>
     </div>
     <% end %>
   </div>
