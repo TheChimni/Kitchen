@@ -444,7 +444,7 @@ ul.recipeList {
 
 //  How to get this?
 #social {
-  border-left: 2px solid $expForBorder;
+  border-left: 1px dashed #500606;
   padding-left: 20px;
   float: right;
   width: 500px;
@@ -460,11 +460,6 @@ ul.recipeList {
   // margin-left: 5px;
   // color: $contactUsBorder;
   // font-size: 130%;
-}
-
-#email .title {
-  padding: 20px 0 0;
-  margin-left: 105px;
 }
 
 #social article img {

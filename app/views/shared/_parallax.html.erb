@@ -24,7 +24,7 @@
       <div class='parallaxTitle'>Contact</div>
       <div class='parallaxSubtitle'>Don't be shy tweet, email or call us - we love to talk about tasty grub</div>
       <div id='newsletterSignUp'>
-        <article class='title'>Still want to hear more from us? Sign up for our monthly newsletter :-)</article>
+        <article class='title'>Still want to hear more from us? Sign up for our monthly newsletter:</article>
         <article id='subscriptionFormContainer'>
           <%= render :partial => 'subscriptions/form' %>
         </article>
@@ -40,7 +40,13 @@
           </ul>
         </article>
         <article id='email'>
-          <div class='title'>Email us</div>
+          <%= link_to 'Email us', 'mailto:info@zanzaneet.com', :class => 'title' %>
+          <%= image_tag('email_logo.png', :size => '100x100', :alt => 'Email us') %>
+          <ul>
+            <li>
+              <%= link_to 'info@zanzaneet.com', 'mailto:info@zanzaneet.com' %>
+            </li>
+          </ul>
         </article>
       </div>
     </div>
