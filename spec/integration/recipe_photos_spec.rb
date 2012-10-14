@@ -26,7 +26,14 @@ describe 'Recipe photos' do
         page.should have_field('Image')
       end
 
-      it "should create a new photo when I fill out the form and submit it"
+      it "should create a new photo when I fill out the form and submit it" do
+        visit new_recipe_recipe_photo_path(@recipe)
+        fill_in 'Title', :with => 'tasty recipe'
+        attach_file('Image file', 'db/pictures/test1.jpg')
+        click_button 'Save'
+        current_path.should == edit_recipe_path(@recipe)
+
+      end
     end
   end
 

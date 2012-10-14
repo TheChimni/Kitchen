@@ -7,6 +7,16 @@ class RecipePhotosController < ApplicationController
   end
 
   def create
+    @recipe = Recipe.find(params[:recipe_id])
+    # @recipe_photo = RecipePhoto.new(params[:recipe_photo])
+    # @recipe_photo.recipe = @recipe
+    # @recipe_photo = @recipe.recipe_photos.build(params[:recipe_photo])
+    # if @recipe_photo.save
+    if @recipe.recipe_photos.create(params[:recipe_photo])
+      redirect_to edit_recipe_path(@recipe)
+    else
+      render :new
+    end
   end
 
   def edit
