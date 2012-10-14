@@ -1,20 +1,20 @@
 Recipe.destroy_all
 
 recipe1 = Recipe.create!(:title => 'Baingan ka Bharta',
-               :synopsis => 'Scrumptious smoked aubergine mash made from simple ingredients, a popular choice of North India',
+               :synopsis => 'Scrumptious smoked aubergine mash made from simple ingredients, a popular choice of North India.',
                :ingredient_list => 'secret',
                :preparation_method => 'secret')
 RecipePhoto.create!(:recipe => recipe1, :title => 'Baingan ka Bharta', :image => File.open('db/pictures/baingankabharta1.jpg'))
 RecipePhoto.create!(:recipe => recipe1, :title => 'Baingan ka Bharta', :image => File.open('db/pictures/baingankabharta2.jpg'))
 
 recipe2 = Recipe.create!(:title => 'Dal Makhni',
-               :synopsis => "Mixture of various lentils with a touch of cream, this traditional recipe is a well kept secret of every 'Daadiji' (granny) in a Punjabi family",
+               :synopsis => "Mixture of various lentils and a touch of cream - a well kept secret (or Not?) of every 'Dadiji' in a Punjabi family.",
                :ingredient_list => 'secret',
                :preparation_method => 'secret')
 RecipePhoto.create!(:recipe => recipe2, :title => 'Dal Makhni', :image => File.open('db/pictures/IMG_2785.jpg'))
 
 recipe3 = Recipe.create!(:title => 'Bhindi',
-               :synopsis => 'Bhindi (Okra) with just green chillies, garlic, and tomatoes (optional), cooked all across India but this is my take on it',
+               :synopsis => 'My take on Bhindi (Okra) - cooked with simple ingredients like green chillies, garlic, tomatoes and peanuts (optional).',
                :ingredient_list => 'secret',
                :preparation_method => 'secret')
 RecipePhoto.create!(:recipe => recipe3, :title => 'Bhindi', :image => File.open('db/pictures/IMG_2787.jpg'))
@@ -88,7 +88,7 @@ recipe5_preparation_method =
  1. To serve, put the salmon onto a plate with blushed wine tomatoes, steamed seaweed and roasted potatoes. Drizzle the sauce vierge around the outside of the plate."
 
 recipe5 = Recipe.create!(:title => 'Salmon avec sauce vierge',
-               :synopsis => "Mouthwatering and healthy salmon dish drizzled with sauce vierge and sea weed as a delicious accompaniment to go with - just what you need on a quiet friday night in.",
+               :synopsis => "Mouthwatering and healthy Salmon dish drizzled with sauce vierge and Seaweed as a delicious accompaniment to go with it.",
                :description => recipe5_description,
                :ingredient_list => recipe5_ingredient_list,
                :preparation_method => recipe5_preparation_method)
