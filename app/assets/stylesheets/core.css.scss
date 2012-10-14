@@ -137,6 +137,7 @@ section {
 label {
 	display: block;
 	margin: 10px 0 4px;
+  font-weight: normal;
 }
 
 label > span {
@@ -154,15 +155,22 @@ input, textarea {
   border-radius: 3px;
 }
 
+textarea {
+	height: 100px;
+	width: 800px;
+}
+
+textarea.medium {
+  min-height: 200px;
+}
+
+textarea.large {
+  min-height: 300px;
+}
 
 input[type='text'], input[type='email'], input[type='password'] {
   padding: 10px;
   width: 500px;
-}
-
-textarea {
-	height: 100px;
-	width: 800px;
 }
 
 .formActions {

@@ -12,15 +12,15 @@
   </div>
   <div>
     <%= form.label :description, 'Description' %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, :class => :medium %>
   </div>
   <div>
     <%= form.label :ingredient_list, 'Ingredients' %>
-    <%= form.text_area :ingredient_list %>
+    <%= form.text_area :ingredient_list, :class => :large %>
   </div>
   <div>
     <%= form.label :preparation_method, 'Preparation method' %>
-    <%= form.text_area :preparation_method %>
+    <%= form.text_area :preparation_method, :class => :large %>
   </div>
   <div>
     <% @recipe.recipe_photos.each do |photo| %>
