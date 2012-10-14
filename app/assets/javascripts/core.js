@@ -252,11 +252,11 @@ $(function() {
   var defaults = {};
   $.fn.parallax = function(options) {
     var opts = $.extend({}, defaults, options);
-    return this.each(function() 
+    return this.each(function()
     {
       var $this = $(this);
       if (this.parallax) { return false; }
-      var self = { 
+      var self = {
         initialize: function() {
           self.container = $this;
           // find the panels
@@ -264,8 +264,11 @@ $(function() {
           // set the background images for each panel
           panels.each(function(index, panel) {
             var $panel = $(panel);
-            $panel.css({'background-image': "url('images/" + $panel.data('background') + "')",
-              'background-position': '0px ' + panel.offsetTop/8 + 'px'});
+            var background = $panel.data('background');
+            if (background) {
+              $panel.css({'background-image': "url('images/" + $panel.data('background') + "')",
+                'background-position': '0px ' + panel.offsetTop/8 + 'px'});
+            }
           });
           // hook the scroll event
           $(document).scroll(function(event) {

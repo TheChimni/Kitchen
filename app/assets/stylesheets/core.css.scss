@@ -9,6 +9,7 @@ $greytransparent: rgba(64,64,64,0.5);
 $buttonbackground: #006DCC;
 $extralightgrey : rgb(229, 229, 229);
 $orange: rgb(255, 165, 0);
+$cream: rgb(249, 244, 230);
 
 // Contact Us colour palette
 $maroon: rgb(89, 15, 15);
@@ -235,7 +236,7 @@ input[type='text'], input[type='email'], input[type='password'] {
   position: relative;
   width: 1000px;
   height: 800px;
-  left: 100px;
+  left: 150px;
   overflow: hidden;
 }
 
@@ -254,7 +255,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 @mixin carouselText {
   position: relative;
   left: 0px;
-  color: $white;
+  /*color: $white;*/
   padding: 5px;
 }
 
@@ -272,7 +273,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 .carouselItem .recipeSecondaryImage img, .carouselItem .recipeImage img {
-  box-shadow: 0 0 6px 6px $maroon;
+  /*box-shadow: 0 0 2px 2px #333;*/
 }
 
 .carouselItem .recipeSecondaryImage {
@@ -283,20 +284,22 @@ input[type='text'], input[type='email'], input[type='password'] {
 
 .carouselItem .recipeSynopsis {
   padding: 10px;
-  color: $white;
   font-size: 150%;
 }
 
 .carouselItem .recipeMoreLink {
-  background: url("/assets/button-bg.png") 0 0 no-repeat;
   display: inline-block;
-  width: 84px;
-  height: 84px;
+  border-radius: 61px;
+  width: 80px;
+  height: 56px;
   text-align: center;
-  padding: 20px 0 0 0;
+  padding: 32px 20px;
   font-size: 130%;
   text-decoration: none;
-  color: $orange;
+  color: $white;
+	background-color: rgba(255, 165, 0, 0.75);
+  position: relative;
+  left: 50px;
 }
 
 // .carouselTitle {
@@ -314,20 +317,20 @@ input[type='text'], input[type='email'], input[type='password'] {
 .carouselButton {
 	top: 40%;
 	position: absolute;
-	width: 30px;
-	height: 30px;
-  border-radius: 16px;
-	border: 2px solid $white;
-	font-size: 110%;
+	width: 60px;
+	height: 60px;
+  border-radius: 32px;
+	font-size: 150%;
 	color: $white;
-	line-height: 28px;
+	background-color: rgba(255, 165, 0, 0.75);
+	line-height: 56px;
 	text-align: center;
-	cursor: default;
+	cursor: pointer;
   z-index: 4;
 }
 
-.carouselButton:hover {
-	background-color: rgba(255, 255, 255, 0.15);
+.recipeMoreLink:hover, .carouselButton:hover {
+	background-color: $orange;
 }
 
 .left {
@@ -335,7 +338,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 .right {
-	left: 50px;
+	left: 80px;
 }
 
 .recipeSearch {
@@ -438,6 +441,11 @@ ul.recipeList {
 .parallaxPanel .container{
   padding: 50px 0 0;
   min-height: 800px;
+}
+
+.parallaxPanelLight {
+  background-color: $cream;
+  color: #444;
 }
 
 .parallaxTitle {
