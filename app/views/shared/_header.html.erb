@@ -1,25 +1,6 @@
-<header id="banner">
-  <div>
+<header id='header'>
+  <div class='container'>
     <h1 class='siteTitle'>Zanzaneet</h1>
-    <nav id="menu">
-      <ul>
-        <li><%= link_to 'Home', root_path, :'data-section' => :home %></li>
-        <li><%= link_to 'Recipes', recipes_path, :'data-section' => :recipes %></li>
-        <li><%= link_to 'Classes', classes_path, :'data-section' => :classes %></li>
-        <li class='right'>
-          <% if user_signed_in? %>
-            <%= link_to 'Logout', destroy_user_session_path, :'data-section' => :login, :method => 'delete' %>
-          <% else %>
-            <%= link_to 'Login', new_user_session_path, :'data-section' => :login %>
-          <% end %>
-        </li>
-      </ul>
-    </nav>
-    <% if flash[:notice] %>
-      <p class='notice'><%= flash[:notice] %></p>
-    <% end %>
-    <% if flash[:error] %>
-      <p class='error'><%= flash[:error] %></p>
-    <% end %>
+    <h2 id='punchLine' class='parallaxSubtitle'>Where Indian cooking comes home...</h2>
   </div>
 </header>

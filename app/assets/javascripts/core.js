@@ -10,6 +10,19 @@ $(function() {
   // $('.watermark').watermark();
 });
 
+$(function() {
+  var $banner = $('#banner');
+  var bannerOffset = $banner[0].offsetTop;
+  $(document).scroll(function(event) {
+    var offset = $(window).scrollTop();
+    if (offset > bannerOffset) {
+      $banner.addClass('fixed');
+    } else {
+      $banner.removeClass('fixed');
+    }
+  });
+});
+
 // Plugin for menu
 (function($) {
   var defaults = {};
@@ -252,7 +265,7 @@ $(function() {
   var defaults = {};
   $.fn.parallax = function(options) {
     var opts = $.extend({}, defaults, options);
-    return this.each(function()
+    return this.each(function() 
     {
       var $this = $(this);
       if (this.parallax) { return false; }
@@ -286,3 +299,5 @@ $(function() {
     return this;
   };
 })(jQuery);
+
+

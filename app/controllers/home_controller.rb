@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @show_header = true
     @recipes = Recipe.all
     @subscription = Subscription.new
     begin
