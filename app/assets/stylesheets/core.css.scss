@@ -477,12 +477,11 @@ ul.recipeList {
 
 #social article {
   height: 165px;
-  border-bottom: 1px dashed $expForBorder;
-  padding: 20px 0 0 0;
+  padding: 40px 0 0 0;
+}
 
-  // margin-left: 5px;
-  // color: $contactUsBorder;
-  // font-size: 130%;
+#social article:first-child {
+  border-bottom: 1px dashed $expForBorder;
 }
 
 #social article img {
@@ -530,7 +529,8 @@ ul.recipeList {
 }
 
 #social article#email ul {
-  padding: 18px 10px;
+  padding: 16px 10px;
+  font-size: 110%;
 }
 
 #contactPanel .title {
@@ -548,6 +548,14 @@ ul.recipeList {
   width: 560px;
 }
 
+#newsletterSignUp article {
+  padding: 20px 0 0 0;
+}
+
+#newsletterSignUp article:first-child {
+  padding: 40px 0 0 0;
+}
+
 #subscriptionFormContainer {
   color: $white;
   font-size: 100%;
@@ -555,5 +563,10 @@ ul.recipeList {
 
 .subscribeButton {
   margin: 0 20px 0 0;
+  padding: 10px;
+}
+
+.subscribeButton:hover {
+  background-color: $orange;
 }
 
