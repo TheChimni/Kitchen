@@ -469,7 +469,7 @@ ul.recipeList {
   border-left: 1px dashed #500606;
   padding-left: 20px;
   float: right;
-  width: 500px;
+  width: 560px;
   margin-top: 70px;
   color: $white;
   height: 400px;
@@ -478,6 +478,7 @@ ul.recipeList {
 #social article {
   height: 165px;
   border-bottom: 1px dashed $expForBorder;
+  padding: 20px 0 0 0;
 
   // margin-left: 5px;
   // color: $contactUsBorder;
@@ -508,10 +509,10 @@ ul.recipeList {
 /* override the Browser default styles for <a> embedded in Tweets within the contact panel */
 #social article > ul a {
   text-decoration: none;
-  color: $contactUsBorder;
+  color: $white;
 }
 
-#social article > ul:before {
+#social article#twitter > ul:before {
   position: absolute;
   top: 10px;
   left: -20px;
@@ -521,6 +522,15 @@ ul.recipeList {
   width: 0px;
   height: 0px;
   content: " ";
+}
+
+#social article#email img {
+  float: left;
+  margin-top: 21px;
+}
+
+#social article#email ul {
+  padding: 18px 10px;
 }
 
 #contactPanel .title {
@@ -535,7 +545,7 @@ ul.recipeList {
   padding-left: 20px;
   padding-right: 20px;
   height: 400px;
-  width: 620px;
+  width: 560px;
 }
 
 #subscriptionFormContainer {
