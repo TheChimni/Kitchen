@@ -477,7 +477,7 @@ ul.recipeList {
 
 #social article {
   height: 165px;
-  padding: 40px 0 0 0;
+  padding: 40px 0 10px 0;
 }
 
 #social article:first-child {
@@ -549,11 +549,20 @@ ul.recipeList {
 }
 
 #newsletterSignUp article {
-  padding: 20px 0 0 0;
+  padding: 10px 0 0 0;
+}
+
+#newsletterSignUp label {
+  font-weight: lighter;
+  font-size: 110%;
 }
 
 #newsletterSignUp article:first-child {
   padding: 40px 0 0 0;
+}
+
+#newsletterSignUp form div.field {
+  padding: 10px 0 0 0;
 }
 
 #subscriptionFormContainer {
