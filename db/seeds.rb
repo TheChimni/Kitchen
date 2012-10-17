@@ -93,8 +93,8 @@ recipe5 = Recipe.create!(:title => 'Salmon avec sauce vierge',
                :ingredient_list => recipe5_ingredient_list,
                :preparation_method => recipe5_preparation_method)
 RecipePhoto.create!(:recipe => recipe5, :title => 'Salmon avec sauce vierge ', :image => File.open('db/pictures/salmoncloseup1.jpg'))
-RecipePhoto.create!(:recipe => recipe5, :title => 'Salmon avec sauce vierge ', :image => File.open('db/pictures/salmonweed1.jpg'))
 RecipePhoto.create!(:recipe => recipe5, :title => 'Salmon avec sauce vierge ', :image => File.open('db/pictures/wholeplate.jpg'))
+RecipePhoto.create!(:recipe => recipe5, :title => 'Salmon avec sauce vierge ', :image => File.open('db/pictures/salmonweed1.jpg'))
 
 User.destroy_all
 User.create!(:email => 'rieethaa@zanzaneet.com', :password => 'secret', :password_confirmation => 'secret')

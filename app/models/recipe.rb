@@ -16,6 +16,10 @@ class Recipe < ActiveRecord::Base
     recipe_photos.first
   end
 
+  def secondary_photo
+    recipe_photos[1]
+  end
+
   private
   def save_ingredients
     ingredients.clear
