@@ -37,7 +37,7 @@ shepu_ingredient_list =
 shepu_preparation_method =
 "1. Sort each bunch of Dill leaving the bigger stem aside but picking the leaves and delicate stalk. Collect the leafy parts with their delicate stalks in a bowl. This is 'sorting' the dill i.e seperating gritty and chunky stems from the tasty leaves and stalks.
 
-1. Coarsly chop the collected stalks with leaves and put them a bowl and pour some cold water in it to wash out all the grit. I generally pour the water down the drain and repeat the process twice but leave the water in bowl the last time.
+1. Coarsely chop the collected stalks with leaves and put them a bowl and pour some cold water in it to wash out all the grit. I generally pour the water down the drain and repeat the process twice but leave the water in bowl the last time.
 
 1. Chop some green chillies and garlic.
 
