@@ -15,6 +15,8 @@ $cream: rgb(249, 244, 230);
 $maroon: rgb(89, 15, 15);
 $lightMaroon: rgb(162, 66, 66);
 $contactUsBorder: rgb(213, 195, 153);
+$contactBackground: rgb(103, 82, 65);
+$okayishBackground: rgb(217, 117, 112);
 
 // Experimental
 $darkblue: rgb(0, 51, 153) 9;
@@ -25,6 +27,11 @@ $lightBeige: rgb(255, 255, 238);
 $exp1: rgb(237, 237, 225);
 $expForBorder: rgb(80, 6, 6);
 $mandatory: rgb(156,141,108);
+$dullTeal: rgb(113, 157, 152); 
+
+// menu bar
+$lightOrangeBrownTransparent: rgba(166, 133, 105, 0.5);
+$dullDarkBrown: rgb(103, 82, 65);  
 
 $watermark: rgb(112, 111, 111);
 $base_font: lighter 13pt 'Gill Sans', 'Helvetica Neue', sans-serif;
@@ -68,8 +75,8 @@ body, html {
 
 #banner {
   padding: 5px;
-  background: $greytransparent;
-  color: $white;
+  background: $lightOrangeBrownTransparent;
+  // color: $white;
   height: 40px;
   z-index: 5;
   width: 100%;
@@ -121,7 +128,8 @@ body, html {
 	display: block;
 	width: 100px;
 	text-decoration: none;
-	color: $white;
+	// color: $white;
+  color: $dullDarkBrown;
 	font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 	padding: 10px 0 0;
 	height: 25px;
@@ -132,7 +140,7 @@ body, html {
 }
 
 #menu li > a.selected {
-  text-decoration: underline;
+  text-decoration: overline;
   color: $white;
 }
 
@@ -464,7 +472,10 @@ ul.recipeList {
   font-size: 150%;
 }
 
-//  How to get this?
+#contactPanel {
+  background-color: $contactBackground;
+}
+
 #social {
   border-left: 1px dashed #500606;
   padding-left: 20px;
