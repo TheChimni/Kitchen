@@ -15,8 +15,9 @@ $cream: rgb(249, 244, 230);
 $maroon: rgb(89, 15, 15);
 $lightMaroon: rgb(162, 66, 66);
 $contactUsBorder: rgb(213, 195, 153);
-$contactBackground: rgb(103, 82, 65);
-$okayishBackground: rgb(217, 117, 112);
+$okayishBackground: rgb(103, 82, 65);
+$contactBackground: rgb(213, 101, 64);
+$contactTurquoise: rgb(57, 169, 164); 
 
 // Experimental
 $darkblue: rgb(0, 51, 153) 9;
@@ -343,7 +344,8 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 .recipeMoreLink:hover, .carouselButton:hover {
-	background-color: $orange;
+	// background-color: $orange;
+  background-color: $contactBackground;
 }
 
 .left {
