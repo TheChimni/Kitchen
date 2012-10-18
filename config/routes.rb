@@ -4,6 +4,7 @@ Kitchen::Application.routes.draw do
   resources :recipes do
     collection do
       get 'search'
+      get 'doLookup'
     end
     resources :recipe_photos, :except => [:index, :show]
   end

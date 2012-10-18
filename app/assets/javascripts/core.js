@@ -11,6 +11,13 @@ $(function() {
 });
 
 $(function() {
+  $('input#search').autocomplete({
+    source: '/recipes/doLookup',
+    minLength: 2
+  });
+});
+
+$(function() {
   var $banner = $('#banner');
   var bannerOffset = $banner[0].offsetTop;
   $(document).scroll(function(event) {
