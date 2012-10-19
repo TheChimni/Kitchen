@@ -12,7 +12,7 @@ $(function() {
 
 $(function() {
   $('input#search').autocomplete({
-    source: '/recipes/doLookup',
+    source: '/recipes/lookup',
     minLength: 2
   });
 });

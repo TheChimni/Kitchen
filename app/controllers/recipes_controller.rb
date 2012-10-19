@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show, :search, :doLookup]
+  before_filter :authenticate_user!, :except => [:index, :show, :search, :lookup]
 
   def index
     # using kaminari for paging
@@ -19,11 +19,11 @@ class RecipesController < ApplicationController
     return render :partial => 'recipe_search' if request.xhr?
   end
 
-  def doLookup
+  def lookup
     search_term = params[:term]
-    # raise search_term.inspect
-    Recipe.select("title").where("title ILIKE ?","%#{search_term}%").to_json && Ingredient.select("title").where("title ILIKE ?","%#{search_term}%").to_json
-    # return render :nothing => true
+    matches = Recipe.where("title ILIKE ?","%#{search_term}%").pluck(:title)
+    matches << Ingredient.where("title ILIKE ?","%#{search_term}%").pluck(:title)
+    render :json => matches
   end
 
 
