@@ -20,14 +20,16 @@ $(function() {
 $(function() {
   var $banner = $('#banner');
   var bannerOffset = $banner[0].offsetTop;
-  $(document).scroll(function(event) {
+  var callback = function(event) {
     var offset = $(window).scrollTop();
-    if (offset > bannerOffset) {
+    if ($('#header').length == 0 || offset > bannerOffset) {
       $banner.addClass('fixed');
     } else {
       $banner.removeClass('fixed');
     }
-  });
+  }
+  $(document).scroll(callback);
+  callback();
 });
 
 // Plugin for menu
