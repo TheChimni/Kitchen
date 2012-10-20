@@ -4,20 +4,20 @@ recipe1 = Recipe.create!(:title => 'Baingan ka Bharta',
                :synopsis => 'Scrumptious smoked aubergine mash made from simple ingredients, a popular choice of North India.',
                :ingredient_list => 'secret',
                :preparation_method => 'secret')
-RecipePhoto.create!(:recipe => recipe1, :title => 'Baingan ka Bharta', :image => File.open('db/pictures/baingankabharta1.jpg'))
-RecipePhoto.create!(:recipe => recipe1, :title => 'Baingan ka Bharta', :image => File.open('db/pictures/baingankabharta2.jpg'))
+RecipePhoto.create!(:recipe => recipe1, :title => 'Baingan ka Bharta', :image => File.open('db/pictures/baingankabharta1.jpeg'))
+RecipePhoto.create!(:recipe => recipe1, :title => 'Baingan ka Bharta', :image => File.open('db/pictures/baingankabharta2.jpeg'))
 
 recipe2 = Recipe.create!(:title => 'Dal Makhni',
                :synopsis => "Mixture of various lentils and a touch of cream - a well kept secret (or Not?) of every 'Dadiji' in a Punjabi family.",
                :ingredient_list => 'secret',
                :preparation_method => 'secret')
-RecipePhoto.create!(:recipe => recipe2, :title => 'Dal Makhni', :image => File.open('db/pictures/IMG_2785.jpg'))
+RecipePhoto.create!(:recipe => recipe2, :title => 'Dal Makhni', :image => File.open('db/pictures/IMG_2785.jpeg'))
 
 recipe3 = Recipe.create!(:title => 'Bhindi',
                :synopsis => 'My take on Bhindi (Okra) - cooked with simple ingredients like green chillies, garlic, tomatoes and peanuts (optional).',
                :ingredient_list => 'secret',
                :preparation_method => 'secret')
-RecipePhoto.create!(:recipe => recipe3, :title => 'Bhindi', :image => File.open('db/pictures/IMG_2787.jpg'))
+RecipePhoto.create!(:recipe => recipe3, :title => 'Bhindi', :image => File.open('db/pictures/IMG_2787.jpeg'))
 
 shepu_description =
 "\"Zanzaneet\" is all about rustic home cooking with fresh and simple inredients just as it's cooked at home - with less faffing about with loads of ingredients but more emphasis given on trying to retain the distinctive flavour of each ingredient being used in the food. Whilst doing this, I like to make sure the dish comes out flavourful and spicy as it is made across India which essentially is the theme of most of my recipes - 'Zanzaneet' meaning 'spicy, vibrant yet full of flavour'. Hence the name 'Zanzaneet' of this website. Very apt to my style of cooking. 
@@ -92,9 +92,9 @@ recipe5 = Recipe.create!(:title => 'Salmon avec sauce vierge',
                :description => recipe5_description,
                :ingredient_list => recipe5_ingredient_list,
                :preparation_method => recipe5_preparation_method)
-RecipePhoto.create!(:recipe => recipe5, :title => 'Salmon avec sauce vierge ', :image => File.open('db/pictures/salmoncloseup1.jpg'))
-RecipePhoto.create!(:recipe => recipe5, :title => 'Salmon avec sauce vierge ', :image => File.open('db/pictures/wholeplate.jpg'))
-RecipePhoto.create!(:recipe => recipe5, :title => 'Salmon avec sauce vierge ', :image => File.open('db/pictures/salmonweed1.jpg'))
+RecipePhoto.create!(:recipe => recipe5, :title => 'Salmon avec sauce vierge ', :image => File.open('db/pictures/salmoncloseup1.jpeg'))
+RecipePhoto.create!(:recipe => recipe5, :title => 'Salmon avec sauce vierge ', :image => File.open('db/pictures/wholeplate.jpeg'))
+RecipePhoto.create!(:recipe => recipe5, :title => 'Salmon avec sauce vierge ', :image => File.open('db/pictures/salmonweed1.jpeg'))
 
 User.destroy_all
 User.create!(:email => 'rieethaa@zanzaneet.com', :password => 'secret', :password_confirmation => 'secret')
