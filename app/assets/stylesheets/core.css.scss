@@ -16,7 +16,7 @@ $maroon: rgb(89, 15, 15);
 $lightMaroon: rgb(162, 66, 66);
 $contactUsBorder: rgb(213, 195, 153);
 $okayishBackground: rgb(103, 82, 65);
-$contactBackground: rgb(213, 101, 64);
+$salmon4: rgb(213, 101, 64);
 $contactTurquoise: rgb(57, 169, 164);
 
 // Experimental
@@ -41,6 +41,11 @@ $champagne5: rgb(103, 82, 65);
 $champagne4_50: rgba(166, 133, 105, 0.5);
 $champagne5_50: rgba(103, 82, 65, 0.5);
 $champagne4_80: rgba(166, 133, 105, 0.8);
+
+$salmon4: rgb(213, 101, 64);
+$salmon5: rgb(168, 78, 51);
+$salmon6: rgb(135, 64, 42);
+$salmon7: rgb(72, 34, 22);
 
 $watermark: rgb(112, 111, 111);
 $base_font: lighter 13pt 'Gill Sans', 'Helvetica Neue', sans-serif;
@@ -100,7 +105,7 @@ body, html {
 
 #header .siteTitle {
   font: 300% SamarkanNormal, "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  color: $orange;
+  color: $salmon4;
   margin: -28px 0;
 }
 
@@ -381,7 +386,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 
 .recipeMoreLink:hover, .carouselButton:hover {
 	// background-color: $orange;
-  background-color: $contactBackground;
+  background-color: $salmon4;
 }
 
 .left {
@@ -511,11 +516,11 @@ ul.recipeList {
 }
 
 #contactPanel {
-  background-color: $contactBackground;
+  background-color: $salmon5;
 }
 
 #social {
-  border-left: 1px dashed #500606;
+  border-left: 1px solid $salmon6;
   padding-left: 20px;
   float: right;
   width: 560px;
@@ -530,7 +535,7 @@ ul.recipeList {
 }
 
 #social article:first-child {
-  border-bottom: 1px dashed $expForBorder;
+  border-bottom: 1px dashed $salmon6;
 }
 
 #social article img {
@@ -547,7 +552,7 @@ ul.recipeList {
 #social article > ul {
   position: relative;
   color: $white;
-  background-color: $maroon;
+  background-color: $salmon6;
   list-style: none;
   margin-left: 105px;
   width: 360px;
@@ -564,7 +569,7 @@ ul.recipeList {
   position: absolute;
   top: 10px;
   left: -20px;
-  border-color: transparent $maroon $maroon transparent;
+  border-color: transparent $salmon6 $salmon6 transparent;
   border-style: solid;
   border-width: 10px;
   width: 0px;
