@@ -76,22 +76,24 @@ body, html {
 }
 
 #header {
-  min-height: 160px;
+  height: 110px;
   background-color: $white;
 }
 
 #banner {
   padding: 5px;
   background: $champagne4_50;
-  // color: $white;
   height: 40px;
   z-index: 5;
   width: 100%;
+  position: relative;
+  bottom: -50px;
 }
 
-.fixed {
+#banner.fixed {
   top: 0px;
   position: fixed;
+  bottom: 0px;
 }
 
 #header .siteTitle {
