@@ -127,6 +127,12 @@ body, html {
 
 #menu li {
 	float: left;
+  padding: 0 15px;
+}
+
+#menu li:first-child {
+	float: left;
+  padding: 0 15px 0 0;
 }
 
 #menu li.right {
@@ -135,7 +141,7 @@ body, html {
 
 #menu li > a {
 	display: block;
-	width: 100px;
+	/*width: 100px;*/
 	text-decoration: none;
   color: $champagne0;
 	font: 110% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
@@ -148,7 +154,8 @@ body, html {
 }
 
 #menu li > a.selected {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
+  border-bottom: 1px solid $white;
   color: $white;
 }
 
