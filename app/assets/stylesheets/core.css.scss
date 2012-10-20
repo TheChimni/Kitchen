@@ -17,7 +17,7 @@ $lightMaroon: rgb(162, 66, 66);
 $contactUsBorder: rgb(213, 195, 153);
 $okayishBackground: rgb(103, 82, 65);
 $contactBackground: rgb(213, 101, 64);
-$contactTurquoise: rgb(57, 169, 164); 
+$contactTurquoise: rgb(57, 169, 164);
 
 // Experimental
 $darkblue: rgb(0, 51, 153) 9;
@@ -28,11 +28,17 @@ $lightBeige: rgb(255, 255, 238);
 $exp1: rgb(237, 237, 225);
 $expForBorder: rgb(80, 6, 6);
 $mandatory: rgb(156,141,108);
-$dullTeal: rgb(113, 157, 152); 
+$dullTeal: rgb(113, 157, 152);
 
-// menu bar
-$lightOrangeBrownTransparent: rgba(166, 133, 105, 0.5);
-$dullDarkBrown: rgb(103, 82, 65);  
+// champagne
+$champagne0: rgb(255, 240, 229);
+$champagne1: rgb(242, 215, 191);
+$champagne2: rgb(230, 185, 145);
+$champagne3: rgb(205, 164, 129);
+$champagne4: rgb(166, 133, 105);
+$champagne5: rgb(103, 82, 65);
+
+$champagne4_50: rgba(166, 133, 105, 0.5);
 
 $watermark: rgb(112, 111, 111);
 $base_font: lighter 13pt 'Gill Sans', 'Helvetica Neue', sans-serif;
@@ -76,7 +82,7 @@ body, html {
 
 #banner {
   padding: 5px;
-  background: $lightOrangeBrownTransparent;
+  background: $champagne4_50;
   // color: $white;
   height: 40px;
   z-index: 5;
@@ -129,15 +135,14 @@ body, html {
 	display: block;
 	width: 100px;
 	text-decoration: none;
-	// color: $white;
-  color: $dullDarkBrown;
+  color: $champagne0;
 	font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 	padding: 10px 0 0;
 	height: 25px;
 }
 
 #menu li > a:hover {
-  color: $white;
+	color: $white;
 }
 
 #menu li > a.selected {

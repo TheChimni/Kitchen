@@ -34,11 +34,12 @@ $(function() {
 (function($) {
   var defaults = {};
   $.fn.menu = function(options) {
+    console.log(this);
     var opts = $.extend({}, defaults, options);
-    return this.each(function() 
+    return this.each(function()
     {
       if (this.menu) { return false; }
-      var self = { 
+      var self = {
         initialize: function()
         {
           var section = $('body').data('section');
