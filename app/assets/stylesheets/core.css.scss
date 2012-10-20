@@ -39,6 +39,7 @@ $champagne4: rgb(166, 133, 105);
 $champagne5: rgb(103, 82, 65);
 
 $champagne4_50: rgba(166, 133, 105, 0.5);
+$champagne4_80: rgba(166, 133, 105, 0.8);
 
 $watermark: rgb(112, 111, 111);
 $base_font: lighter 13pt 'Gill Sans', 'Helvetica Neue', sans-serif;
@@ -109,7 +110,6 @@ body, html {
   z-index: 5;
   width: 100%
 }
-
 
 #menu {
   margin: 0 auto;
@@ -250,6 +250,19 @@ input[type='text'], input[type='email'], input[type='password'] {
   color: #FFFFFF;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 };
+
+.homeContent {
+  float: left;
+  width: 500px;
+  background-color: $champagne4_80;
+  padding: 40px;
+  font-size: 140%;
+  margin: 200px 0 0 50px;
+}
+
+.homeContent h1 {
+  color: $white;
+}
 
 #carousel {
 	/*Need to have relative position here as all the other carousel items inside this container will be relative to this?*/
