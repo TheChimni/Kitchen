@@ -136,7 +136,7 @@ body, html {
 	width: 100px;
 	text-decoration: none;
   color: $champagne0;
-	font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+	font: 110% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 	padding: 10px 0 0;
 	height: 25px;
 }
@@ -146,7 +146,7 @@ body, html {
 }
 
 #menu li > a.selected {
-  text-decoration: overline;
+  text-decoration: underline;
   color: $white;
 }
 
