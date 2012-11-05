@@ -3,7 +3,7 @@ $(function() {
   }
   var menuChangeHandler = function() {
   }
-  window.menu = $('#menu').menu();
+  window.menu = $('#menu').homeMenu();
   window.carousel = $('#carousel').carousel();
   $('.markdownInplaceEditor').markdownInplaceEditor();
   $('#parallax').parallax();
@@ -35,12 +35,11 @@ $(function() {
 // Plugin for menu
 (function($) {
   var defaults = {};
-  $.fn.menu = function(options) {
-    console.log(this);
+  $.fn.homeMenu = function(options) {
     var opts = $.extend({}, defaults, options);
     return this.each(function()
     {
-      if (this.menu) { return false; }
+      if (this.homeMenu) { return false; }
       var self = {
         initialize: function()
         {
@@ -49,7 +48,7 @@ $(function() {
           menuItem.addClass('selected');
         }
       };
-      this.menu = self;
+      this.homeMenu = self;
       self.initialize();
     });
     return this;
