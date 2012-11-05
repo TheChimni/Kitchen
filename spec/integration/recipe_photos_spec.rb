@@ -29,7 +29,7 @@ describe 'Recipe photos' do
       it "should create a new photo when I fill out the form and submit it" do
         visit new_recipe_recipe_photo_path(@recipe)
         fill_in 'Title', :with => 'tasty recipe'
-        attach_file('Image file', 'db/pictures/test1.jpg')
+        attach_file('Image file', 'db/pictures/test1.jpeg')
         click_button 'Save'
         current_path.should == edit_recipe_path(@recipe)
 
@@ -48,7 +48,7 @@ describe 'Recipe photos' do
       @photos << RecipePhoto.create!(:recipe => @recipe, :title => 'test3', :image => File.open('db/pictures/test.jpeg'))
     end
 
-    describe "Viewing photos on the show page" do
+    describe "Viewinge photos on the show page" do
 
       it 'should show the photos' do
         pending 'visit the show page for the recipe and check that the photos are displayed'
@@ -74,11 +74,11 @@ describe 'Recipe photos' do
           visit edit_recipe_path(@recipe)
           click_link 'Edit'
           current_path.should == edit_recipe_recipe_photo_path(@recipe, @photos.first)
-          page.attach_file('Image file', 'db/pictures/test1.jpg')
+          page.attach_file('Image file', 'db/pictures/test1.jpeg')
           click_button 'Update'
           @recipe.reload
           current_path.should == edit_recipe_path(@recipe)
-          @recipe.recipe_photos.select{|photo| photo.image.current_path =~ /test1\.jpg/}.should have(1).items
+          @recipe.recipe_photos.select{|photo| photo.image.current_path =~ /test1\.jpeg/}.should have(1).items
           # @recipe.recipe_photos.should include(:image => File.open('db/pictures/test1.jpg'))
         end
 
