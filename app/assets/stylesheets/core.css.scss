@@ -179,6 +179,10 @@ label {
   font-weight: normal;
 }
 
+label.inline {
+	display: inline;
+}
+
 label > span {
   color: $mandatory;
   margin-left: 5px;
