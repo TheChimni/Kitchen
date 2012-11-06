@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
   def lookup
     search_term = params[:term]
     matches = Recipe.where("title ILIKE ?","%#{search_term}%").pluck(:title)
-    matches << Ingredient.where("title ILIKE ?","%#{search_term}%").pluck(:title)
+    matches += Ingredient.where("title ILIKE ?","%#{search_term}%").pluck(:title)
     render :json => matches
   end
 

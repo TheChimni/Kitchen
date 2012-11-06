@@ -640,13 +640,16 @@ ul.recipeList {
 .ui-autocomplete {
   list-style: none;
   margin: 0;
-  padding: 10px 0;
+  padding: 0;
   width: 500px;
   max-height: 200px;
-  border: 1px solid $extralightgrey;
+  border: 1px solid #CCC;
   background-color: $white;
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .ui-autocomplete li {
