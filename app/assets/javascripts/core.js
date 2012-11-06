@@ -7,6 +7,7 @@ $(function() {
   window.carousel = $('#carousel').carousel();
   $('.markdownInplaceEditor').markdownInplaceEditor();
   $('#parallax').parallax();
+  $('.dots').photoScroller();
   // $('.watermark').watermark();
 });
 
@@ -16,6 +17,30 @@ $(function() {
     minLength: 2
   });
 });
+
+// Plugin for carousel on show recipe
+(function($) {
+  var defaults = {};
+  $.fn.photoScroller = function(options) {
+    var opts = $.extend({}, defaults, options);
+    return this.each(function() {
+      var $ul = $(this);
+      if (this.photoScroller) { return false; }
+      var self = {
+        initialize: function() {
+            $('a', $ul).click(function(e) {
+            $('#recipePhotoImage').attr('src', $(this).data('image-url'));
+            e.preventDefault();
+          });
+        }
+      };
+      this.photoScroller = self;
+      self.initialize();
+    });
+    return this;
+  };
+
+})(jQuery);
 
 $(function() {
   var $banner = $('#banner');
@@ -37,12 +62,10 @@ $(function() {
   var defaults = {};
   $.fn.homeMenu = function(options) {
     var opts = $.extend({}, defaults, options);
-    return this.each(function()
-    {
+    return this.each(function() {
       if (this.homeMenu) { return false; }
       var self = {
-        initialize: function()
-        {
+        initialize: function() {
           var section = $('body').data('section');
           var menuItem = $("a[data-section='" + section + "']");
           menuItem.addClass('selected');

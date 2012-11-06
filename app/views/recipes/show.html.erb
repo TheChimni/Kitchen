@@ -3,17 +3,13 @@
 
   <p><%= @recipe.synopsis %></p>
   <p><%= md_to_html @recipe.description %></p>
-  <%= image_tag @recipe.primary_photo.image.medium.url if @recipe.primary_photo %>
+  <%= image_tag @recipe.primary_photo.image.medium.url, :id => :recipePhotoImage if @recipe.primary_photo %>
   <ul class='dots'>
-
-    <!-- TODO: Create a loop to render the right number of dots -->
     <% @recipe.recipe_photos.each do |photo| %>
       <li>
-        <a class='filled_dot' href='#' data-image-url='<%= photo.image.medium.url %>'></a>
+        <a class='<%= photo == @recipe.primary_photo ? 'filledDot' : 'emptyDot' %>' href='#' data-image-url='<%= photo.image.medium.url %>'></a>
       </li>
     <% end %>
-      <!-- <a class='empty_dot' href='#'></a>
-      <a class='empty_dot' href='#'></a> -->
   </ul>
 
   <h3>Ingredients</h3>

@@ -464,6 +464,21 @@ ul.recipeList {
   padding: 10px 20px;
 }
 
+.dots a {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.emptyDot {
+  background-color: $grey;
+}
+
+.filledDot {
+  background-color: $darkgrey;
+}
+
 .pagination {
   text-align: right;
 }
