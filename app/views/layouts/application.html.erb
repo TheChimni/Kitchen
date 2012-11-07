@@ -12,7 +12,9 @@
 <%= render :partial => 'shared/header' if @show_header %>
 <%= render :partial => 'shared/menu' %>
 <section class='mainSection'>
-  <%= yield %>
+  <div class='content'>
+    <%= yield %>
+  </div>
 </section>
 </body>
 </html>

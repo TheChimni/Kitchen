@@ -7,7 +7,7 @@ $(function() {
   window.carousel = $('#carousel').carousel();
   $('.markdownInplaceEditor').markdownInplaceEditor();
   $('#parallax').parallax();
-  $('.dots').photoScroller();
+  $('.dotNav ul').photoScroller();
   // $('.watermark').watermark();
 });
 
@@ -30,7 +30,10 @@ $(function() {
         initialize: function() {
             $('a', $ul).click(function(e) {
             $('#recipePhotoImage').attr('src', $(this).data('image-url'));
+            // Below line is added to avoid scrolling to the top of the browser every time a link is clicked.     
             e.preventDefault();
+            $('a', $ul).addClass('emptyDot').removeClass('filledDot');
+            $(this).addClass('filledDot');
           });
         }
       };
