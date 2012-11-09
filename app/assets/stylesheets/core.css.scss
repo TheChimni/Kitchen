@@ -470,6 +470,16 @@ ul.recipeList {
   padding: 10px 20px;
 }
 
+#recipeImageContainer {
+  position: relative;
+}
+
+#recipeImageCopy {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
 .dotNav {
   width: 100%;
   margin: 0;

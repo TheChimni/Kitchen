@@ -18,7 +18,7 @@ $(function() {
   });
 });
 
-// Plugin for carousel on show recipe
+// Plugin for photo browser on recipe#show page
 (function($) {
   var defaults = {};
   $.fn.photoScroller = function(options) {
@@ -28,12 +28,23 @@ $(function() {
       if (this.photoScroller) { return false; }
       var self = {
         initialize: function() {
-            $('a', $ul).click(function(e) {
+          $('a', $ul).click(function(e) {
+            // Create a copy to fade out
+            var imageCopy = $("<img id='recipeImageCopy' src='" + $('a.filledDot', $ul).data('image-url') + "'></img>");
+            $('#recipeImageContainer').append(imageCopy);
+    
             $('#recipePhotoImage').attr('src', $(this).data('image-url'));
             // Below line is added to avoid scrolling to the top of the browser every time a link is clicked.     
             e.preventDefault();
             $('a', $ul).addClass('emptyDot').removeClass('filledDot');
             $(this).addClass('filledDot');
+
+            // Fade out the copy and delete when we are done
+            imageCopy.animate({
+              opacity: 0,
+            }, 1000, function() {
+              imageCopy.remove();
+            });
           });
         }
       };

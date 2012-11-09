@@ -3,7 +3,9 @@
 
   <p><%= @recipe.synopsis %></p>
   <p><%= md_to_html @recipe.description %></p>
-  <%= image_tag @recipe.primary_photo.image.medium.url, :id => :recipePhotoImage if @recipe.primary_photo %>
+  <div id='recipeImageContainer'>
+    <%= image_tag @recipe.primary_photo.image.medium.url, :id => :recipePhotoImage if @recipe.primary_photo %>
+  </div>
   <nav class='dotNav'>
     <ul>
       <% @recipe.recipe_photos.each do |photo| %>
