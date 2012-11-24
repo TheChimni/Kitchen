@@ -39,12 +39,19 @@
   <div class='contentSidePanel'>
     <menu class='sidePanelMenu'>
       <% if user_signed_in? %>
-        <p><%= link_to 'Edit this recipe', edit_recipe_path(@recipe) %></p>
-        <p><%= link_to 'Delete this recipe', recipe_path(@recipe), :method => :delete, :confirm => 'Are you sure?' %></p>
+        <%= link_to edit_recipe_path(@recipe) do %>
+          <span class='icon-pencil icon'></span>
+          <span class='label'>Edit this recipe</span>
+        <% end %>
+        <%= link_to recipe_path(@recipe), :method => :delete, :confirm => 'Are you sure?' do %>
+          <span class='icon-trash icon'></span>
+          <span class='label'>Delete this recipe</span>
+        <% end %>
       <% end %>
-      <p>
-        <%= link_to 'Back to recipe list', recipes_path %>
-      </p>
+      <%= link_to recipes_path do %>
+        <span class='icon-arrow-left icon'></span>
+        <span class='label'>Back to recipe list</span>
+      <% end %>
     </menu>
   </div>
 </div>

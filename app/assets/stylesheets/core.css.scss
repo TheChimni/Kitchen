@@ -782,3 +782,23 @@ input[type='submit'], input[type='button'] {
 .ui-autocomplete a.ui-state-hover {
   background-color: $orange;
 }
+
+.sidePanelMenu a {
+  display: inline-block;
+  margin: 3px 0;
+  padding: 5px 9px;
+  text-decoration: none;
+  color: #000;
+}
+
+.sidePanelMenu a:hover {
+  background-color: $champagne4;
+  color: white;
+}
+
+.sidePanelMenu .icon {
+  margin: 0 5px 0 0;
+}
+
+.sidePanelMenu .label {
+}

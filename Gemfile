@@ -6,6 +6,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'twitter'
 gem 'rails_autolink'
+gem 'font-awesome-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
