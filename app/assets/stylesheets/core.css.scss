@@ -86,6 +86,17 @@ h1, h2, h3, h4 {
   // Give line-height and font-size here;
 }
 
+.contentMain {
+  float: left;
+  width: 850px;
+}
+
+.contentSidePanel {
+  float: left;
+  width: 300px;
+  margin: 0 0 0 40px;
+}
+
 body {
 	margin: 0;
   font: $base_font;

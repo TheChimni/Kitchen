@@ -1,45 +1,50 @@
 <section id="main" class='container recipeContainer'>
   <h2><%= @recipe.title %></h2>
 
-  <p><%= @recipe.synopsis %></p>
-  <p><%= md_to_html @recipe.description %></p>
-  <div id='recipeImageContainer'>
-    <%= image_tag @recipe.primary_photo.image.large.url, :id => :recipePhotoImage if @recipe.primary_photo %>
-  </div>
-  <nav class='dotNav'>
-    <ul>
-      <% @recipe.recipe_photos.each do |photo| %>
-        <li>
-          <a class='<%= photo == @recipe.primary_photo ? 'filledDot' : 'emptyDot' %>' href='#' data-image-url='<%= photo.image.large.url %>'></a>
-        </li>
+  <div class='contentMain'>
+    <p><%= @recipe.synopsis %></p>
+    <p><%= md_to_html @recipe.description %></p>
+    <div id='recipeImageContainer'>
+      <%= image_tag @recipe.primary_photo.image.large.url, :id => :recipePhotoImage if @recipe.primary_photo %>
+    </div>
+    <nav class='dotNav'>
+      <ul>
+        <% @recipe.recipe_photos.each do |photo| %>
+          <li>
+            <a class='<%= photo == @recipe.primary_photo ? 'filledDot' : 'emptyDot' %>' href='#' data-image-url='<%= photo.image.large.url %>'></a>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class='clear'></div>
+
+    <h3>Ingredients</h3>
+    <div class='markdownInplaceEditor' data-class='recipe' data-attribute='ingredient_list' data-url='<%= recipe_path(@recipe) %>'>
+      <% if user_signed_in? %>
+        <a href='#'>edit</a>
       <% end %>
-    </ul>
-  </nav>
-  <div class='clear'></div>
+      <textarea><%= @recipe.ingredient_list%></textarea>
+      <div><%= md_to_html @recipe.ingredient_list %></div>
+    </div>
 
-  <h3>Ingredients</h3>
-  <div class='markdownInplaceEditor' data-class='recipe' data-attribute='ingredient_list' data-url='<%= recipe_path(@recipe) %>'>
-    <% if user_signed_in? %>
-      <a href='#'>edit</a>
-    <% end %>
-    <textarea><%= @recipe.ingredient_list%></textarea>
-    <div><%= md_to_html @recipe.ingredient_list %></div>
+    <h3>Preparation method</h3>
+    <div class='markdownInplaceEditor' data-class='recipe' data-attribute='preparation_method' data-url='<%= recipe_path(@recipe) %>'>
+      <% if user_signed_in? %>
+        <a href='#'>edit</a>
+      <% end %>
+      <textarea><%= @recipe.preparation_method%></textarea>
+      <div><%= md_to_html @recipe.preparation_method %></div>
+    </div>
   </div>
-
-  <h3>Preparation method</h3>
-  <div class='markdownInplaceEditor' data-class='recipe' data-attribute='preparation_method' data-url='<%= recipe_path(@recipe) %>'>
-    <% if user_signed_in? %>
-      <a href='#'>edit</a>
-    <% end %>
-    <textarea><%= @recipe.preparation_method%></textarea>
-    <div><%= md_to_html @recipe.preparation_method %></div>
+  <div class='contentSidePanel'>
+    <menu class='sidePanelMenu'>
+      <% if user_signed_in? %>
+        <p><%= link_to 'Edit this recipe', edit_recipe_path(@recipe) %></p>
+        <p><%= link_to 'Delete this recipe', recipe_path(@recipe), :method => :delete, :confirm => 'Are you sure?' %></p>
+      <% end %>
+      <p>
+        <%= link_to 'Back to recipe list', recipes_path %>
+      </p>
+    </menu>
   </div>
-
-  <% if user_signed_in? %>
-    <%= link_to 'Edit this recipe', edit_recipe_path(@recipe) %>
-    <%= link_to 'Delete this recipe', recipe_path(@recipe), :method => :delete, :confirm => 'Are you sure?' %>
-  <% end %>
-  <p>
-    <%= link_to 'Back to recipe list', recipes_path %>
-  </p>
 </div>
