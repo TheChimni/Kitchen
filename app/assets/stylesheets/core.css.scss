@@ -12,11 +12,7 @@ $orange: rgb(255, 165, 0);
 $cream: rgb(249, 244, 230);
 
 // Contact Us colour palette
-$maroon: rgb(89, 15, 15);
-$lightMaroon: rgb(162, 66, 66);
-$contactUsBorder: rgb(213, 195, 153);
 $okayishBackground: rgb(103, 82, 65);
-$salmon4: rgb(213, 101, 64);
 $contactTurquoise: rgb(57, 169, 164);
 
 // Experimental
@@ -42,10 +38,16 @@ $champagne4_50: rgba(166, 133, 105, 0.5);
 $champagne5_50: rgba(103, 82, 65, 0.5);
 $champagne4_80: rgba(166, 133, 105, 0.8);
 
-$salmon4: rgb(213, 101, 64);
-$salmon5: rgb(168, 78, 51);
+$salmon3: rgb(213, 101, 64);
+$salmon4: rgb(168, 78, 51);
+$salmon5: rgb(152, 70, 47);
 $salmon6: rgb(135, 64, 42);
-$salmon7: rgb(72, 34, 22);
+$salmon7: rgb(105, 46, 29);
+$salmon8: rgb(72, 34, 22);
+
+$maroon: rgb(89, 15, 15);
+$lightMaroon: rgb(162, 66, 66);
+$contactUsTitle: rgb(213, 195, 153);
 
 $watermark: rgb(112, 111, 111);
 $base_font: lighter 13pt 'Gill Sans', 'Helvetica Neue', sans-serif;
@@ -81,7 +83,7 @@ h1, h2, h3, h4 {
 .content {
   // word-spacing: -1px;
   // Give line-height and font-size here;
-} 
+}
 
 body {
 	margin: 0;
@@ -115,7 +117,7 @@ body, html {
 
 #header .siteTitle {
   font: 300% SamarkanNormal, "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  color: $salmon4;
+  color: $salmon3;
   margin: -28px 0;
 }
 
@@ -400,7 +402,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 
 .recipeMoreLink:hover, .carouselButton:hover {
 	// background-color: $orange;
-  background-color: $salmon4;
+  background-color: $salmon3;
 }
 
 .left {
@@ -487,10 +489,10 @@ ul.recipeList {
   text-align: center;
   display: block;
   // position: relative;
-  
+
   ul {
     list-style-type: none;
-  
+
     li {
       // position: relative;
       margin: 0;
@@ -575,7 +577,7 @@ ul.recipeList {
 }
 
 #contactPanel {
-  background-color: $salmon5;
+  background-color: $salmon4;
 }
 
 #social {
@@ -647,12 +649,12 @@ ul.recipeList {
 }
 
 #contactPanel .title {
-  color: $contactUsBorder;
+  color: $contactUsTitle;
   font-size: 130%;
 }
 
 #newsletterSignUp {
-  color: $contactUsBorder;
+  color: $contactUsTitle;
   margin-top: 70px;
   float: left;
   padding-left: 20px;
@@ -683,15 +685,27 @@ ul.recipeList {
   font-size: 100%;
 }
 
+input[type='submit'], input[type='button'] {
+  border: none;
+  /*border-radius: 0;*/
+}
+
 .subscribeButton {
   margin: 0 20px 0 0;
   padding: 10px;
+  background-color: $salmon6;
+  color: $white;
+  -moz-transition: .2s background-color;
+  -webkit-transition: .2s background-color;
+  -ms-transition: .2s background-color;
+  -o-transition: .2s background-color;
+  transition: .2s background-color;
 }
 
 .subscribeButton:hover {
-  background-color: $orange;
+  background-color: $salmon7;
 }
-  
+
 .ui-autocomplete {
   list-style: none;
   margin: 0;
