@@ -47,7 +47,8 @@ $salmon8: rgb(72, 34, 22);
 
 $maroon: rgb(89, 15, 15);
 $lightMaroon: rgb(162, 66, 66);
-$contactUsTitle: rgb(213, 195, 153);
+$contactUsTitle1: rgb(252, 231, 146);
+$contactUsTitle2: rgb(213, 195, 153);
 
 $watermark: rgb(112, 111, 111);
 $base_font: lighter 13pt 'Gill Sans', 'Helvetica Neue', sans-serif;
@@ -198,7 +199,7 @@ label > span {
   font-style: italic;
 }
 
-input, textarea {
+input:not([type=submit]), textarea {
   font: $base_font;
   border: 1px solid #CCC;
   -webkit-border-radius: 3px;
@@ -590,27 +591,36 @@ ul.recipeList {
   height: 400px;
 }
 
-#social article {
-  height: 165px;
-  padding: 40px 0 10px 0;
+#social > a {
+  height: 145px;
+  padding: 10px 0 0 0;
+  margin: 40px 0 10px 0;
+  -moz-transition: .2s background-color;
+  -webkit-transition: .2s background-color;
+  -ms-transition: .2s background-color;
+  -o-transition: .2s background-color;
+  transition: .2s background-color;
+  display: block;
+  text-decoration: none;
 }
 
-#social article:first-child {
+#social > a:first-child {
   border-bottom: 1px dashed $salmon6;
 }
 
-#social article img {
+#social > a img {
   float: left;
   margin-top: 41px;
 }
 
-#social article > a {
+#social > a h2 {
+  display: inline-block;
   width: 370px;
-  margin-left: 5px;
+  margin: 0 0 0 5px;
   text-decoration: none;
 }
 
-#social article > ul {
+#social > a ul {
   position: relative;
   color: $white;
   background-color: $salmon6;
@@ -620,13 +630,17 @@ ul.recipeList {
   padding: 10px;
 }
 
+#social li {
+  text-decoration: none;
+}
+
 /* override the Browser default styles for <a> embedded in Tweets within the contact panel */
-#social article > ul a {
+#social > a > ul > a {
   text-decoration: none;
   color: $white;
 }
 
-#social article#twitter > ul:before {
+#social #twitter > ul:before {
   position: absolute;
   top: 10px;
   left: -20px;
@@ -638,23 +652,37 @@ ul.recipeList {
   content: " ";
 }
 
-#social article#email img {
+#social #email:hover, #social #twitter:hover {
+  background-color: $salmon5;
+}
+
+#social #email:hover .title, #social #twitter:hover .title {
+  color: $contactUsTitle1;
+}
+
+#social #email img {
   float: left;
   margin-top: 21px;
 }
 
-#social article#email ul {
+#social #email ul {
   padding: 16px 10px;
   font-size: 110%;
 }
 
 #contactPanel .title {
-  color: $contactUsTitle;
+  color: $contactUsTitle2;
   font-size: 130%;
+  font-weight: lighter;
+  -moz-transition: .2s color;
+  -webkit-transition: .2s color;
+  -ms-transition: .2s color;
+  -o-transition: .2s color;
+  transition: .2s color;
 }
 
 #newsletterSignUp {
-  color: $contactUsTitle;
+  color: $contactUsTitle2;
   margin-top: 70px;
   float: left;
   padding-left: 20px;
@@ -686,11 +714,13 @@ ul.recipeList {
 }
 
 input[type='submit'], input[type='button'] {
+  font: $base_font;
   border: none;
-  /*border-radius: 0;*/
+  border-radius: none !important;
 }
 
 .subscribeButton {
+  font-size: 110%;
   margin: 0 20px 0 0;
   padding: 10px;
   background-color: $salmon6;
@@ -704,6 +734,10 @@ input[type='submit'], input[type='button'] {
 
 .subscribeButton:hover {
   background-color: $salmon7;
+}
+
+.subscribeButton:active {
+  background-color: $salmon8;
 }
 
 .ui-autocomplete {

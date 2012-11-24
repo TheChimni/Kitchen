@@ -58,24 +58,22 @@
         </article>
       </div>
       <div id='social'>
-        <article id='twitter'>
-          <%= link_to 'Follow us on Twitter', 'http://twitter.com/thechimni', :class => 'title' %>
+        <a id='twitter' href='http://twitter.com/thechimni'>
+          <h2 class='title'>Follow us on Twitter</h2>
           <%= image_tag('twitter_logo.png', :size => '100x100', :alt => 'Recent tweets') %>
           <ul>
             <% @tweets.each do |tweet| %>
-            <li><%= auto_link(tweet) %></li>
+              <li><%= tweet %></li>
             <% end %>
           </ul>
-        </article>
-        <article id='email'>
-          <%= link_to 'Email us', 'mailto:info@zanzaneet.com', :class => 'title' %>
+        </a>
+        <a id='email' href='mailto:info@zanzaneet.com'>
+          <h2 class='title'>Email us</h2>
           <%= image_tag('email_logo.png', :size => '100x100', :alt => 'Email us') %>
           <ul>
-            <li>
-              <%= link_to 'info@zanzaneet.com', 'mailto:info@zanzaneet.com' %>
-            </li>
+            <li>info@zanzaneet.com</li>
           </ul>
-        </article>
+        </a>
       </div>
     </div>
   </div>
