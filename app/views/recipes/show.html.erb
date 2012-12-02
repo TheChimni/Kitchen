@@ -53,5 +53,9 @@
         <span class='label'>Back to recipe list</span>
       <% end %>
     </menu>
+    <div>
+      <%= pin_it_button media: (@recipe.primary_photo ? @recipe.primary_photo.image.large.url : nil),
+        description: @recipe.title %>
+    </div>
   </div>
 </div>
