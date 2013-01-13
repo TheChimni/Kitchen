@@ -7,15 +7,17 @@
     <div id='recipeImageContainer'>
       <%= image_tag @recipe.primary_photo.image.large.url, :id => :recipePhotoImage if @recipe.primary_photo %>
     </div>
-    <nav class='dotNav'>
-      <ul>
-        <% @recipe.recipe_photos.each do |photo| %>
-          <li>
-            <a class='<%= photo == @recipe.primary_photo ? 'filledDot' : 'emptyDot' %>' href='#' data-image-url='<%= photo.image.large.url %>'></a>
-          </li>
-        <% end %>
-      </ul>
-    </nav>
+    <% if @recipe.recipe_photos.count > 1 %>
+      <nav class='dotNav'>
+        <ul>
+          <% @recipe.recipe_photos.each do |photo| %>
+            <li>
+              <a class='<%= photo == @recipe.primary_photo ? 'filledDot' : 'emptyDot' %>' href='#' data-image-url='<%= photo.image.large.url %>'></a>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    <% end %>
     <div class='clear'></div>
 
     <h3>Ingredients</h3>

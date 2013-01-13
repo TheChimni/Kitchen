@@ -28,13 +28,19 @@ $(function() {
       if (this.photoScroller) { return false; }
       var self = {
         initialize: function() {
+          $('#recipePhotoImage').click(function(e) {
+            var currentSelectedListItem = $('a.filledDot', $ul).parent();
+            var nextListItem = currentSelectedListItem.next()[0] || $('li', $ul)[0];
+            $('a', nextListItem).click();
+          });
           $('a', $ul).click(function(e) {
             // Create a copy to fade out
             var imageCopy = $("<img id='recipeImageCopy' src='" + $('a.filledDot', $ul).data('image-url') + "'></img>");
             $('#recipeImageContainer').append(imageCopy);
-    
+
             $('#recipePhotoImage').attr('src', $(this).data('image-url'));
-            // Below line is added to avoid scrolling to the top of the browser every time a link is clicked.     
+
+            // preventDefault to avoid scrolling to the top of the browser every time a link is clicked.
             e.preventDefault();
             $('a', $ul).addClass('emptyDot').removeClass('filledDot');
             $(this).addClass('filledDot');
@@ -53,7 +59,6 @@ $(function() {
     });
     return this;
   };
-
 })(jQuery);
 
 $(function() {
@@ -113,7 +118,7 @@ $(function() {
             else if ($this.val() == '') {
               $this.val(watermarkText);
             } else {
-              $this.val('');              
+              $this.val('');
             }
           });
           $this.blur(function() {
@@ -218,7 +223,7 @@ $(function() {
             this.setCurrent(this.currentPanel.next('.carouselItem'), 'right');
           } else {
             this.setCurrent($('.carouselItem:first', $this), 'right');
-          } 
+          }
         },
         setCurrent: function(newCurrent, direction) {
           var oldPanel = this.currentPanel;
@@ -242,7 +247,7 @@ $(function() {
         }
       };
       this.carousel = self;
-      self.initialize();      
+      self.initialize();
       return this;
     });
   };
@@ -255,11 +260,11 @@ $(function() {
   var defaults = {};
   $.fn.markdownInplaceEditor = function(options) {
     var opts = $.extend({}, defaults, options);
-    return this.each(function() 
+    return this.each(function()
     {
       var $this = $(this);
       if (this.markdownInplaceEditor) { return false; }
-      var self = { 
+      var self = {
         initialize: function() {
           self.container = $this;
           self.a = $('a', $this).click(self.onEditClick);
@@ -311,7 +316,7 @@ $(function() {
   var defaults = {};
   $.fn.parallax = function(options) {
     var opts = $.extend({}, defaults, options);
-    return this.each(function() 
+    return this.each(function()
     {
       var $this = $(this);
       if (this.parallax) { return false; }
