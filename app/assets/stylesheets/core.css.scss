@@ -495,7 +495,7 @@ ul.recipeList {
 }
 
 .dotNav {
-  width: 100%;
+  width: 800px;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -504,6 +504,9 @@ ul.recipeList {
 
   ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
 
     li {
       // position: relative;
