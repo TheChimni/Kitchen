@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(:version => 20130114145702) do
   create_table "recipes", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",                                        :null => false
-    t.datetime "updated_at",                                        :null => false
+    t.datetime "created_at",                                               :null => false
+    t.datetime "updated_at",                                               :null => false
     t.text     "ingredient_list"
     t.text     "preparation_method"
     t.integer  "preparation_time",               :default => 30
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(:version => 20130114145702) do
     t.string   "secondary_picture_content_type"
     t.integer  "secondary_picture_file_size"
     t.datetime "secondary_picture_updated_at"
-    t.string   "synopsis",                                          :null => false
-    t.string   "category",                                          :null => false
+    t.string   "synopsis",                                                 :null => false
+    t.string   "category",                       :default => "vegetarian", :null => false
   end
 
   create_table "subscriptions", :force => true do |t|
