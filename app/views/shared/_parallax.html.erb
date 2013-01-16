@@ -2,50 +2,35 @@
   <div id='homePanel' class='parallaxPanel' data-content='' data-background='nicervada.jpeg'>
     <div class='container'>
       <div class='homeContent'>
-        <h1><%= t('copy.homeContent.title') %></h1>
-        <p><%= t('copy.homeContent.text') %></p>
+        <h1><%= t('copy.home.home_panel.title') %></h1>
+        <p><%= t('copy.home.home_panel.text') %></p>
       </div>
     </div>
   </div>
   <div id='recipesPanel' class='parallaxPanel parallaxPanelLight' data-content='recipes'>
     <div class='container'>
-      <div class='parallaxTitle'>Recipes</div>
-      <div class='parallaxSubtitle'>Tasty treats for all the family...</div>
+      <div class='parallaxTitle'><%= t('copy.home.recipes_panel.title') %></div>
+      <div class='parallaxSubtitle'><%= t('copy.home.recipes_panel.subtitle') %></div>
       <%= render :partial => 'shared/carousel' %>
     </div>
   </div>
   <div id='classesPanel' class='parallaxPanel parallaxPanelLight' data-content='classes' data-background='wheat.jpg'>
     <div class='container'>
-      <div class='parallaxTitle'>Classes</div>
-      <div class='parallaxSubtitle'>Come learn traditional Indian cooking...</div>
-      <div class='classesContent'>
-        <h1>Maharastrian Vegetarian Cooking</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </div>
-      <div class='classesContent'>
-        <h1>South Indian Cooking</h1>
-        <p>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
-      </div>
-      <div class='classesContent'>
-        <h1>North Indian non-Veg Cooking</h1>
-        <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
+      <div class='parallaxTitle'><%= t('copy.home.classes_panel.title') %></div>
+      <div class='parallaxSubtitle'><%= t('copy.home.classes_panel.subtitle') %></div>
+      <% 3.times do |n| %>
+        <div class='classesContent'>
+          <h1><%= t("copy.home.classes_panel.class#{n}.title") %></h1>
+          <p><%= t("copy.home.classes_panel.class#{n}.text") %></p>
+        </div>
+      <% end %>
     </div>
   </div>
   <div id='contactPanel' class='parallaxPanel' data-content='contact'>
     <a id='contact'></a>
     <div class='container'>
-      <div class='parallaxTitle'>Contact</div>
-      <div class='parallaxSubtitle'>Don't be shy tweet, email or call us - we love to talk about tasty grub</div>
+      <div class='parallaxTitle'><%= t('copy.home.contact_panel.title') %></div>
+      <div class='parallaxSubtitle'><%= t('copy.home.contact_panel.subtitle') %></div>
       <div id='newsletterSignUp'>
         <article class='title'>Still want to hear more from us? Sign up for our monthly newsletter:</article>
         <article id='subscriptionFormContainer'>

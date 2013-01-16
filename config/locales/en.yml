@@ -5,8 +5,30 @@ en:
   hello: "Hello world"
 
   copy:
-    homeContent:
-      title: Authentic Indian cooking
-      text: Zanzaneet brings you recipes and tips to introduce you to real Indian cooking.
-            What you won't find here is recipes to reproduce the flavours of your local curry house.
-            Instead we aim to show you how to bring the authentic regional Indian cooking into your home.
+    home:
+      home_panel:
+        title: Authentic Indian cooking
+        text: Zanzaneet brings you recipes and tips to introduce you to real Indian cooking.
+              What you won't find here is recipes to reproduce the flavours of your local curry house.
+              Instead we aim to show you how to bring the authentic regional Indian cooking into your home.
+      recipes_panel:
+        title: Recipes
+        subtitle: Tasty treats for all the family...
+      classes_panel:
+        title: Classes
+        subtitle: Come learn Indian cooking...
+        class0:
+          title: Maharastrian Vegetarian Cooking
+          text: Learn the traditional vegetarian delicacies of this region. Learn the distinctive flavours
+                of Sheepu and nutritious Bakri.
+        class1:
+          title: South Indian Cooking
+          text: Down south where coconuts are abundant they turn simple rice and gram flour into tasty dosas,
+                they flavour their dal sambar with tangy tamarind and they turn rice into light fluffy idlis.
+        class2:
+          title: North Indian non-Veg Cooking
+          text: Have you ever tried cooking your chicken curry on the bone? If not you don't know what you are missing.
+                Learn how to blend the spices to get the best out of your curries.
+      contact_panel:
+        title: Contact
+        subtitle: Don't be shy tweet, email or call us - we love to talk about tasty grub
