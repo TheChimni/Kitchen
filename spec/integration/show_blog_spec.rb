@@ -16,7 +16,6 @@ describe 'Blog page' do
     end
 
     it 'can use the main menu to open the blog from the home page' do
-      pending
       visit root_path
       click_link 'Blog'
       current_path.should == blog_posts_path
