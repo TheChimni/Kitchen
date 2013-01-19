@@ -98,3 +98,18 @@ RecipePhoto.create!(:recipe => recipe5, :title => 'Salmon avec sauce vierge ', :
 
 User.destroy_all
 User.create!(:email => 'rieethaa@zanzaneet.com', :password => 'secret', :password_confirmation => 'secret')
+
+BlogPost.create!(:title => 'Washing up Indian style',
+    :content =>
+"Have you ever wondered why your vessels are left mucky despite all the effort you put into your washing-up?
+Well its because you are doing it all wrong! Let Mummyji put you straight...
+First of all drain away all that mucky water, thats right, unplug the sink - we are going to be washing under clean running water.
+Grab a suitably abrasive wire scrub and get to work on those stainless steel vessels with plenty of elbow grease.
+Don't worry if your arm starts to ache - that just means you are doing a decent job of it.")
+
+BlogPost.create!(:title => 'Get your spluttering action on',
+    :content =>
+"Its really important to allow time (and heat) to let the oils (and flavour) get released from your whole spices.
+Don't be in too much of a hurry to put the garlic and other wet ingredients into the vessel.
+Make sure you get some serious spluttering action first!")
+
