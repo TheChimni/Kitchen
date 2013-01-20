@@ -1,8 +1,17 @@
-<ul>
-  <% @posts.each do |post| %>    
-    <li>
-      <h2><%= post.title %></h2>
-      <div><%= post.content %></div>
-    </li>
-  <% end %>
-</ul>
+
+<section id="main" class="container">
+
+  <div id='blogListContainer'>
+    <% @posts.each do |post| %>
+      <article class='blogPost'>
+        <h2><%= post.title %></h2>
+        <div class='blogContent'><%= post.content %></div>
+        <div class='blogDate'><%= post.published_at %></div>
+      </article>
+    <% end %>
+  </div>
+
+  <div>
+    <%= link_to 'New blog post', new_blog_post_path if user_signed_in? %>
+  </div>
+</section>
