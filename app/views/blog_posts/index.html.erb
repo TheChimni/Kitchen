@@ -6,7 +6,7 @@
       <article class='blogPost'>
         <h2><%= post.title %></h2>
         <div class='blogContent'><%= post.content %></div>
-        <div class='blogDate'><%= post.published_at %></div>
+        <div class='blogDate'><%= time_ago_in_words post.published_at %> ago</div>
       </article>
     <% end %>
   </div>

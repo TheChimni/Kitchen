@@ -9,9 +9,13 @@ describe 'Blog page' do
   end
 
   context "with 3 blog entries" do
+    include ActionView::Helpers::DateHelper
+
+    let(:published_at) { DateTime.new(2013, 2, 24, 12, 0, 0) }
+
     before do
       (1..3).each do |n|
-        BlogPost.create! :title => "Post no. #{n}", :content => "content for post number #{n}"
+        BlogPost.create! :title => "Post no. #{n}", :content => "content for post number #{n}", :published_at => published_at
       end
     end
 
@@ -33,6 +37,11 @@ describe 'Blog page' do
       (1..3).each do |n|
         page.should have_content "content for post number #{n}"
       end
+    end
+
+    it 'shows publication date' do
+      visit blog_posts_path
+      page.should have_content "#{time_ago_in_words(published_at)} ago"
     end
 
   end

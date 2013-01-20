@@ -828,3 +828,11 @@ input[type='submit'], input[type='button'] {
 .flash {
   display: none;
 }
+
+.blogPost {}
+.blogContent {}
+.blogDate {
+  margin: 10px 0 0 0;
+  color: $grey;
+  font-size: 80%;
+}
