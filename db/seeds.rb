@@ -99,6 +99,7 @@ RecipePhoto.create!(:recipe => recipe5, :title => 'Salmon avec sauce vierge ', :
 User.destroy_all
 User.create!(:email => 'rieethaa@zanzaneet.com', :password => 'secret', :password_confirmation => 'secret')
 
+BlogPost.destroy_all
 BlogPost.create!(:title => 'Washing up Indian style',
     :content =>
 "Have you ever wondered why your vessels are left mucky despite all the effort you put into your washing-up?
