@@ -20,6 +20,7 @@ describe Recipe do
   it { should validate_presence_of :ingredient_list }
   it { should validate_presence_of :preparation_method }
   it { should ensure_length_of(:synopsis).is_at_most(120) }
+  it { should ensure_inclusion_of(:category).in_array(%w(non_vegetarian vegetarian vegan)) }
 
   it { should have_and_belong_to_many :ingredients }
   it { should have_many :recipe_photos }

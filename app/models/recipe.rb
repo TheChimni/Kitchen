@@ -1,9 +1,11 @@
 class Recipe < ActiveRecord::Base
-  validates_presence_of :title, :synopsis, :ingredient_list, :preparation_method
+  validates_presence_of :title, :synopsis, :ingredient_list, :preparation_method, :category
   validates_length_of :synopsis, :maximum => 120
   has_and_belongs_to_many :ingredients
   has_many :recipe_photos
-  # attr_accessible :title, :synopsis, :ingredient_list, :preparation_method, :ingredients, :recipe_photos
+
+  validates :category, :inclusion => { :in => %w(non_vegetarian vegetarian vegan),
+    :message => "%{value} is not a valid category" }
 
   before_save :save_ingredients
 
