@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 describe 'Blog page' do
   before do
     # Stubbing the external twitter API
@@ -42,6 +41,26 @@ describe 'Blog page' do
     it 'shows publication date' do
       visit blog_posts_path
       page.should have_content "#{time_ago_in_words(published_at)} ago"
+    end
+
+    it 'results should not be paged' do
+      page.should_not have_link 'More'
+    end
+
+  end
+
+  context "with 6 blog entries" do
+
+    before do
+      (1..6).each do |n|
+        BlogPost.create! :title => "Post no. #{n}", :content => "content for post number #{n}"
+      end
+    end
+
+    it 'results are paged' do
+      visit blog_posts_path
+      page.should_not have_content "Post no. 6"
+      page.should have_link 'More'
     end
 
   end
