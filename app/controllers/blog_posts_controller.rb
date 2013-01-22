@@ -11,5 +11,18 @@ class BlogPostsController < ApplicationController
   def show
   end
 
+  def new
+    @post = BlogPost.new
+  end
+
+  def create
+    @post = BlogPost.create params[:blog_post]
+    if @post.save
+      redirect_to blog_posts_path
+    else
+      render :new
+    end
+  end
+
 end
 
