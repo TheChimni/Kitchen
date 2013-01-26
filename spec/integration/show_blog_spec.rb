@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Blog page' do
 
-  let(:published_at) { DateTime.new(2013, 2, 24, 12, 0, 0) }
+  let(:published_at) { DateTime.new(2012, 2, 24, 12, 0, 0) }
 
   before do
     # Stubbing the external twitter API
@@ -72,6 +72,26 @@ describe 'Blog page' do
       visit blog_posts_path
       page.should_not have_content "Post no. 1"
       page.should have_link 'More'
+    end
+
+  end
+
+  context "with unpublished posts" do
+
+    let(:today) { Date.today }
+
+    before do
+      BlogPost.create! :title => "Published next week", :content => "test content", :published_at => (today + 7)
+      BlogPost.create! :title => "Published last week", :content => "test content", :published_at => (today - 7)
+      visit blog_posts_path
+    end
+
+    it 'does not show the unpublished post' do
+      page.should_not have_content "Published next week"
+    end
+
+    it 'shows the published post' do
+      page.should have_content "Published last week"
     end
 
   end

@@ -38,6 +38,11 @@ describe 'Create a new blog' do
         BlogPost.count.should == 1
         BlogPost.first.title.should == 'test post'
       end
+
+      it 'uses markdown to format the content'
+
+      it 'lets me defer the published date'
+
     end
   end
 
