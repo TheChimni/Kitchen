@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe 'Blog page' do
+
+  let(:published_at) { DateTime.new(2013, 2, 24, 12, 0, 0) }
+
   before do
     # Stubbing the external twitter API
     @tweets = ['I fancy chocolate pudding today.', 'I fancy indian veg roll today.']
@@ -10,11 +13,9 @@ describe 'Blog page' do
   context "with 3 blog entries" do
     include ActionView::Helpers::DateHelper
 
-    let(:published_at) { DateTime.new(2013, 2, 24, 12, 0, 0) }
-
     before do
       (1..3).each do |n|
-        BlogPost.create! :title => "Post no. #{n}", :content => "content for post number #{n}", :published_at => published_at
+        BlogPost.create! :title => "Post no. #{n}", :content => "content for post number #{n}", :published_at => (published_at - n)
       end
     end
 
@@ -40,11 +41,21 @@ describe 'Blog page' do
 
     it 'shows publication date' do
       visit blog_posts_path
-      page.should have_content "#{time_ago_in_words(published_at)} ago"
+      (1..3).each do |n|
+        page.should have_content "#{time_ago_in_words(published_at - n)} ago"
+      end
     end
 
     it 'results should not be paged' do
+      visit blog_posts_path
       page.should_not have_link 'More'
+    end
+
+    it 'shows most recent first' do
+      visit blog_posts_path
+      (1..3).each do |n|
+        page.find("#blogListContainer article:nth-of-type(#{n})").text.should =~ /Post no. #{n}/
+      end
     end
 
   end
@@ -53,13 +64,13 @@ describe 'Blog page' do
 
     before do
       (1..6).each do |n|
-        BlogPost.create! :title => "Post no. #{n}", :content => "content for post number #{n}"
+        BlogPost.create! :title => "Post no. #{n}", :content => "content for post number #{n}", :published_at => (published_at + n)
       end
     end
 
     it 'results are paged' do
       visit blog_posts_path
-      page.should_not have_content "Post no. 6"
+      page.should_not have_content "Post no. 1"
       page.should have_link 'More'
     end
 

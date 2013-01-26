@@ -4,7 +4,7 @@ class BlogPostsController < ApplicationController
   def index
     # using kaminari for paging
     page = params[:page] || 1
-    @posts = BlogPost.page(page.to_i).per(5)
+    @posts = BlogPost.order('published_at DESC').page(page.to_i).per(5)
     return render :partial => 'blog_list' if request.xhr?
   end
 
