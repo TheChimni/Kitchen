@@ -9,6 +9,7 @@ class BlogPostsController < ApplicationController
   end
 
   def show
+    @post = BlogPost.published.find params[:id]
   end
 
   def new

@@ -14,8 +14,9 @@ describe 'Blog page' do
     include ActionView::Helpers::DateHelper
 
     before do
+      @posts = []
       (1..3).each do |n|
-        BlogPost.create! :title => "Post no. #{n}", :content => "content for post number #{n}", :published_at => (published_at - n)
+        @posts << BlogPost.create!(:title => "Post no. #{n}", :content => "content for post number #{n}", :published_at => (published_at - n))
       end
     end
 
@@ -58,6 +59,13 @@ describe 'Blog page' do
       end
     end
 
+    it "each post has a 'Read more' link" do
+      visit blog_posts_path
+      @posts.each do |post|
+        page.should have_link('Read more', :href => blog_post_path(post))
+      end
+    end
+
   end
 
   context "with 6 blog entries" do
@@ -81,8 +89,8 @@ describe 'Blog page' do
     let(:today) { Date.today }
 
     before do
-      BlogPost.create! :title => "Published next week", :content => "test content", :published_at => (today + 7)
-      BlogPost.create! :title => "Published last week", :content => "test content", :published_at => (today - 7)
+      @unpublished_post = BlogPost.create! :title => "Published next week", :content => "test content", :published_at => (today + 7)
+      @published_post = BlogPost.create! :title => "Published last week", :content => "test content", :published_at => (today - 7)
       visit blog_posts_path
     end
 
@@ -94,5 +102,15 @@ describe 'Blog page' do
       page.should have_content "Published last week"
     end
 
+    it "'Read more' link navigates to the show page for the publised post" do
+      page.click_link 'Read more'
+      current_path.should == blog_post_path(@published_post)
+    end
+
+    it "Attempting to open the show page for the unpublised post raises error" do
+      -> { visit blog_post_path(@unpublished_post) }.should raise_error
+    end
+
   end
+
 end

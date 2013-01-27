@@ -39,9 +39,23 @@ describe 'Create a new blog' do
         BlogPost.first.title.should == 'test post'
       end
 
-      it 'uses markdown to format the content'
+      describe 'using markdown to format content' do
+        it 'can create paragraphs' do
+          visit new_blog_post_path
+          fill_in :blog_post_title, :with => 'test post'
+          fill_in 'Content', :with => 'paragraph 1\nparagraph 2'
+          click_button 'Save'
+          current_path.should == blog_posts_path
+        end
+
+        it 'can create bold text' do
+
+        end
+      end
 
       it 'lets me defer the published date'
+
+      it 'lets me add images'
 
     end
   end
