@@ -23,6 +23,15 @@
     <%= form.text_area :preparation_method, :class => :large %>
   </div>
   <div>
+    <%= form.label :category, 'Category' %>
+    <% %w(vegan vegetarian non_vegetarian).each do |category| %>
+      <br>
+        <%= radio_button_tag 'Category', category, category == 'vegan' %>
+        <%= category.humanize %>
+      </br>
+    <% end %> 
+  </div>
+  <div>
     <% @recipe.recipe_photos.each do |photo| %>
     <div>
       <%= image_tag photo.image.extra_small.url %>
