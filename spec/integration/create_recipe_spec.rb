@@ -11,6 +11,10 @@ describe 'Create a new recipe' do
     fill_in 'Synopsis', :with => 'Test synopsis'
     fill_in 'Ingredients', :with => 'secret'
     fill_in 'Preparation method', :with => 'secret'
+    page.should have_checked_field 'Category_vegetarian'
+    choose 'Category_vegan'
+    # save_and_open_page
+    page.should have_checked_field 'Category_vegan'
     click_button 'Save'
     Recipe.where(:title => 'Test recipe').count.should == 1
   end
