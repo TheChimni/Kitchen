@@ -37,6 +37,16 @@
       <textarea><%= @recipe.preparation_method%></textarea>
       <div><%= md_to_html @recipe.preparation_method %></div>
     </div>
+
+    <h3>Category 
+      <span><%= @recipe.category.humanize%></span>
+    </h3>
+    <div>
+      <% if user_signed_in? %>
+      <a href='#'>edit</a>
+      <% end %>
+    </div>
+    
   </div>
   <div class='contentSidePanel'>
     <menu class='sidePanelMenu'>
@@ -54,6 +64,10 @@
         <span class='icon-arrow-left icon'></span>
         <span class='label'>Back to recipe list</span>
       <% end %>
+      <div>
+        <span class='label'>Category</span>
+        <span><%= @recipe.category%></span>
+      </div>   
     </menu>
     <div>
       <%= pin_it_button media: (@recipe.primary_photo ? @recipe.primary_photo.image.large.url : nil),

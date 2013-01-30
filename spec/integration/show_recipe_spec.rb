@@ -6,7 +6,7 @@ describe 'Show an existing recipe' do
     
     before do
       @recipe = Recipe.create!(:title => 'Aloo tikki chaat', :synopsis => 'Yummy street food', :description => 'This is...',
-                               :ingredient_list => 'secret sauce', :preparation_method => 'secret method', :category => 'vegan')
+                               :ingredient_list => 'secret sauce', :preparation_method => 'secret method', :category => 'vegetarian')
     end
 
     it "'Back to recipe' list should take you back to the recipe list page" do
@@ -35,10 +35,10 @@ describe 'Show an existing recipe' do
       page.should have_content 'secret method'
     end
 
-    # it "should show you the category of the recipe" do
-    #   visit recipe_path(@recipe)
-    #   page.should have_content 'vegan'
-    # end
+    it "should show you the category of the recipe" do
+      visit recipe_path(@recipe)
+      page.should have_content 'Vegetarian'
+    end
 
   end
   
