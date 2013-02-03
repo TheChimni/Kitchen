@@ -38,15 +38,14 @@
       <div><%= md_to_html @recipe.preparation_method %></div>
     </div>
 
-    <h3>Category 
+    <h3>Category
       <span><%= @recipe.category.humanize%></span>
     </h3>
     <div>
       <% if user_signed_in? %>
       <a href='#'>edit</a>
       <% end %>
-    </div>
-    
+    </div>   
   </div>
   <div class='contentSidePanel'>
     <menu class='sidePanelMenu'>
