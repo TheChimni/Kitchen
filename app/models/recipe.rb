@@ -4,7 +4,10 @@ class Recipe < ActiveRecord::Base
   has_and_belongs_to_many :ingredients
   has_many :recipe_photos
 
-  validates :category, :inclusion => { :in => %w(vegan vegetarian non_vegetarian),
+  CATEGORY_VALUES = %w(vegan vegetarian non_vegetarian)
+  CATEGORY_SEARCH_VALUES = %w(all vegetarian vegan_only)
+
+  validates :category, :inclusion => { :in => CATEGORY_VALUES,
     :message => "%{value} is not a valid category" }
 
   before_save :save_ingredients

@@ -34,18 +34,9 @@
       <% if user_signed_in? %>
         <a href='#'>edit</a>
       <% end %>
-      <textarea><%= @recipe.preparation_method%></textarea>
+      <textarea><%= @recipe.preparation_method %></textarea>
       <div><%= md_to_html @recipe.preparation_method %></div>
     </div>
-
-    <h3>Category
-      <span><%= @recipe.category.humanize%></span>
-    </h3>
-    <div>
-      <% if user_signed_in? %>
-      <a href='#'>edit</a>
-      <% end %>
-    </div>   
   </div>
   <div class='contentSidePanel'>
     <menu class='sidePanelMenu'>
@@ -64,8 +55,7 @@
         <span class='label'>Back to recipe list</span>
       <% end %>
       <div>
-        <span class='label'>Category</span>
-        <span><%= @recipe.category%></span>
+        <span><%= @recipe.category.humanize %></span>
       </div>   
     </menu>
     <div>

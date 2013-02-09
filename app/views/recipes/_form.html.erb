@@ -24,9 +24,9 @@
   </div>
   <div>
     <%= form.label :category, 'Category' %>
-    <% %w(vegan vegetarian non_vegetarian).each do |category| %>
+    <% Recipe::CATEGORY_VALUES.each do |category| %>
       <br>
-        <%= radio_button_tag 'Category', category, category == 'vegetarian' %>
+        <%= radio_button_tag 'recipe[category]', category, category == @recipe.category %>
         <%= category.humanize %>
       </br>
     <% end %> 
