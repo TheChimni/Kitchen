@@ -7,4 +7,8 @@ class BlogPost < ActiveRecord::Base
   def set_publication_date
     self.published_at = DateTime.now unless self.published_at
   end
+
+  def html_content
+    BlueCloth.new(self.content).to_html
+  end
 end

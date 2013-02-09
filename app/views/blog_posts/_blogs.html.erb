@@ -3,7 +3,7 @@
     <article class='blogPost'>
       <h2><%= post.title %></h2>
       <div class='blogContent'>
-        <%= post.content %>
+        <%= truncate strip_tags(post.html_content), :length => 400, :omission => '...' %>
         <p>
           <%= link_to 'Read more', post %>
         </p>
