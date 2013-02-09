@@ -11,6 +11,7 @@
       <div class='blogDate'><%= time_ago_in_words post.published_at %> ago</div>
     </article>
   <% end %>
+  <div class='clear'></div>
   <nav class='pagination'>
     <span class="next">
       <%= link_to_next_page @posts, 'More', :remote => true %>

@@ -552,6 +552,7 @@ ul.recipeList {
 
 .pagination {
   text-align: right;
+  float: right;
 }
 
 .pagination span {
@@ -829,10 +830,20 @@ input[type='submit'], input[type='button'] {
   display: none;
 }
 
-.blogPost {}
+.blogPost {
+  padding: 0 0 10px;
+  border-bottom: #ddd 1px solid;
+}
+
 .blogContent {}
 .blogDate {
   margin: 10px 0 0 0;
   color: $grey;
   font-size: 80%;
+}
+
+#blogListContainer {
+  .clear {
+    margin: 20px 0 0;
+  }
 }
