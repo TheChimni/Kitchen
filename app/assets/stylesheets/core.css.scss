@@ -384,6 +384,11 @@ input[type='text'], input[type='email'], input[type='password'] {
 	background-color: $champagne5_80;
   position: relative;
   left: 50px;
+  -moz-transition: .2s background-color;
+  -webkit-transition: .2s background-color;
+  -ms-transition: .2s background-color;
+  -o-transition: .2s background-color;
+  transition: .2s background-color;
 }
 
 // .carouselTitle {
@@ -411,6 +416,11 @@ input[type='text'], input[type='email'], input[type='password'] {
 	text-align: center;
 	cursor: pointer;
   z-index: 4;
+  -moz-transition: .2s background-color;
+  -webkit-transition: .2s background-color;
+  -ms-transition: .2s background-color;
+  -o-transition: .2s background-color;
+  transition: .2s background-color;
 }
 
 .recipeMoreLink:hover, .carouselButton:hover {
