@@ -168,14 +168,14 @@ $(function() {
           if ($('#carousel .carouselItem').length < 2) {
             return;
           }
-          $("<a class='carouselButton left'>&lt;</a>").appendTo($this).click(function(){
+          $("<a class='carouselButton left'><span class='icon-chevron-left icon'></span></a>").appendTo($this).click(function(){
             if (!self.isAnimating) {
               // de-activate the buttons whilst the animation is in progress
               self.isAnimating = true;
               self.showPrevious();
             }
           });
-          $("<a class='carouselButton right'>&gt;</a>").appendTo($this).click(function(){
+          $("<a class='carouselButton right'><span class='icon-chevron-right icon'></span></a>").appendTo($this).click(function(){
             if (!self.isAnimating) {
               self.isAnimating = true;
               self.showNext();

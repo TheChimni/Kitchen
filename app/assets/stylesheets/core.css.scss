@@ -35,6 +35,7 @@ $champagne4: rgb(166, 133, 105);
 $champagne5: rgb(103, 82, 65);
 
 $champagne4_50: rgba(166, 133, 105, 0.5);
+$champagne5_20: rgba(103, 82, 65, 0.2);
 $champagne5_50: rgba(103, 82, 65, 0.5);
 $champagne5_80: rgba(103, 82, 65, 0.8);
 $champagne4_80: rgba(166, 133, 105, 0.8);
@@ -320,7 +321,7 @@ input[type='text'], input[type='email'], input[type='password'] {
   position: relative;
   width: 1000px;
   height: 800px;
-  left: 150px;
+  left: 80px;
   overflow: hidden;
 }
 
@@ -373,22 +374,18 @@ input[type='text'], input[type='email'], input[type='password'] {
 
 .carouselItem .recipeMoreLink {
   display: inline-block;
-  border-radius: 61px;
-  width: 80px;
-  height: 56px;
-  text-align: center;
-  padding: 32px 20px;
-  font-size: 130%;
+  padding: 4px 6px;
+  font-size: 110%;
   text-decoration: none;
-  color: $white;
-	background-color: $champagne5_80;
+  color: $champagne5;
+	background-color: transparent;
   position: relative;
-  left: 50px;
-  -moz-transition: .2s background-color;
-  -webkit-transition: .2s background-color;
-  -ms-transition: .2s background-color;
-  -o-transition: .2s background-color;
-  transition: .2s background-color;
+  float: right;
+  -moz-transition: color .2s, background-color .2s;
+  -webkit-transition: color .2s, background-color .2s;
+  -ms-transition: color .2s, background-color .2s;
+  -o-transition: color .2s, background-color .2s;
+  transition: color .2s, background-color .2s;
 }
 
 // .carouselTitle {
@@ -406,26 +403,27 @@ input[type='text'], input[type='email'], input[type='password'] {
 .carouselButton {
 	top: 40%;
 	position: absolute;
-	width: 60px;
-	height: 60px;
-  border-radius: 32px;
+	width: 55px;
+	height: 55px;
 	font-size: 150%;
 	color: $white;
-	background-color: $champagne5_80;
+	background-color: transparent;
+  color: $champagne5_50;
 	line-height: 56px;
 	text-align: center;
 	cursor: pointer;
   z-index: 4;
-  -moz-transition: .2s background-color;
-  -webkit-transition: .2s background-color;
-  -ms-transition: .2s background-color;
-  -o-transition: .2s background-color;
-  transition: .2s background-color;
+  -moz-transition: color .2s, background-color .2s;
+  -webkit-transition: color .2s, background-color .2s;
+  -ms-transition: color .2s, background-color .2s;
+  -o-transition: color .2s, background-color .2s;
+  transition: color .2s, background-color .2s;
 }
 
 .recipeMoreLink:hover, .carouselButton:hover {
 	// background-color: $orange;
-  background-color: $salmon3;
+  color: $white;
+	background-color: $champagne5_50;
 }
 
 .left {
@@ -433,7 +431,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 .right {
-	left: 80px;
+	right: 10px;
 }
 
 .recipeSearch {
