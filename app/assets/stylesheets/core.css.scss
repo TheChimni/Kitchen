@@ -407,10 +407,11 @@ input[type='text'], input[type='email'], input[type='password'] {
 	height: 55px;
 	font-size: 150%;
 	color: $white;
-	background-color: transparent;
-  color: $champagne5_50;
-	line-height: 56px;
+	background-color: $champagne5_20;
+  color: $white;
+	line-height: 63px;
 	text-align: center;
+  vertical-align: middle;
 	cursor: pointer;
   z-index: 4;
   -moz-transition: color .2s, background-color .2s;
@@ -418,6 +419,10 @@ input[type='text'], input[type='email'], input[type='password'] {
   -ms-transition: color .2s, background-color .2s;
   -o-transition: color .2s, background-color .2s;
   transition: color .2s, background-color .2s;
+
+  span {
+    font-size: 150%;
+  }
 }
 
 .recipeMoreLink:hover, .carouselButton:hover {
