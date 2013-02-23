@@ -1,0 +1,22 @@
+<h3>Photos</h3>
+<div>
+  <% @post.blog_post_photos.each do |photo| %>
+  <div>
+    <%= image_tag photo.image.extra_small.url %>
+    <%= photo.title %>
+    <%= link_to 'Delete', blog_post_blog_post_photo_path(@post, photo), :method => :delete, :confirm => "Are you sure?" %>
+  </div>
+  <% end %>
+</div>
+<div>
+  <%= link_to 'New Photo', new_blog_post_blog_post_photo_path(@post) if params[:action] == 'edit' %>
+</div>
+<h4>How to add a photo</h4>
+<div class='helpText'>
+  <p>
+  To add insert an image into a blog post first upload it by clicking 'New Photo' then add a markdown image tag such as ![]($image0)
+  </p>
+  <p>
+  ($image0 refers the URL of the first image).
+  </p>
+</div>

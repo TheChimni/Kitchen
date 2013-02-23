@@ -4,6 +4,8 @@ describe BlogPost do
   it { should validate_presence_of :title }
   it { should validate_presence_of :content }
 
+  it { should have_many :blog_post_photos }
+
   describe '#published_at' do
     let(:now) { DateTime.new(2013, 2, 24, 12, 0, 0) }
     before { DateTime.stub(:now).and_return(now) }

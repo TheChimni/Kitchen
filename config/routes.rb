@@ -9,7 +9,9 @@ Kitchen::Application.routes.draw do
     resources :recipe_photos, :except => [:index, :show]
   end
 
-  resources :blog_posts, :path => 'blog'
+  resources :blog_posts, :path => 'blog' do
+    resources :blog_post_photos, :except => [:index, :show]
+  end
 
   resources :classes
   resources :subscriptions, :only => [:create, :show, :destroy]

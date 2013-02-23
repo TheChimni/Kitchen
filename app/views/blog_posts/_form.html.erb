@@ -1,3 +1,4 @@
+<h3>Content</h3>
 <%= form_for @post do |form| %>
   <div>
     <%= errors_for(@post, "Could not save the blog post").html_safe %>
@@ -8,7 +9,7 @@
   </div>
   <div>
     <%= form.label :content, 'Content' %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, :class => 'extraLarge' %>
   </div>
   <div class="formActions">
     <%= form.submit(params[:action] == 'edit' ? 'Update' : 'Save', :class => 'formButton') %>
