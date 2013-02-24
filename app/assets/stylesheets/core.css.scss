@@ -55,6 +55,7 @@ $contactUsTitle2: rgb(213, 195, 153);
 $watermark: rgb(112, 111, 111);
 $base_font: lighter 13pt 'Gill Sans', 'Helvetica Neue', sans-serif;
 $heading_font: SamarkanNormal;
+$default_letter_spacing: 1px;
 
 h1 {
   color: #f00;
@@ -102,6 +103,7 @@ h1, h2, h3, h4 {
 body {
 	margin: 0;
   font: $base_font;
+  letter-spacing: $default_letter_spacing;
 }
 
 body, html {
@@ -218,6 +220,7 @@ input:not([type=submit]), textarea {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  letter-spacing: $default_letter_spacing
 }
 
 textarea {
@@ -236,6 +239,7 @@ textarea.large {
 input[type='text'], input[type='email'], input[type='password'] {
   padding: 10px;
   width: 500px;
+  letter-spacing: $default_letter_spacing;
 }
 
 .formActions {
@@ -745,6 +749,7 @@ input[type='submit'], input[type='button'] {
   font: $base_font;
   border: none;
   border-radius: none !important;
+  letter-spacing: $default_letter_spacing;
 }
 
 .subscribeButton {
