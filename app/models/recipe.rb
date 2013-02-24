@@ -25,6 +25,10 @@ class Recipe < ActiveRecord::Base
     recipe_photos[1]
   end
 
+  def similar_recipes(limit = 3)
+    Recipe.where(:category => self.category).where('NOT id = ?', self.id).page(1).per(limit)
+  end
+
   private
   def save_ingredients
     ingredients.clear
