@@ -55,3 +55,6 @@ group :test, :development do
   gem 'timecop'
   gem 'rb-fsevent', '~> 0.9.1'
 end
+
+gem "letter_opener", :group => :development
+

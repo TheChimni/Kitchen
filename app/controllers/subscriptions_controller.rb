@@ -3,6 +3,7 @@ class SubscriptionsController < ApplicationController
     # raise params.inspect
     subscription = Subscription.new params[:subscription]
     success = subscription.save
+    UserMailer.welcome_email(subscription).deliver if success
     if request.xhr?
       @subscription = success ? Subscription.new : subscription
     else
@@ -13,5 +14,10 @@ class SubscriptionsController < ApplicationController
         redirect_to root_path + '#contact'
       end
     end
+  end
+
+  def destroy
+    # TODO: ...
+    raise 'not implemented'
   end
 end
