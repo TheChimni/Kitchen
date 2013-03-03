@@ -1,0 +1,15 @@
+<section id="main" class='container recipeContainer'>
+  <h2>Unsubscribe</h2>
+  <p>We'll be sorry to see you go but if you no longer want to receive emails from us just click the Unsubscribe button below.</p>
+  <p>Thankyou!</p>
+  <%= form_for @subscription, :method => :delete do |form| %>
+    <div>
+      <%= errors_for(@subscription, "Could not delete your subscription").html_safe %>
+    </div>
+    <div class="formActions">
+      <%= form.submit('Unsubscribe', :class => 'formButton') %>
+      <%= link_to 'Cancel', root_path, :class => 'formButton' %>
+    </div>
+  <% end %>
+</section>
+

@@ -9,7 +9,7 @@ Kitchen::Application.routes.draw do
     resources :recipe_photos, :except => [:index, :show]
   end
   resources :classes
-  resources :subscriptions, :only => [:create, :destroy]
+  resources :subscriptions, :only => [:create, :show, :destroy]
   root :to => 'home#index'
 
   # The priority is based upon order of creation:

@@ -16,8 +16,18 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  def show
+    @show_header = true
+    @subscription = Subscription.find(params[:id])
+  end
+
   def destroy
-    # TODO: ...
-    raise 'not implemented'
+    @subscription = Subscription.find(params[:id])
+    if @subscription.destroy
+      flash[:notice] = "Your subscription has been deleted."
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 end
