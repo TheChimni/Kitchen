@@ -2,9 +2,25 @@
 
 <body>
   <h1>Zanzaneet News</h1>
+  <p>
+    Its been another busy month in the <a href='http://www.zanzaneet.com'>zanzaneet.com</a> kitchen. Here are some of the things we have been cooking up recently...
+  </p>
 
-  <p>Some things have happened but we havn't filled out this template yet so we can't tell you what they are...</p>
+  <h2>New Recipes</h2>
 
+  <% @recipes.each do |recipe| %>
+    <div style='border-bottom: 1px solid #888;'>
+      <p style='font-size: 120%; color: #590f0f;'><%= link_to recipe.title, recipe_url(recipe) %></p>
+      <p style=''><%= link_to recipe_url(recipe), {} { image_tag recipe.primary_photo.image.thumb.url } if recipe.primary_photo %></p>
+      <p style=''><%= recipe.synopsis %></p>
+    </div>
+  <% end %>
+
+  <h2>Recent Blog Posts</h2>
+
+  <p>Coming soon...</p>
+
+  <h2>How to Unsubscribe</h2>
   <p>If you no longer want to receive emails from us then please click the link below to unsubscribe.</p>
   <p><%= link_to 'Unsubscribe', subscription_url(@subscription) %></p>
 </body>
