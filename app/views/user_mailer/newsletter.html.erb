@@ -11,7 +11,6 @@
   <% @recipes.each do |recipe| %>
     <div style='border-bottom: 1px solid #888;'>
       <p style='font-size: 120%; color: #590f0f;'><%= link_to recipe.title, recipe_url(recipe) %></p>
-      <p style=''><%= link_to recipe_url(recipe), {} { image_tag recipe.primary_photo.image.thumb.url } if recipe.primary_photo %></p>
       <p style=''><%= recipe.synopsis %></p>
     </div>
   <% end %>
