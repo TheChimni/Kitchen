@@ -5,4 +5,11 @@ class UserMailer < ActionMailer::Base
     @subscription = subscription
     mail(:to => subscription.email, :subject => "Welcome to Zanzaneet")
   end
+
+  def newsletter(subscription, recipes, posts)
+    @subscription = subscription
+    @recipes = recipes
+    @posts = posts
+    mail(:to => subscription.email, :subject => "Zanzaneet News")
+  end
 end
