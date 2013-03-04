@@ -77,7 +77,7 @@ describe 'Home page' do
       it "saves a valid subscription" do
         page.current_path.should == root_path
         Subscription.count.should == 1
-        page.should have_content 'Thankyou, your subscription has been created'
+        page.should have_content 'Thankyou, you are now subscribed to zanzaneet.com'
       end
 
       it "sends a welcome email" do

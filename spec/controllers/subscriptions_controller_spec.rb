@@ -11,7 +11,7 @@ describe SubscriptionsController do
       post :create, :subscription => { :name =>  "", :email => "bob@roberts.com" }
       # flash[:notice].inspect
       response.should redirect_to("#{root_path}#contact")
-      flash[:notice].should == 'Thankyou, your subscription has been created'
+      flash[:notice].should == 'Thankyou, you are now subscribed to zanzaneet.com'
     end
 
     it "redirects to '/' and sets error on unsuccessful save" do
