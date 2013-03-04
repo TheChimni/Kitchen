@@ -6,9 +6,14 @@ class SubscriptionsController < ApplicationController
     UserMailer.welcome_email(subscription).deliver if success
     if request.xhr?
       @subscription = success ? Subscription.new : subscription
+      if success
+        @notice = "Thankyou, you are now subscribed to zanzaneet.com"
+      else
+        @error = "Your subscription could not be created. #{subscription.errors.full_messages.join(', ')}."
+      end
     else
       if success
-        redirect_to root_path + '#contact', :notice => 'Thankyou, your subscription has been created'
+        redirect_to root_path + '#contact', :notice => 'Thankyou, you are now subscribed to zanzaneet.com'
       else
         flash[:error] = "Your subscription could not be created. #{subscription.errors.full_messages.join(', ')}."
         redirect_to root_path + '#contact'
