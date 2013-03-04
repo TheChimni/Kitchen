@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "info@zanzaneet.com"
+  default from: "noreply@zanzaneet.com"
 
   def welcome_email(subscription)
     @subscription = subscription

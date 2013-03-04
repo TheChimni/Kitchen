@@ -14,7 +14,7 @@ describe UserMailer do
     end
 
     it 'renders the sender email' do
-      mail.from.should == ['info@zanzaneet.com']
+      mail.from.should == ['noreply@zanzaneet.com']
     end
 
     it 'renders an unsubscribe link' do
