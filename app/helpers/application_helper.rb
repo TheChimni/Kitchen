@@ -8,10 +8,10 @@ module ApplicationHelper
           html << "\t\t<h5>There was a problem creating the #{object.class.name.humanize.downcase}</h5>\n"
         else
           html << "\t\t<h5>There was a problem updating the #{object.class.name.humanize.downcase}</h5>\n"
-        end    
+        end
       else
         html << "<h5>#{message}</h5>"
-      end  
+      end
       html << "\t\t<ul>\n"
       object.errors.full_messages.each do |error|
         html << "\t\t\t<li>#{error}</li>\n"
@@ -24,5 +24,15 @@ module ApplicationHelper
 
   def md_to_html(markdown)
     BlueCloth.new(markdown).to_html.html_safe
+  end
+
+  def md_to_html_with_images(markdown, photo_collection)
+    html = BlueCloth.new(markdown).to_html
+    html.gsub!(/\$image[\d]+/) do |place_holder|
+      index = place_holder.gsub('$image', '').to_i
+      photo = photo_collection[index]
+      photo.image.large.url
+    end
+    html.html_safe
   end
 end

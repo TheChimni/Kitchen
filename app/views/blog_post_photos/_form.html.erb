@@ -1,0 +1,17 @@
+<%= form_for [@blog_post, @blog_post_photo], :html => {:multipart => true}  do |form| %>
+  <div>
+    <%= errors_for(@blog_post_photo, "Could not save the photo").html_safe %>
+  </div>
+  <div>
+    <%= form.label :title, 'Title' %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :image, 'Image file' %>
+    <%= form.file_field :image %>
+  </div>
+  <div class="formActions">
+    <%= form.submit(params[:action] == 'edit' ? 'Update' : 'Save', :class => 'formButton') %>
+    <%= link_to 'Cancel', edit_blog_post_path(@blog_post), :class => 'formButton' %>
+  </div>
+<% end %>

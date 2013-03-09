@@ -115,4 +115,65 @@ describe Recipe do
       end
     end
   end
+
+  describe '#similar_recipes' do
+    context 'with 5 vegetarian recipes and 2 non-veg' do
+      before do
+        @vegetarian_recipes = (1..5).map do |counter|
+          Recipe.create! :title => "vegetarian recipe #{counter}", :synopsis => 'try it', :ingredient_list => 'pending', :preparation_method => 'test', :category => 'vegetarian'
+        end
+        @non_vegetarian_recipes = (1..2).map do |counter|
+          Recipe.create! :title => "non-vegetarian recipe #{counter}", :synopsis => 'try it', :ingredient_list => 'pending', :preparation_method => 'test', :category => 'non_vegetarian'
+        end
+      end
+
+      context "the first vegetarian recipe's similar recipes" do
+        let(:similar_recipes) { @vegetarian_recipes.first.similar_recipes }
+
+        it 'contains 3 recipes' do
+          similar_recipes.count.should == 3
+        end
+
+        it 'do not include itself' do
+          similar_recipes.should_not include(@vegetarian_recipes.first)
+        end
+
+        it 'only includes vegetarian recipes' do
+          similar_recipes.each { |recipe| recipe.category.should == 'vegetarian' }
+        end
+      end
+
+      context "the second vegetarian recipe's similar recipes" do
+        let(:similar_recipes) { @vegetarian_recipes[1].similar_recipes }
+
+        it 'contains 3 recipes' do
+          similar_recipes.count.should == 3
+        end
+
+        it 'do not include itself' do
+          similar_recipes.should_not include(@vegetarian_recipes[1])
+        end
+
+        it 'only includes vegetarian recipes' do
+          similar_recipes.each { |recipe| recipe.category.should == 'vegetarian' }
+        end
+      end
+
+      context "the second non-vegetarian recipe's similar recipes" do
+        let(:similar_recipes) { @non_vegetarian_recipes[1].similar_recipes }
+
+        it 'contains 1 recipe' do
+          similar_recipes.count.should == 1
+        end
+
+        it 'do not include itself' do
+          similar_recipes.should_not include(@non_vegetarian_recipes[1])
+        end
+
+        it 'only includes non-vegetarian recipes' do
+          similar_recipes[0].should == @non_vegetarian_recipes[0]
+        end
+      end
+    end
+  end
 end

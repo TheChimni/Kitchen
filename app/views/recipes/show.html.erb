@@ -56,8 +56,21 @@
       <% end %>
       <div>
         <span><%= @recipe.category.humanize %></span>
-      </div>   
+      </div>
     </menu>
+    <%
+      similar_recipes = @recipe.similar_recipes
+      if similar_recipes.present?
+    %>
+    <h3>You might also like to try</h3>
+    <menu class='sidePanelMenu'>
+      <% similar_recipes.each do |similar_recipe| %>
+        <%= link_to recipe_path(similar_recipe) do %>
+          <span><%= similar_recipe.title %></span>
+        <% end %>
+      <% end %>
+    </menu>
+    <% end %>
     <div>
       <%= pin_it_button media: (@recipe.primary_photo ? @recipe.primary_photo.image.large.url : nil),
         description: @recipe.title %>

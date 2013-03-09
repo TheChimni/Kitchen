@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130114145702) do
+ActiveRecord::Schema.define(:version => 20130223183840) do
+
+  create_table "blog_post_photos", :force => true do |t|
+    t.integer  "blog_post_id"
+    t.string   "title"
+    t.string   "image"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "blog_posts", :force => true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "content"
+    t.datetime "published_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "ingredients", :force => true do |t|
     t.string   "title"
@@ -23,6 +40,13 @@ ActiveRecord::Schema.define(:version => 20130114145702) do
   create_table "ingredients_recipes", :id => false, :force => true do |t|
     t.integer "recipe_id"
     t.integer "ingredient_id"
+  end
+
+  create_table "recipe_categories", :force => true do |t|
+    t.string   "name"
+    t.string   "asset_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "recipe_photos", :force => true do |t|
@@ -56,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20130114145702) do
     t.integer  "secondary_picture_file_size"
     t.datetime "secondary_picture_updated_at"
     t.string   "synopsis",                                                 :null => false
+    t.integer  "recipe_category_id"
     t.string   "category",                       :default => "vegetarian", :null => false
   end
 

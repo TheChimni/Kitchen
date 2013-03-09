@@ -1,7 +1,12 @@
 <%= form_for @subscription, :remote => true do |form| %>
   <div>
     <!-- The errors here are only rendered for an Ajax response -->
-    <%= errors_for(@subscription).html_safe %>
+    <% if @error %>
+      <p class='flash errors'><%= @error %></p>
+    <% end %>
+    <% if @notice %>
+      <p class='flash notice'><%= @notice %></p>
+    <% end %>
   </div>
   <div class='field'>
     <%= form.label :name, 'Name' %>

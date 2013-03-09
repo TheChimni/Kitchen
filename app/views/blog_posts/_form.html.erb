@@ -1,0 +1,18 @@
+<h3>Content</h3>
+<%= form_for @post do |form| %>
+  <div>
+    <%= errors_for(@post, "Could not save the blog post").html_safe %>
+  </div>
+  <div>
+    <%= form.label :title, 'Title' %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :content, 'Content' %>
+    <%= form.text_area :content, :class => 'extraLarge' %>
+  </div>
+  <div class="formActions">
+    <%= form.submit(params[:action] == 'edit' ? 'Update' : 'Save', :class => 'formButton') %>
+    <%= link_to 'Cancel', params[:action] == 'edit' ? blog_post_path(@post) : blog_posts_path , :class => 'formButton' %>
+  </div>
+<% end %>

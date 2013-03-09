@@ -1,0 +1,8 @@
+<section id="main" class="container">
+
+  <%= render :partial => 'blog_posts/blogs' %>
+
+  <div>
+    <%= link_to 'New blog post', new_blog_post_path if user_signed_in? %>
+  </div>
+</section>

@@ -6,7 +6,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'twitter'
 gem 'rails_autolink'
-gem 'font-awesome-rails'
+gem 'font-awesome-rails', '>= 3.0.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -55,3 +55,6 @@ group :test, :development do
   gem 'timecop'
   gem 'rb-fsevent', '~> 0.9.1'
 end
+
+gem "letter_opener", :group => :development
+

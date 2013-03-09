@@ -1,0 +1,4 @@
+var renderedList = "<%= j render :partial => 'blog_posts/blogs' %>";
+var container = $('#blogListContainer');
+$('nav.pagination', container).remove();
+container.append(renderedList);

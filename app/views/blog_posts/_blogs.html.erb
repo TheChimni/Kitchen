@@ -1,0 +1,20 @@
+<div id='blogListContainer'>
+  <% @posts.each do |post| %>
+    <article class='blogPost'>
+      <h2><%= post.title %></h2>
+      <div class='blogContent'>
+        <%= truncate strip_tags(post.html_content), :length => 400, :omission => '...' %>
+        <p>
+          <%= link_to 'Read more', post %>
+        </p>
+      </div>
+      <div class='blogDate'><%= time_ago_in_words post.published_at %> ago</div>
+    </article>
+  <% end %>
+  <div class='clear'></div>
+  <nav class='pagination'>
+    <span class="next">
+      <%= link_to_next_page @posts, 'More', :remote => true %>
+    </span>
+  </nav>
+</div>

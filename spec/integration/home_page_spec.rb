@@ -67,22 +67,42 @@ describe 'Home page' do
       page.should have_field 'Email'
     end
 
-    it "should save a valid subscription" do
-      visit '/'
-      fill_in 'Email', :with => 'puppy@woof.com'
-      click_button 'Subscribe'
-      page.current_path.should == root_path
-      Subscription.count.should == 1
-      page.should have_content 'Thankyou, your subscription has been created'
+    context "with valid subscription details" do
+      before do
+        visit '/'
+        fill_in 'Email', :with => 'puppy@woof.com'
+        click_button 'Subscribe'
+      end
+
+      it "saves a valid subscription" do
+        page.current_path.should == root_path
+        Subscription.count.should == 1
+        page.should have_content 'Thankyou, you are now subscribed to zanzaneet.com'
+      end
+
+      it "sends a welcome email" do
+        ActionMailer::Base.deliveries.count.should == 1
+        welcome_email = ActionMailer::Base.deliveries.last
+        welcome_email.body.should match "Welcome to Zanzaneet"
+      end
     end
 
-    it "should not save an invalid subscription and throw error" do
-      visit '/'
-      fill_in 'Email', :with => 'puppy'
-      click_button 'Subscribe'
-      page.current_path.should == root_path
-      Subscription.count.should == 0
-      page.should have_content 'Your subscription could not be created'
+    context "with invalid subscription details" do
+      before do
+        visit '/'
+        fill_in 'Email', :with => 'puppy'
+        click_button 'Subscribe'
+      end
+
+      it "should not save an invalid subscription and throw error" do
+        page.current_path.should == root_path
+        Subscription.count.should == 0
+        page.should have_content 'Your subscription could not be created'
+      end
+
+      it "does not send an email" do
+        ActionMailer::Base.deliveries.count.should == 0
+      end
     end
   end
 end

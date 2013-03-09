@@ -55,6 +55,7 @@ $contactUsTitle2: rgb(213, 195, 153);
 $watermark: rgb(112, 111, 111);
 $base_font: lighter 13pt 'Gill Sans', 'Helvetica Neue', sans-serif;
 $heading_font: SamarkanNormal;
+$default_letter_spacing: 1px;
 
 h1 {
   color: #f00;
@@ -102,6 +103,7 @@ h1, h2, h3, h4 {
 body {
 	margin: 0;
   font: $base_font;
+  letter-spacing: $default_letter_spacing;
 }
 
 body, html {
@@ -218,6 +220,7 @@ input:not([type=submit]), textarea {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  letter-spacing: $default_letter_spacing
 }
 
 textarea {
@@ -233,9 +236,14 @@ textarea.large {
   min-height: 300px;
 }
 
+textarea.extraLarge {
+  min-height: 500px;
+}
+
 input[type='text'], input[type='email'], input[type='password'] {
   padding: 10px;
   width: 500px;
+  letter-spacing: $default_letter_spacing;
 }
 
 .formActions {
@@ -548,6 +556,7 @@ ul.recipeList {
 
 .pagination {
   text-align: right;
+  float: right;
 }
 
 .pagination span {
@@ -745,6 +754,7 @@ input[type='submit'], input[type='button'] {
   font: $base_font;
   border: none;
   border-radius: none !important;
+  letter-spacing: $default_letter_spacing;
 }
 
 .subscribeButton {
@@ -801,7 +811,7 @@ input[type='submit'], input[type='button'] {
 }
 
 .sidePanelMenu a {
-  display: inline-block;
+  display: block;
   margin: 3px 0;
   padding: 5px 9px;
   text-decoration: none;
@@ -818,4 +828,33 @@ input[type='submit'], input[type='button'] {
 }
 
 .sidePanelMenu .label {
+}
+
+.flash {
+  display: none;
+}
+
+.blogPost {
+  padding: 0 0 10px;
+  border-bottom: #ddd 1px solid;
+}
+
+.blogContent {}
+.blogDate {
+  margin: 10px 0 0 0;
+  color: $grey;
+  font-size: 80%;
+}
+.blogComments {
+  margin: 30px 0 0;
+}
+
+#blogListContainer {
+  .clear {
+    margin: 20px 0 0;
+  }
+}
+
+.helpText {
+  font-size: 80%;
 }
